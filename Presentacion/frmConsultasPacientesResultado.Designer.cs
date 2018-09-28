@@ -30,6 +30,7 @@
         {
             this.dgvConsultasPacientes = new System.Windows.Forms.DataGridView();
             this.btnActualizar = new System.Windows.Forms.Button();
+            this.btnBuscarPteVolver = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsultasPacientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -38,7 +39,7 @@
             this.dgvConsultasPacientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvConsultasPacientes.Location = new System.Drawing.Point(12, 41);
             this.dgvConsultasPacientes.Name = "dgvConsultasPacientes";
-            this.dgvConsultasPacientes.Size = new System.Drawing.Size(760, 334);
+            this.dgvConsultasPacientes.Size = new System.Drawing.Size(760, 395);
             this.dgvConsultasPacientes.TabIndex = 0;
             // 
             // btnActualizar
@@ -50,11 +51,21 @@
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = true;
             // 
+            // btnBuscarPteVolver
+            // 
+            this.btnBuscarPteVolver.Location = new System.Drawing.Point(585, 442);
+            this.btnBuscarPteVolver.Name = "btnBuscarPteVolver";
+            this.btnBuscarPteVolver.Size = new System.Drawing.Size(187, 58);
+            this.btnBuscarPteVolver.TabIndex = 8;
+            this.btnBuscarPteVolver.Text = "Volver";
+            this.btnBuscarPteVolver.UseVisualStyleBackColor = true;
+            // 
             // frmConsultasPacientesResultado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 512);
+            this.Controls.Add(this.btnBuscarPteVolver);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.dgvConsultasPacientes);
             this.MinimumSize = new System.Drawing.Size(800, 550);
@@ -70,5 +81,6 @@
 
         private System.Windows.Forms.DataGridView dgvConsultasPacientes;
         private System.Windows.Forms.Button btnActualizar;
+        private System.Windows.Forms.Button btnBuscarPteVolver;
     }
 }
