@@ -15,6 +15,5 @@ namespace Dominio
         public string Dpto { set; get; }
         public string Municipio { set; get; }
         public string CP { set; get; }
-        public DateTime FechaAlta { set; get; }
     }
 }
