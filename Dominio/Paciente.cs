@@ -9,6 +9,6 @@ namespace Dominio
     public class Paciente:Persona
     {
         public Int32 IdPaciente { set; get; }
-        public HC IdHC { set; get; }
+        public IList<HC> IdHC { set; get; }
     }
 }

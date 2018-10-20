@@ -21,5 +21,11 @@ namespace Presentacion
         {
             Close();
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            frmConsultasPacientesResultado consPacientes = new frmConsultasPacientesResultado();
+            consPacientes.ShowDialog();
+        }
     }
 }

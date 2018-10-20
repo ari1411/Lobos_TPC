@@ -26,5 +26,21 @@ SELECT * FROM RAZONESSOCIALES
 SELECT * FROM TURNOS
 GO
 
+
+SELECT P.IDPERSONA AS ID, P.DNI, P.APELLIDO+', '+P.NOMBRE AS 'APELLIDO Y NOMBRE', CASE P.SEXO WHEN 1 THEN 'M' WHEN 0 THEN 'F' END AS SEXO, P.FechaNac AS 'FECHA NACIMIENTO', P.NACIONALIDAD, P.Calle, P.Numero, P.Piso, P.Depto, M.MUNICIPIO, P.TelCelular, P.TelFijo, P.FechaAlta, P.IdAdminAlta, P.FechaModif, P.IdAdminModif, P.FechaBaja, P. IdAdminBaja FROM Personas AS P LEFT JOIN Municipios AS M ON P.IDMUNICIPIO=M.IDMUNICIPIO LEFT JOIN Administrativos AS A ON P.IdPersona=A.IDPERSONA
+GO
+
+
+
+
+
+
+
+
+
+
+
 go
-update Personas set numero=4459,idmunicipio=1
+update Personas set IdPersona=3 where IdPersona=1
+
+

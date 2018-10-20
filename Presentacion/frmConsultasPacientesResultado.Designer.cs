@@ -50,6 +50,7 @@
             this.btnActualizar.TabIndex = 1;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // btnBuscarPteVolver
             // 
@@ -59,6 +60,7 @@
             this.btnBuscarPteVolver.TabIndex = 8;
             this.btnBuscarPteVolver.Text = "Volver";
             this.btnBuscarPteVolver.UseVisualStyleBackColor = true;
+            this.btnBuscarPteVolver.Click += new System.EventHandler(this.btnBuscarPteVolver_Click);
             // 
             // frmConsultasPacientesResultado
             // 
@@ -72,6 +74,7 @@
             this.Name = "frmConsultasPacientesResultado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frmConsultasPacientesResultado";
+            this.Load += new System.EventHandler(this.frmConsultasPacientesResultado_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsultasPacientes)).EndInit();
             this.ResumeLayout(false);
 
