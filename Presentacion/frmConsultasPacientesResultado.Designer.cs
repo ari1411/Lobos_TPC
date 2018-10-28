@@ -38,7 +38,10 @@
             // 
             this.dgvConsultasPacientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvConsultasPacientes.Location = new System.Drawing.Point(12, 41);
+            this.dgvConsultasPacientes.MultiSelect = false;
             this.dgvConsultasPacientes.Name = "dgvConsultasPacientes";
+            this.dgvConsultasPacientes.ReadOnly = true;
+            this.dgvConsultasPacientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvConsultasPacientes.Size = new System.Drawing.Size(760, 395);
             this.dgvConsultasPacientes.TabIndex = 0;
             // 

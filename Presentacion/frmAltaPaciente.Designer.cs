@@ -28,17 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txtDni = new System.Windows.Forms.TextBox();
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.cboSexo = new System.Windows.Forms.ComboBox();
             this.cboNacionalidad = new System.Windows.Forms.ComboBox();
+            this.vWNACIONALIDADBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lOBOS_DBDataSet1 = new Presentacion.LOBOS_DBDataSet1();
             this.dtpFechaNacimiento = new System.Windows.Forms.DateTimePicker();
             this.txtCalle = new System.Windows.Forms.TextBox();
             this.txtNumero = new System.Windows.Forms.TextBox();
             this.txtPiso = new System.Windows.Forms.TextBox();
             this.txtDepto = new System.Windows.Forms.TextBox();
-            this.txtMunicipio = new System.Windows.Forms.TextBox();
             this.txtPartido = new System.Windows.Forms.TextBox();
             this.txtMail = new System.Windows.Forms.TextBox();
             this.txtTelFijo = new System.Windows.Forms.TextBox();
@@ -60,6 +61,24 @@
             this.lblTelMovil = new System.Windows.Forms.Label();
             this.btnGrabar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.cboMunicipio = new System.Windows.Forms.ComboBox();
+            this.vWMUNICIPIOSBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lOBOS_DBDataSet2 = new Presentacion.LOBOS_DBDataSet2();
+            this.cboSexo = new System.Windows.Forms.ComboBox();
+            this.sexoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lOBOS_DBDataSet = new Presentacion.LOBOS_DBDataSet();
+            this.sexoTableAdapter = new Presentacion.LOBOS_DBDataSetTableAdapters.SexoTableAdapter();
+            this.vW_NACIONALIDADTableAdapter = new Presentacion.LOBOS_DBDataSet1TableAdapters.VW_NACIONALIDADTableAdapter();
+            this.vW_MUNICIPIOSTableAdapter = new Presentacion.LOBOS_DBDataSet2TableAdapters.VW_MUNICIPIOSTableAdapter();
+            this.btnAgregarSexo = new System.Windows.Forms.Button();
+            this.btnAgregarNacionalidad = new System.Windows.Forms.Button();
+            this.btnAgregarMunicipio = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.vWNACIONALIDADBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lOBOS_DBDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vWMUNICIPIOSBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lOBOS_DBDataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sexoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lOBOS_DBDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // txtDni
@@ -68,8 +87,9 @@
             this.txtDni.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtDni.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtDni.Location = new System.Drawing.Point(218, 41);
+            this.txtDni.MaxLength = 8;
             this.txtDni.Name = "txtDni";
-            this.txtDni.Size = new System.Drawing.Size(285, 20);
+            this.txtDni.Size = new System.Drawing.Size(210, 20);
             this.txtDni.TabIndex = 0;
             // 
             // txtApellido
@@ -78,6 +98,7 @@
             this.txtApellido.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtApellido.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtApellido.Location = new System.Drawing.Point(218, 73);
+            this.txtApellido.MaxLength = 50;
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(285, 20);
             this.txtApellido.TabIndex = 1;
@@ -88,35 +109,41 @@
             this.txtNombre.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtNombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNombre.Location = new System.Drawing.Point(218, 105);
+            this.txtNombre.MaxLength = 50;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(285, 20);
             this.txtNombre.TabIndex = 2;
             // 
-            // cboSexo
-            // 
-            this.cboSexo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cboSexo.FormattingEnabled = true;
-            this.cboSexo.Location = new System.Drawing.Point(218, 137);
-            this.cboSexo.Name = "cboSexo";
-            this.cboSexo.Size = new System.Drawing.Size(152, 21);
-            this.cboSexo.TabIndex = 3;
-            // 
             // cboNacionalidad
             // 
             this.cboNacionalidad.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cboNacionalidad.DataSource = this.vWNACIONALIDADBindingSource;
+            this.cboNacionalidad.DisplayMember = "NACIONALIDAD";
             this.cboNacionalidad.FormattingEnabled = true;
             this.cboNacionalidad.Location = new System.Drawing.Point(218, 170);
             this.cboNacionalidad.Name = "cboNacionalidad";
             this.cboNacionalidad.Size = new System.Drawing.Size(178, 21);
             this.cboNacionalidad.TabIndex = 4;
+            this.cboNacionalidad.ValueMember = "IdPais";
+            // 
+            // vWNACIONALIDADBindingSource
+            // 
+            this.vWNACIONALIDADBindingSource.DataMember = "VW_NACIONALIDAD";
+            this.vWNACIONALIDADBindingSource.DataSource = this.lOBOS_DBDataSet1;
+            // 
+            // lOBOS_DBDataSet1
+            // 
+            this.lOBOS_DBDataSet1.DataSetName = "LOBOS_DBDataSet1";
+            this.lOBOS_DBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // dtpFechaNacimiento
             // 
             this.dtpFechaNacimiento.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dtpFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaNacimiento.Location = new System.Drawing.Point(218, 203);
             this.dtpFechaNacimiento.MaxDate = new System.DateTime(2018, 9, 20, 0, 0, 0, 0);
             this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
-            this.dtpFechaNacimiento.Size = new System.Drawing.Size(210, 20);
+            this.dtpFechaNacimiento.Size = new System.Drawing.Size(121, 20);
             this.dtpFechaNacimiento.TabIndex = 5;
             this.dtpFechaNacimiento.Value = new System.DateTime(2018, 9, 20, 0, 0, 0, 0);
             // 
@@ -126,6 +153,7 @@
             this.txtCalle.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtCalle.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtCalle.Location = new System.Drawing.Point(218, 235);
+            this.txtCalle.MaxLength = 50;
             this.txtCalle.Name = "txtCalle";
             this.txtCalle.Size = new System.Drawing.Size(241, 20);
             this.txtCalle.TabIndex = 6;
@@ -136,6 +164,7 @@
             this.txtNumero.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtNumero.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNumero.Location = new System.Drawing.Point(505, 235);
+            this.txtNumero.MaxLength = 10;
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(100, 20);
             this.txtNumero.TabIndex = 7;
@@ -146,6 +175,7 @@
             this.txtPiso.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtPiso.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtPiso.Location = new System.Drawing.Point(218, 267);
+            this.txtPiso.MaxLength = 10;
             this.txtPiso.Name = "txtPiso";
             this.txtPiso.Size = new System.Drawing.Size(77, 20);
             this.txtPiso.TabIndex = 8;
@@ -156,20 +186,11 @@
             this.txtDepto.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtDepto.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtDepto.Location = new System.Drawing.Point(319, 267);
+            this.txtDepto.MaxLength = 10;
             this.txtDepto.Name = "txtDepto";
             this.txtDepto.Size = new System.Drawing.Size(77, 20);
             this.txtDepto.TabIndex = 9;
             this.txtDepto.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
-            // 
-            // txtMunicipio
-            // 
-            this.txtMunicipio.AllowDrop = true;
-            this.txtMunicipio.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtMunicipio.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtMunicipio.Location = new System.Drawing.Point(218, 299);
-            this.txtMunicipio.Name = "txtMunicipio";
-            this.txtMunicipio.Size = new System.Drawing.Size(224, 20);
-            this.txtMunicipio.TabIndex = 10;
             // 
             // txtPartido
             // 
@@ -187,6 +208,7 @@
             this.txtMail.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtMail.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtMail.Location = new System.Drawing.Point(218, 363);
+            this.txtMail.MaxLength = 50;
             this.txtMail.Name = "txtMail";
             this.txtMail.Size = new System.Drawing.Size(285, 20);
             this.txtMail.TabIndex = 12;
@@ -196,10 +218,11 @@
             this.txtTelFijo.AllowDrop = true;
             this.txtTelFijo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtTelFijo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtTelFijo.Location = new System.Drawing.Point(218, 395);
+            this.txtTelFijo.Location = new System.Drawing.Point(479, 395);
+            this.txtTelFijo.MaxLength = 14;
             this.txtTelFijo.Name = "txtTelFijo";
             this.txtTelFijo.Size = new System.Drawing.Size(178, 20);
-            this.txtTelFijo.TabIndex = 13;
+            this.txtTelFijo.TabIndex = 14;
             // 
             // txtTelMovil
             // 
@@ -208,11 +231,11 @@
             this.txtTelMovil.AllowDrop = true;
             this.txtTelMovil.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtTelMovil.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtTelMovil.Location = new System.Drawing.Point(477, 395);
-            this.txtTelMovil.MaxLength = 10;
+            this.txtTelMovil.Location = new System.Drawing.Point(218, 395);
+            this.txtTelMovil.MaxLength = 14;
             this.txtTelMovil.Name = "txtTelMovil";
             this.txtTelMovil.Size = new System.Drawing.Size(191, 20);
-            this.txtTelMovil.TabIndex = 14;
+            this.txtTelMovil.TabIndex = 13;
             // 
             // lblDni
             // 
@@ -348,7 +371,7 @@
             // 
             this.lblTelFijo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblTelFijo.AutoSize = true;
-            this.lblTelFijo.Location = new System.Drawing.Point(154, 398);
+            this.lblTelFijo.Location = new System.Drawing.Point(415, 398);
             this.lblTelFijo.Name = "lblTelFijo";
             this.lblTelFijo.Size = new System.Drawing.Size(58, 13);
             this.lblTelFijo.TabIndex = 28;
@@ -358,7 +381,7 @@
             // 
             this.lblTelMovil.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblTelMovil.AutoSize = true;
-            this.lblTelMovil.Location = new System.Drawing.Point(402, 398);
+            this.lblTelMovil.Location = new System.Drawing.Point(143, 398);
             this.lblTelMovil.Name = "lblTelMovil";
             this.lblTelMovil.Size = new System.Drawing.Size(69, 13);
             this.lblTelMovil.TabIndex = 29;
@@ -371,7 +394,7 @@
             this.btnGrabar.Location = new System.Drawing.Point(234, 454);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(115, 43);
-            this.btnGrabar.TabIndex = 30;
+            this.btnGrabar.TabIndex = 15;
             this.btnGrabar.Text = "Grabar";
             this.btnGrabar.UseVisualStyleBackColor = true;
             this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
@@ -383,17 +406,111 @@
             this.btnCancelar.Location = new System.Drawing.Point(444, 454);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(115, 43);
-            this.btnCancelar.TabIndex = 31;
+            this.btnCancelar.TabIndex = 16;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // cboMunicipio
+            // 
+            this.cboMunicipio.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cboMunicipio.DataSource = this.vWMUNICIPIOSBindingSource;
+            this.cboMunicipio.DisplayMember = "MUNICIPIOS";
+            this.cboMunicipio.FormattingEnabled = true;
+            this.cboMunicipio.Location = new System.Drawing.Point(218, 302);
+            this.cboMunicipio.Name = "cboMunicipio";
+            this.cboMunicipio.Size = new System.Drawing.Size(439, 21);
+            this.cboMunicipio.TabIndex = 10;
+            this.cboMunicipio.ValueMember = "IDMUNICIPIO";
+            // 
+            // vWMUNICIPIOSBindingSource
+            // 
+            this.vWMUNICIPIOSBindingSource.DataMember = "VW_MUNICIPIOS";
+            this.vWMUNICIPIOSBindingSource.DataSource = this.lOBOS_DBDataSet2;
+            // 
+            // lOBOS_DBDataSet2
+            // 
+            this.lOBOS_DBDataSet2.DataSetName = "LOBOS_DBDataSet2";
+            this.lOBOS_DBDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // cboSexo
+            // 
+            this.cboSexo.DataSource = this.sexoBindingSource;
+            this.cboSexo.DisplayMember = "Sexo";
+            this.cboSexo.FormattingEnabled = true;
+            this.cboSexo.Location = new System.Drawing.Point(218, 137);
+            this.cboSexo.Name = "cboSexo";
+            this.cboSexo.Size = new System.Drawing.Size(121, 21);
+            this.cboSexo.TabIndex = 3;
+            this.cboSexo.ValueMember = "Idsexo";
+            // 
+            // sexoBindingSource
+            // 
+            this.sexoBindingSource.DataMember = "Sexo";
+            this.sexoBindingSource.DataSource = this.lOBOS_DBDataSet;
+            // 
+            // lOBOS_DBDataSet
+            // 
+            this.lOBOS_DBDataSet.DataSetName = "LOBOS_DBDataSet";
+            this.lOBOS_DBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sexoTableAdapter
+            // 
+            this.sexoTableAdapter.ClearBeforeFill = true;
+            // 
+            // vW_NACIONALIDADTableAdapter
+            // 
+            this.vW_NACIONALIDADTableAdapter.ClearBeforeFill = true;
+            // 
+            // vW_MUNICIPIOSTableAdapter
+            // 
+            this.vW_MUNICIPIOSTableAdapter.ClearBeforeFill = true;
+            // 
+            // btnAgregarSexo
+            // 
+            this.btnAgregarSexo.Location = new System.Drawing.Point(345, 137);
+            this.btnAgregarSexo.Name = "btnAgregarSexo";
+            this.btnAgregarSexo.Size = new System.Drawing.Size(25, 21);
+            this.btnAgregarSexo.TabIndex = 17;
+            this.btnAgregarSexo.Text = "+";
+            this.btnAgregarSexo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnAgregarSexo.UseVisualStyleBackColor = true;
+            this.btnAgregarSexo.Click += new System.EventHandler(this.btnAgregarSexo_Click);
+            // 
+            // btnAgregarNacionalidad
+            // 
+            this.btnAgregarNacionalidad.Location = new System.Drawing.Point(402, 170);
+            this.btnAgregarNacionalidad.Name = "btnAgregarNacionalidad";
+            this.btnAgregarNacionalidad.Size = new System.Drawing.Size(25, 21);
+            this.btnAgregarNacionalidad.TabIndex = 18;
+            this.btnAgregarNacionalidad.Text = "+";
+            this.btnAgregarNacionalidad.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnAgregarNacionalidad.UseVisualStyleBackColor = true;
+            this.btnAgregarNacionalidad.Click += new System.EventHandler(this.btnAgregarNacionalidad_Click);
+            // 
+            // btnAgregarMunicipio
+            // 
+            this.btnAgregarMunicipio.Location = new System.Drawing.Point(663, 302);
+            this.btnAgregarMunicipio.Name = "btnAgregarMunicipio";
+            this.btnAgregarMunicipio.Size = new System.Drawing.Size(25, 21);
+            this.btnAgregarMunicipio.TabIndex = 19;
+            this.btnAgregarMunicipio.Text = "+";
+            this.btnAgregarMunicipio.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnAgregarMunicipio.UseVisualStyleBackColor = true;
+            this.btnAgregarMunicipio.Click += new System.EventHandler(this.btnAgregarMunicipio_Click);
             // 
             // frmAltaPaciente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnCancelar;
             this.ClientSize = new System.Drawing.Size(784, 584);
             this.ControlBox = false;
+            this.Controls.Add(this.btnAgregarMunicipio);
+            this.Controls.Add(this.btnAgregarNacionalidad);
+            this.Controls.Add(this.btnAgregarSexo);
+            this.Controls.Add(this.cboSexo);
+            this.Controls.Add(this.cboMunicipio);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGrabar);
             this.Controls.Add(this.lblTelMovil);
@@ -415,14 +532,12 @@
             this.Controls.Add(this.txtTelFijo);
             this.Controls.Add(this.txtMail);
             this.Controls.Add(this.txtPartido);
-            this.Controls.Add(this.txtMunicipio);
             this.Controls.Add(this.txtDepto);
             this.Controls.Add(this.txtPiso);
             this.Controls.Add(this.txtNumero);
             this.Controls.Add(this.txtCalle);
             this.Controls.Add(this.dtpFechaNacimiento);
             this.Controls.Add(this.cboNacionalidad);
-            this.Controls.Add(this.cboSexo);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.txtApellido);
             this.Controls.Add(this.txtDni);
@@ -431,6 +546,12 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Alta Paciente";
             this.Load += new System.EventHandler(this.frmAltaPaciente_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.vWNACIONALIDADBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lOBOS_DBDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vWMUNICIPIOSBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lOBOS_DBDataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sexoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lOBOS_DBDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -441,14 +562,12 @@
         private System.Windows.Forms.TextBox txtDni;
         private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.ComboBox cboSexo;
         private System.Windows.Forms.ComboBox cboNacionalidad;
         private System.Windows.Forms.DateTimePicker dtpFechaNacimiento;
         private System.Windows.Forms.TextBox txtCalle;
         private System.Windows.Forms.TextBox txtNumero;
         private System.Windows.Forms.TextBox txtPiso;
         private System.Windows.Forms.TextBox txtDepto;
-        private System.Windows.Forms.TextBox txtMunicipio;
         private System.Windows.Forms.TextBox txtPartido;
         private System.Windows.Forms.TextBox txtMail;
         private System.Windows.Forms.TextBox txtTelFijo;
@@ -470,5 +589,19 @@
         private System.Windows.Forms.Label lblTelMovil;
         private System.Windows.Forms.Button btnGrabar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.ComboBox cboMunicipio;
+        private System.Windows.Forms.ComboBox cboSexo;
+        private LOBOS_DBDataSet lOBOS_DBDataSet;
+        private System.Windows.Forms.BindingSource sexoBindingSource;
+        private LOBOS_DBDataSetTableAdapters.SexoTableAdapter sexoTableAdapter;
+        private LOBOS_DBDataSet1 lOBOS_DBDataSet1;
+        private System.Windows.Forms.BindingSource vWNACIONALIDADBindingSource;
+        private LOBOS_DBDataSet1TableAdapters.VW_NACIONALIDADTableAdapter vW_NACIONALIDADTableAdapter;
+        private LOBOS_DBDataSet2 lOBOS_DBDataSet2;
+        private System.Windows.Forms.BindingSource vWMUNICIPIOSBindingSource;
+        private LOBOS_DBDataSet2TableAdapters.VW_MUNICIPIOSTableAdapter vW_MUNICIPIOSTableAdapter;
+        private System.Windows.Forms.Button btnAgregarSexo;
+        private System.Windows.Forms.Button btnAgregarNacionalidad;
+        private System.Windows.Forms.Button btnAgregarMunicipio;
     }
 }

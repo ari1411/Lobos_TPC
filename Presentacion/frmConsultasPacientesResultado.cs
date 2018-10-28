@@ -33,9 +33,12 @@ namespace Presentacion
             {
                 listaPacientes = (List<Paciente>)neg.Listar();
                 dgvConsultasPacientes.DataSource = listaPacientes;
-                dgvConsultasPacientes.Columns["idpaciente"].Visible = false;
-                dgvConsultasPacientes.Columns["idhc"].Visible = false;
-                dgvConsultasPacientes.Columns["id"].Visible = false;
+                dgvConsultasPacientes.Columns["Idpaciente"].Visible = false;
+                dgvConsultasPacientes.Columns["Idhc"].Visible = false;
+                dgvConsultasPacientes.Columns["Id"].Visible = false;
+                dgvConsultasPacientes.Columns["IdSexo"].Visible = false;
+                dgvConsultasPacientes.Columns["IdMunicipio"].Visible = false;
+                dgvConsultasPacientes.Columns["IdNacionalidad"].Visible = false;
                 dgvConsultasPacientes.Columns["FechaAlta"].Visible = false;
                 dgvConsultasPacientes.Columns["IdUsuarioAlta"].Visible = false;
                 dgvConsultasPacientes.Columns["FechaModif"].Visible = false;

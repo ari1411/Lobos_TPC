@@ -24,7 +24,7 @@ namespace Negocio
 
         public AccesoDatos()
         {
-            conexion = new SqlConnection("initial catalog=INMO_DB; data source=.; integrated security=sspi");
+            conexion = new SqlConnection("initial catalog=LOBOS_DB; data source=.; integrated security=sspi");
         }
 
         //setear consulta embebida.

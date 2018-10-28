@@ -50,6 +50,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmAgregarMunicipio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAgregarMunicipio.Designer.cs">
+      <DependentUpon>frmAgregarMunicipio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAgregarPais.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAgregarPais.Designer.cs">
+      <DependentUpon>frmAgregarPais.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAgregarPartido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAgregarPartido.Designer.cs">
+      <DependentUpon>frmAgregarPartido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAgregarProvincia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAgregarProvincia.Designer.cs">
+      <DependentUpon>frmAgregarProvincia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAgregarSexo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAgregarSexo.Designer.cs">
+      <DependentUpon>frmAgregarSexo.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAltaPaciente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +110,36 @@
     <Compile Include="frmInicio.Designer.cs">
       <DependentUpon>frmInicio.cs</DependentUpon>
     </Compile>
+    <Compile Include="LOBOS_DBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LOBOS_DBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LOBOS_DBDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LOBOS_DBDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LOBOS_DBDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LOBOS_DBDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LOBOS_DBDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LOBOS_DBDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LOBOS_DBDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LOBOS_DBDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LOBOS_DBDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LOBOS_DBDataSet5.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Principal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +148,21 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmAgregarMunicipio.resx">
+      <DependentUpon>frmAgregarMunicipio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAgregarPais.resx">
+      <DependentUpon>frmAgregarPais.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAgregarPartido.resx">
+      <DependentUpon>frmAgregarPartido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAgregarProvincia.resx">
+      <DependentUpon>frmAgregarProvincia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAgregarSexo.resx">
+      <DependentUpon>frmAgregarSexo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAltaPaciente.resx">
       <DependentUpon>frmAltaPaciente.cs</DependentUpon>
     </EmbeddedResource>
@@ -116,6 +191,72 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="LOBOS_DBDataSet.xsc">
+      <DependentUpon>LOBOS_DBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="LOBOS_DBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LOBOS_DBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LOBOS_DBDataSet.xss">
+      <DependentUpon>LOBOS_DBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="LOBOS_DBDataSet1.xsc">
+      <DependentUpon>LOBOS_DBDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="LOBOS_DBDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LOBOS_DBDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LOBOS_DBDataSet1.xss">
+      <DependentUpon>LOBOS_DBDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="LOBOS_DBDataSet2.xsc">
+      <DependentUpon>LOBOS_DBDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="LOBOS_DBDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LOBOS_DBDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LOBOS_DBDataSet2.xss">
+      <DependentUpon>LOBOS_DBDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="LOBOS_DBDataSet3.xsc">
+      <DependentUpon>LOBOS_DBDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="LOBOS_DBDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LOBOS_DBDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LOBOS_DBDataSet3.xss">
+      <DependentUpon>LOBOS_DBDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="LOBOS_DBDataSet4.xsc">
+      <DependentUpon>LOBOS_DBDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="LOBOS_DBDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LOBOS_DBDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LOBOS_DBDataSet4.xss">
+      <DependentUpon>LOBOS_DBDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="LOBOS_DBDataSet5.xsc">
+      <DependentUpon>LOBOS_DBDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="LOBOS_DBDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LOBOS_DBDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LOBOS_DBDataSet5.xss">
+      <DependentUpon>LOBOS_DBDataSet5.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

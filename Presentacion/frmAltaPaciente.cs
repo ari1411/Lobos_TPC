@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Negocio;
+using Dominio;
 
 namespace Presentacion
 {
@@ -19,7 +21,16 @@ namespace Presentacion
 
         private void frmAltaPaciente_Load(object sender, EventArgs e)
         {
-            
+            // TODO: esta línea de código carga datos en la tabla 'lOBOS_DBDataSet2.VW_MUNICIPIOS' Puede moverla o quitarla según sea necesario.
+            this.vW_MUNICIPIOSTableAdapter.Fill(this.lOBOS_DBDataSet2.VW_MUNICIPIOS);
+            // TODO: esta línea de código carga datos en la tabla 'lOBOS_DBDataSet1.VW_NACIONALIDAD' Puede moverla o quitarla según sea necesario.
+            this.vW_NACIONALIDADTableAdapter.Fill(this.lOBOS_DBDataSet1.VW_NACIONALIDAD);
+            // TODO: esta línea de código carga datos en la tabla 'lOBOS_DBDataSet.Sexo' Puede moverla o quitarla según sea necesario.
+            this.sexoTableAdapter.Fill(this.lOBOS_DBDataSet.Sexo);
+
+
+
+
         }
 
         private void lblTelMovil_Click(object sender, EventArgs e)
@@ -39,8 +50,61 @@ namespace Presentacion
 
         private void btnGrabar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("¡¡¡Felicidades, no hace nada :D!!!");
-            Close();
+            if (txtDni.TextLength > 0 && txtApellido.TextLength > 0 && txtNombre.TextLength > 0 && txtCalle.TextLength > 0 && txtNumero.TextLength > 0)
+            {
+
+                PacienteNegocio neg = new PacienteNegocio();
+                Paciente nvo = new Paciente();
+
+                try
+                {
+                    nvo.Dni = txtDni.Text;
+                    nvo.Apellido = txtApellido.Text;
+                    nvo.Nombre = txtNombre.Text;
+                    nvo.IdSexo = int.Parse(cboSexo.SelectedValue.ToString());
+                    nvo.FechaNacimiento = DateTime.Parse(dtpFechaNacimiento.Text);
+                    nvo.IdNacionalidad = int.Parse(cboNacionalidad.SelectedValue.ToString());
+                    nvo.Calle = txtCalle.Text;
+                    nvo.Altura = txtNumero.Text;
+                    nvo.Piso = txtPiso.Text;
+                    nvo.Dpto = txtDepto.Text;
+                    nvo.IdMunicipio = int.Parse(cboMunicipio.SelectedValue.ToString());
+                    nvo.TelCelular = txtTelMovil.Text;
+                    nvo.TelFijo = txtTelFijo.Text;
+                    nvo.Mail = txtMail.Text;
+                    nvo.IdUsuarioAlta = 1;
+                    nvo.IdUsuarioModif = 1;
+
+                    neg.Alta(nvo);
+                    MessageBox.Show("Se grabo con exito");
+                    //Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+            }
+        }
+
+        private void btnAgregarSexo_Click(object sender, EventArgs e)
+        {
+            frmAgregarSexo sex = new frmAgregarSexo();
+            sex.ShowDialog();
+            this.sexoTableAdapter.Fill(this.lOBOS_DBDataSet.Sexo);
+        }
+
+        private void btnAgregarNacionalidad_Click(object sender, EventArgs e)
+        {
+            frmAgregarPais pais = new frmAgregarPais();
+            pais.ShowDialog();
+            this.vW_NACIONALIDADTableAdapter.Fill(this.lOBOS_DBDataSet1.VW_NACIONALIDAD);
+        }
+
+        private void btnAgregarMunicipio_Click(object sender, EventArgs e)
+        {
+            frmAgregarMunicipio mun = new frmAgregarMunicipio();
+            mun.ShowDialog();
+            this.vW_MUNICIPIOSTableAdapter.Fill(this.lOBOS_DBDataSet2.VW_MUNICIPIOS);
         }
     }
 }

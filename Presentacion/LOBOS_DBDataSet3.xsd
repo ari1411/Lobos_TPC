@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="LOBOS_DBDataSet3" targetNamespace="http://tempuri.org/LOBOS_DBDataSet3.xsd" xmlns:mstns="http://tempuri.org/LOBOS_DBDataSet3.xsd" xmlns="http://tempuri.org/LOBOS_DBDataSet3.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="LOBOS_DBConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="LOBOS_DBConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Presentacion.Properties.Settings.GlobalReference.Default.LOBOS_DBConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="VW_PARTIDOSTableAdapter" GeneratorDataComponentClassName="VW_PARTIDOSTableAdapter" Name="VW_PARTIDOS" UserDataComponentName="VW_PARTIDOSTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="LOBOS_DBConnectionString (Settings)" DbObjectName="LOBOS_DB.dbo.VW_PARTIDOS" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT IDPARTIDO, PARTIDOS FROM dbo.VW_PARTIDOS</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="IDPARTIDO" DataSetColumn="IDPARTIDO" />
+              <Mapping SourceColumn="PARTIDOS" DataSetColumn="PARTIDOS" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="LOBOS_DBDataSet3" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="LOBOS_DBDataSet3" msprop:Generator_UserDSName="LOBOS_DBDataSet3">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="VW_PARTIDOS" msprop:Generator_TableClassName="VW_PARTIDOSDataTable" msprop:Generator_TableVarName="tableVW_PARTIDOS" msprop:Generator_TablePropName="VW_PARTIDOS" msprop:Generator_RowDeletingName="VW_PARTIDOSRowDeleting" msprop:Generator_RowChangingName="VW_PARTIDOSRowChanging" msprop:Generator_RowEvHandlerName="VW_PARTIDOSRowChangeEventHandler" msprop:Generator_RowDeletedName="VW_PARTIDOSRowDeleted" msprop:Generator_UserTableName="VW_PARTIDOS" msprop:Generator_RowChangedName="VW_PARTIDOSRowChanged" msprop:Generator_RowEvArgName="VW_PARTIDOSRowChangeEvent" msprop:Generator_RowClassName="VW_PARTIDOSRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IDPARTIDO" msprop:Generator_ColumnVarNameInTable="columnIDPARTIDO" msprop:Generator_ColumnPropNameInRow="IDPARTIDO" msprop:Generator_ColumnPropNameInTable="IDPARTIDOColumn" msprop:Generator_UserColumnName="IDPARTIDO" type="xs:int" />
+              <xs:element name="PARTIDOS" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnPARTIDOS" msprop:Generator_ColumnPropNameInRow="PARTIDOS" msprop:Generator_ColumnPropNameInTable="PARTIDOSColumn" msprop:Generator_UserColumnName="PARTIDOS" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="126" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:VW_PARTIDOS" />
+      <xs:field xpath="mstns:IDPARTIDO" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
