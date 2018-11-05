@@ -21,8 +21,8 @@ namespace Dominio
         public string Altura { set; get; }
         public string Piso { set; get; }
         public string Dpto { set; get; }
-        public string Partido { set; get; }
         public string Municipio { set; get; }
+        public string Partido { set; get; }
         public Int32 IdMunicipio { set; get; }
         public string CP { set; get; }
         public string TelCelular { set; get; }

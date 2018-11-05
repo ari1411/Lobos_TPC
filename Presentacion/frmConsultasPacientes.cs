@@ -24,7 +24,10 @@ namespace Presentacion
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            frmConsultasPacientesResultado consPacientes = new frmConsultasPacientesResultado();
+            string dni = txtDni.Text;
+            string apellido = txtApellido.Text;
+            string nombre = txtNombre.Text;
+            frmConsultasPacientesResultado consPacientes = new frmConsultasPacientesResultado(dni, apellido, nombre);
             consPacientes.ShowDialog();
         }
     }

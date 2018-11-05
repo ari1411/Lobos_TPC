@@ -98,6 +98,7 @@
             // 
             // btnBuscarPteVolver
             // 
+            this.btnBuscarPteVolver.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnBuscarPteVolver.Location = new System.Drawing.Point(585, 442);
             this.btnBuscarPteVolver.Name = "btnBuscarPteVolver";
             this.btnBuscarPteVolver.Size = new System.Drawing.Size(187, 58);
@@ -108,8 +109,10 @@
             // 
             // frmConsultasPacientes
             // 
+            this.AcceptButton = this.btnBuscar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnBuscarPteVolver;
             this.ClientSize = new System.Drawing.Size(784, 512);
             this.Controls.Add(this.btnBuscarPteVolver);
             this.Controls.Add(this.lblNombre);

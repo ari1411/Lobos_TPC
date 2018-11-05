@@ -61,3 +61,12 @@ INSERT INTO Municipios (Municipio, CP, IdPartido, Estado) VALUES (1)
 
 "INSERT INTO Personas (DNI, APELLIDO, NOMBRE, IDSEXO, FECHANAC, IDNACIONALIDAD, CALLE, NUMERO, IDMUNICIPIO, PISO, DEPTO, TELCELULAR, TELFIJO, MAIL, FECHAALTA, IDADMINALTA, FECHAMODIF, IDADMINMODIF, ESTADO) 
                values (10000001,'APELLIDO','NOMBRE',0,'2018/09/20',1,'CALLE',123,10,GETDATE(),1,GETDATE(),1,1)"
+go
+
+Select P.IdPersona, P.DNI, P.Apellido, P.Nombre, S.Sexo, P.FechaNac, PA.NacionalidadM, PA.NacionalidadF, P.Calle, P.Numero, P.Piso, P.Depto,Part.Partido, M.Municipio, M.CP, P.TelCelular, P.TelFijo, P.Mail, P.FechaAlta, P.IdAdminAlta, P.FechaModif, P.IdAdminModif, P.FechaBaja, P. IdAdminBaja, P.Estado, p.IdMunicipio, p.IdNacionalidad, PA.Nacionalidad, P.IDSEXO From Personas as P LEFT JOIN Municipios as M on P.IdMunicipio=M.IdMunicipio LEFT JOIN Administrativos as A on P.IdPersona=A.IdPersona LEFT JOIN Paises as PA on P.IdNacionalidad=PA.IdPais LEFT JOIN Partidos as PART on M.IdPartido=PART.IdPartido LEFT JOIN Sexo as S on P.IdSexo=S.IdSexo where P.Estado=1 and P.DNI like '%%' and P.Apellido like '%%' and P.Nombre like '%%'
+go
+
+update Personas set Nombre='MIA',TelCelular=null where IdPersona=28
+go
+
+update Personas set dni='12332112', apellido='LOBOS', nombre='MIA ISABELLA', idsexo=3, fechanac='2016/02/10', idnacionalidad=1, calle='SAN LORENZO', numero='4459', idmunicipio=1, piso='5', depto='D', telcelular='1168641585', telfijo='1168497160', mail='FLIA.LOBOS@GMAIL.COM', fechamodif=GETDATE(), IDADMINMODIF=1, ESTADO=1 where IdPersona=28

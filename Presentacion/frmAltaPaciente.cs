@@ -62,8 +62,8 @@ namespace Presentacion
                     nvo.Apellido = txtApellido.Text;
                     nvo.Nombre = txtNombre.Text;
                     nvo.IdSexo = int.Parse(cboSexo.SelectedValue.ToString());
-                    nvo.FechaNacimiento = DateTime.Parse(dtpFechaNacimiento.Text);
                     nvo.IdNacionalidad = int.Parse(cboNacionalidad.SelectedValue.ToString());
+                    nvo.FechaNacimiento = DateTime.Parse(dtpFechaNacimiento.Text);
                     nvo.Calle = txtCalle.Text;
                     nvo.Altura = txtNumero.Text;
                     nvo.Piso = txtPiso.Text;
@@ -77,7 +77,7 @@ namespace Presentacion
 
                     neg.Alta(nvo);
                     MessageBox.Show("Se grabo con exito");
-                    //Close();
+                    Close();
                 }
                 catch (Exception ex)
                 {
@@ -105,6 +105,36 @@ namespace Presentacion
             frmAgregarMunicipio mun = new frmAgregarMunicipio();
             mun.ShowDialog();
             this.vW_MUNICIPIOSTableAdapter.Fill(this.lOBOS_DBDataSet2.VW_MUNICIPIOS);
+        }
+
+        private void txtDni_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            soloNumeros(sender, e);
+        }
+
+        private void txtNumero_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            soloNumeros(sender, e);
+        }
+
+        private void soloNumeros(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBox.Show("Solo se permiten numeros", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtTelMovil_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back) && (e.KeyChar != (char)Keys.Separator))
+            {
+                MessageBox.Show("Solo se permiten numeros", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
         }
     }
 }

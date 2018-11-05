@@ -15,10 +15,17 @@ namespace Presentacion
     public partial class frmConsultasPacientesResultado : Form
     {
         private List<Paciente> listaPacientes;
-
-        public frmConsultasPacientesResultado()
+        Paciente aux;
+        public string dni { set; get; }
+        public string apellido { set; get; }
+        public string nombre { set; get; }
+        
+        public frmConsultasPacientesResultado(string DNI, string APELLIDO, string NOMBRE)
         {
             InitializeComponent();
+            dni = DNI;
+            apellido = APELLIDO;
+            nombre = NOMBRE;
         }
 
         private void frmConsultasPacientesResultado_Load(object sender, EventArgs e)
@@ -31,7 +38,7 @@ namespace Presentacion
             PacienteNegocio neg = new PacienteNegocio();
             try
             {
-                listaPacientes = (List<Paciente>)neg.Listar();
+                listaPacientes = (List<Paciente>)neg.Buscar(dni,apellido,nombre);
                 dgvConsultasPacientes.DataSource = listaPacientes;
                 dgvConsultasPacientes.Columns["Idpaciente"].Visible = false;
                 dgvConsultasPacientes.Columns["Idhc"].Visible = false;
@@ -62,6 +69,21 @@ namespace Presentacion
         private void btnBuscarPteVolver_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btnEditarPte_Click(object sender, EventArgs e)
+        {
+            aux = (Paciente)dgvConsultasPacientes.CurrentRow.DataBoundItem;
+            frmModificarPaciente modif = new frmModificarPaciente(aux);
+            modif.ShowDialog();
+            cargar();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            aux = (Paciente)dgvConsultasPacientes.CurrentRow.DataBoundItem;
+
+            cargar();
         }
     }
 }

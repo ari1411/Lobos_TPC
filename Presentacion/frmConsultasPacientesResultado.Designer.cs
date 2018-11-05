@@ -31,6 +31,8 @@
             this.dgvConsultasPacientes = new System.Windows.Forms.DataGridView();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnBuscarPteVolver = new System.Windows.Forms.Button();
+            this.btnEditarPte = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsultasPacientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,6 +59,7 @@
             // 
             // btnBuscarPteVolver
             // 
+            this.btnBuscarPteVolver.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnBuscarPteVolver.Location = new System.Drawing.Point(585, 442);
             this.btnBuscarPteVolver.Name = "btnBuscarPteVolver";
             this.btnBuscarPteVolver.Size = new System.Drawing.Size(187, 58);
@@ -65,14 +68,37 @@
             this.btnBuscarPteVolver.UseVisualStyleBackColor = true;
             this.btnBuscarPteVolver.Click += new System.EventHandler(this.btnBuscarPteVolver_Click);
             // 
+            // btnEditarPte
+            // 
+            this.btnEditarPte.Location = new System.Drawing.Point(12, 442);
+            this.btnEditarPte.Name = "btnEditarPte";
+            this.btnEditarPte.Size = new System.Drawing.Size(187, 58);
+            this.btnEditarPte.TabIndex = 9;
+            this.btnEditarPte.Text = "Editar";
+            this.btnEditarPte.UseVisualStyleBackColor = true;
+            this.btnEditarPte.Click += new System.EventHandler(this.btnEditarPte_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(205, 442);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(187, 58);
+            this.btnEliminar.TabIndex = 10;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
             // frmConsultasPacientesResultado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 512);
+            this.Controls.Add(this.btnEliminar);
+            this.Controls.Add(this.btnEditarPte);
             this.Controls.Add(this.btnBuscarPteVolver);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.dgvConsultasPacientes);
+            this.MaximumSize = new System.Drawing.Size(800, 550);
             this.MinimumSize = new System.Drawing.Size(800, 550);
             this.Name = "frmConsultasPacientesResultado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -88,5 +114,8 @@
         private System.Windows.Forms.DataGridView dgvConsultasPacientes;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Button btnBuscarPteVolver;
+        private System.Windows.Forms.Button btnEditarPaciente;
+        private System.Windows.Forms.Button btnEditarPte;
+        private System.Windows.Forms.Button btnEliminar;
     }
 }

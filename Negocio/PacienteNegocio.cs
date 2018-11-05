@@ -11,19 +11,18 @@ namespace Negocio
     public class PacienteNegocio
     {
 
-        public IList<Paciente> Listar()
+        public IList<Paciente> Buscar(string DNI, string APELLIDO, string NOMBRE)
         {
             SqlConnection conexion = new SqlConnection();
             SqlCommand comando = new SqlCommand();
             SqlDataReader lector;
             IList<Paciente> lista = new List<Paciente>();
             Paciente aux;
-
             try
             {
                 conexion.ConnectionString = "initial catalog= LOBOS_DB; data source=.; integrated security=sspi";
                 comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "Select P.IdPersona, P.DNI, P.Apellido, P.Nombre, S.Sexo, P.FechaNac, PA.NacionalidadM, PA.NacionalidadF, P.Calle, P.Numero, P.Piso, P.Depto,Part.Partido, M.Municipio, M.CP, P.TelCelular, P.TelFijo, P.Mail, P.FechaAlta, P.IdAdminAlta, P.FechaModif, P.IdAdminModif, P.FechaBaja, P. IdAdminBaja, P.Estado, p.IdMunicipio, p.IdNacionalidad, PA.Nacionalidad, P.IDSEXO From Personas as P LEFT JOIN Municipios as M on P.IdMunicipio=M.IdMunicipio LEFT JOIN Administrativos as A on P.IdPersona=A.IdPersona LEFT JOIN Paises as PA on P.IdNacionalidad=PA.IdPais LEFT JOIN Partidos as PART on M.IdPartido=PART.IdPartido LEFT JOIN Sexo as S on P.IdSexo=S.IdSexo where P.Estado=1";
+                comando.CommandText = "Select P.IdPersona, P.DNI, P.Apellido, P.Nombre, S.Sexo, P.FechaNac, PA.NacionalidadM, PA.NacionalidadF, P.Calle, P.Numero, P.Piso, P.Depto,Part.Partido, M.Municipio, M.CP, P.TelCelular, P.TelFijo, P.Mail, P.FechaAlta, P.IdAdminAlta, P.FechaModif, P.IdAdminModif, P.FechaBaja, P. IdAdminBaja, P.Estado, p.IdMunicipio, p.IdNacionalidad, PA.Nacionalidad, P.IDSEXO From Personas as P LEFT JOIN Municipios as M on P.IdMunicipio=M.IdMunicipio LEFT JOIN Administrativos as A on P.IdPersona=A.IdPersona LEFT JOIN Paises as PA on P.IdNacionalidad=PA.IdPais LEFT JOIN Partidos as PART on M.IdPartido=PART.IdPartido LEFT JOIN Sexo as S on P.IdSexo=S.IdSexo where P.DNI like '%" + DNI + "%' and P.Apellido like '%" + APELLIDO + "%' and P.Nombre like '%" + NOMBRE + "%' and P.Estado=1";
                 comando.Connection = conexion;
                 conexion.Open();
                 lector = comando.ExecuteReader();
@@ -93,25 +92,25 @@ namespace Negocio
                     consulta = consulta + "PISO, ";
                     valores = valores + ",'" + nuevo.Piso.ToString() + "'";
                 }
-                    
+
                 if (nuevo.Dpto.ToString() != "")
                 {
                     consulta = consulta + "DEPTO, ";
                     valores = valores + ",'" + nuevo.Dpto.ToString() + "'";
                 }
-                    
+
                 if (nuevo.TelCelular.ToString() != "")
                 {
                     consulta = consulta + "TELCELULAR, ";
                     valores = valores + ",'" + nuevo.TelCelular.ToString() + "'";
                 }
-                    
+
                 if (nuevo.TelFijo.ToString() != "")
                 {
                     consulta = consulta + "TELFIJO, ";
                     valores = valores + ",'" + nuevo.TelFijo.ToString() + "'";
                 }
-                    
+
                 if (nuevo.Mail.ToString() != "")
                 {
                     consulta = consulta + "MAIL, ";
@@ -137,5 +136,64 @@ namespace Negocio
             }
         }
 
+        public void Modificar(Paciente modif)
+        {
+            AccesoDatos conexion = null;
+            string consulta = "";
+            try
+            {
+                conexion = new AccesoDatos();
+                consulta = "update Personas set ";
+                consulta = consulta + "dni='" + modif.Dni.ToString();
+                consulta = consulta + "', apellido='" + modif.Apellido.ToString();
+                consulta = consulta + "', nombre='" + modif.Nombre.ToString();
+                consulta = consulta + "', idsexo=" + modif.IdSexo;
+                consulta = consulta + ", fechanac='" + modif.FechaNacimiento.ToString("yyyy/MM/dd");
+                consulta = consulta + "', idnacionalidad=" + modif.IdNacionalidad;
+                consulta = consulta + ", calle='" + modif.Calle.ToString();
+                consulta = consulta + "', numero='" + modif.Altura.ToString();
+                consulta = consulta + "', idmunicipio=" + modif.IdMunicipio;
+                
+                if (modif.Piso.ToString() != "")
+                {
+                    consulta = consulta + ", piso='" + modif.Piso.ToString() + "'";
+                }else consulta = consulta + ", piso=null";
+
+                if (modif.Dpto.ToString() != "")
+                {
+                    consulta = consulta + ", depto='" + modif.Dpto.ToString() + "'";
+                }else consulta = consulta + ", depto=null";
+
+                if (modif.TelCelular.ToString() != "")
+                {
+                    consulta = consulta + ", telcelular='" + modif.TelCelular.ToString() + "'";
+                }else consulta = consulta + ", telcelular=null";
+
+                if (modif.TelFijo.ToString() != "")
+                {
+                    consulta = consulta + ", telfijo='" + modif.TelFijo.ToString() + "'";
+                }else consulta = consulta + ", telfijo=null";
+
+                if (modif.Mail.ToString() != "")
+                {
+                    consulta = consulta + ", mail='" + modif.Mail.ToString() + "'";
+                }else consulta = consulta + ", mail=null";
+
+                consulta = consulta + ", fechamodif=GETDATE(), IDADMINMODIF=" + modif.IdUsuarioModif + ", ESTADO=1";
+                consulta = consulta + " where IdPersona=" + modif.Id;
+                conexion.setearConsulta(consulta);
+                conexion.abrirConexion();
+                conexion.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (conexion != null)
+                    conexion.cerrarConexion();
+            }
+        }
     }
 }
