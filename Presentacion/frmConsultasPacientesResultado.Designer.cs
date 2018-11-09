@@ -30,9 +30,10 @@
         {
             this.dgvConsultasPacientes = new System.Windows.Forms.DataGridView();
             this.btnActualizar = new System.Windows.Forms.Button();
-            this.btnBuscarPteVolver = new System.Windows.Forms.Button();
+            this.btnConsultaPteVolver = new System.Windows.Forms.Button();
             this.btnEditarPte = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnVerHC = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsultasPacientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,22 +58,22 @@
             this.btnActualizar.UseVisualStyleBackColor = true;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
-            // btnBuscarPteVolver
+            // btnConsultaPteVolver
             // 
-            this.btnBuscarPteVolver.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnBuscarPteVolver.Location = new System.Drawing.Point(585, 442);
-            this.btnBuscarPteVolver.Name = "btnBuscarPteVolver";
-            this.btnBuscarPteVolver.Size = new System.Drawing.Size(187, 58);
-            this.btnBuscarPteVolver.TabIndex = 8;
-            this.btnBuscarPteVolver.Text = "Volver";
-            this.btnBuscarPteVolver.UseVisualStyleBackColor = true;
-            this.btnBuscarPteVolver.Click += new System.EventHandler(this.btnBuscarPteVolver_Click);
+            this.btnConsultaPteVolver.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnConsultaPteVolver.Location = new System.Drawing.Point(640, 449);
+            this.btnConsultaPteVolver.Name = "btnConsultaPteVolver";
+            this.btnConsultaPteVolver.Size = new System.Drawing.Size(132, 44);
+            this.btnConsultaPteVolver.TabIndex = 8;
+            this.btnConsultaPteVolver.Text = "Volver";
+            this.btnConsultaPteVolver.UseVisualStyleBackColor = true;
+            this.btnConsultaPteVolver.Click += new System.EventHandler(this.btnBuscarPteVolver_Click);
             // 
             // btnEditarPte
             // 
-            this.btnEditarPte.Location = new System.Drawing.Point(12, 442);
+            this.btnEditarPte.Location = new System.Drawing.Point(12, 449);
             this.btnEditarPte.Name = "btnEditarPte";
-            this.btnEditarPte.Size = new System.Drawing.Size(187, 58);
+            this.btnEditarPte.Size = new System.Drawing.Size(132, 44);
             this.btnEditarPte.TabIndex = 9;
             this.btnEditarPte.Text = "Editar";
             this.btnEditarPte.UseVisualStyleBackColor = true;
@@ -80,29 +81,43 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(205, 442);
+            this.btnEliminar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnEliminar.Location = new System.Drawing.Point(173, 449);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(187, 58);
+            this.btnEliminar.Size = new System.Drawing.Size(132, 44);
             this.btnEliminar.TabIndex = 10;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
+            // btnVerHC
+            // 
+            this.btnVerHC.Location = new System.Drawing.Point(341, 449);
+            this.btnVerHC.Name = "btnVerHC";
+            this.btnVerHC.Size = new System.Drawing.Size(132, 44);
+            this.btnVerHC.TabIndex = 11;
+            this.btnVerHC.Text = "Ver HC";
+            this.btnVerHC.UseVisualStyleBackColor = true;
+            this.btnVerHC.Click += new System.EventHandler(this.btnVerHC_Click);
+            // 
             // frmConsultasPacientesResultado
             // 
+            this.AcceptButton = this.btnVerHC;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnConsultaPteVolver;
             this.ClientSize = new System.Drawing.Size(784, 512);
+            this.Controls.Add(this.btnVerHC);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnEditarPte);
-            this.Controls.Add(this.btnBuscarPteVolver);
+            this.Controls.Add(this.btnConsultaPteVolver);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.dgvConsultasPacientes);
             this.MaximumSize = new System.Drawing.Size(800, 550);
             this.MinimumSize = new System.Drawing.Size(800, 550);
             this.Name = "frmConsultasPacientesResultado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "frmConsultasPacientesResultado";
+            this.Text = "Pacientes";
             this.Load += new System.EventHandler(this.frmConsultasPacientesResultado_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsultasPacientes)).EndInit();
             this.ResumeLayout(false);
@@ -113,9 +128,9 @@
 
         private System.Windows.Forms.DataGridView dgvConsultasPacientes;
         private System.Windows.Forms.Button btnActualizar;
-        private System.Windows.Forms.Button btnBuscarPteVolver;
-        private System.Windows.Forms.Button btnEditarPaciente;
+        private System.Windows.Forms.Button btnConsultaPteVolver;
         private System.Windows.Forms.Button btnEditarPte;
         private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnVerHC;
     }
 }

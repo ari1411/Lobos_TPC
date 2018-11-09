@@ -9,13 +9,14 @@ namespace Dominio
     public class HC
     {
         public Int32 IdHC { set; get; }
-        public RazonSocial IdRazonSocial { set; get; }
-        public Paciente IdPaciente { set; get; }
-        public Int32 NumeroAfiliado { set; get; }
-        public DateTime FechaVencimiento { set; get; }
-        public string DescripcionAcc { set; get; }
+        public Int32 IdRazonSocial { set; get; }
+        public Int32 IdPaciente { set; get; }
+        public string NumeroAfiliado { set; get; }
+        public DateTime FechaVencimientoCarnet { set; get; }
+        public string DescripcionAccidente { set; get; }
         public DateTime FechaHrAlta { set; get; }
         public Int32 IdAdminAlta { set; get; }
+        public string Ingresante { set; get; }
         public DateTime FechaHrModif { set; get; }
         public Int32 IdAdminModif { set; get; }
         public DateTime FechaHrBaja { set; get; }

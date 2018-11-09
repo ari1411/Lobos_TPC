@@ -22,7 +22,7 @@ namespace Negocio
             {
                 conexion.ConnectionString = "initial catalog= LOBOS_DB; data source=.; integrated security=sspi";
                 comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "Select P.IdPersona, P.DNI, P.Apellido, P.Nombre, S.Sexo, P.FechaNac, PA.NacionalidadM, PA.NacionalidadF, P.Calle, P.Numero, P.Piso, P.Depto,Part.Partido, M.Municipio, M.CP, P.TelCelular, P.TelFijo, P.Mail, P.FechaAlta, P.IdAdminAlta, P.FechaModif, P.IdAdminModif, P.FechaBaja, P. IdAdminBaja, P.Estado, p.IdMunicipio, p.IdNacionalidad, PA.Nacionalidad, P.IDSEXO From Personas as P LEFT JOIN Municipios as M on P.IdMunicipio=M.IdMunicipio LEFT JOIN Administrativos as A on P.IdPersona=A.IdPersona LEFT JOIN Paises as PA on P.IdNacionalidad=PA.IdPais LEFT JOIN Partidos as PART on M.IdPartido=PART.IdPartido LEFT JOIN Sexo as S on P.IdSexo=S.IdSexo where P.DNI like '%" + DNI + "%' and P.Apellido like '%" + APELLIDO + "%' and P.Nombre like '%" + NOMBRE + "%' and P.Estado=1";
+                comando.CommandText = "Select P.IdPersona, P.DNI, P.Apellido, P.Nombre, S.Sexo, P.FechaNac, PA.NacionalidadM, PA.NacionalidadF, P.Calle, P.Numero, P.Piso, P.Depto,Part.Partido, M.Municipio, M.CP, P.TelCelular, P.TelFijo, P.Mail, P.FechaAlta, P.IdAdminAlta, P.FechaModif, P.IdAdminModif, P.FechaBaja, P. IdAdminBaja, P.Estado, p.IdMunicipio, p.IdNacionalidad, PA.Nacionalidad, P.IDSEXO From Personas as P LEFT JOIN Municipios as M on P.IdMunicipio=M.IdMunicipio LEFT JOIN Pacientes as pte on P.IdPersona=pte.IdPersona LEFT JOIN Paises as PA on P.IdNacionalidad=PA.IdPais LEFT JOIN Partidos as PART on M.IdPartido=PART.IdPartido LEFT JOIN Sexo as S on P.IdSexo=S.IdSexo where P.DNI like '%" + DNI + "%' and P.Apellido like '%" + APELLIDO + "%' and P.Nombre like '%" + NOMBRE + "%' and P.Estado=1 and pte.Estado=1";
                 comando.Connection = conexion;
                 conexion.Open();
                 lector = comando.ExecuteReader();
@@ -31,6 +31,7 @@ namespace Negocio
                 {
                     aux = new Paciente();
                     aux.Id = (Int32)lector[0];
+                    aux.IdPaciente = (Int32)lector[0];
                     aux.Dni = lector.GetString(1);
                     aux.Apellido = lector.GetString(2);
                     aux.Nombre = lector.GetString(3);
@@ -181,6 +182,29 @@ namespace Negocio
 
                 consulta = consulta + ", fechamodif=GETDATE(), IDADMINMODIF=" + modif.IdUsuarioModif + ", ESTADO=1";
                 consulta = consulta + " where IdPersona=" + modif.Id;
+                conexion.setearConsulta(consulta);
+                conexion.abrirConexion();
+                conexion.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (conexion != null)
+                    conexion.cerrarConexion();
+            }
+        }
+
+        public void Eliminar(int ID, int IdAdminElimina)
+        {
+            AccesoDatos conexion = null;
+            string consulta = "";
+            try
+            {
+                conexion = new AccesoDatos();
+                consulta = "update Personas set FechaBaja=GETDATE(), IdAdminBaja=" + IdAdminElimina + ", Estado=0 where IdPersona=" + ID;
                 conexion.setearConsulta(consulta);
                 conexion.abrirConexion();
                 conexion.ejecutarAccion();

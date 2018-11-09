@@ -19,7 +19,7 @@ namespace Presentacion
         public string dni { set; get; }
         public string apellido { set; get; }
         public string nombre { set; get; }
-        
+
         public frmConsultasPacientesResultado(string DNI, string APELLIDO, string NOMBRE)
         {
             InitializeComponent();
@@ -38,8 +38,9 @@ namespace Presentacion
             PacienteNegocio neg = new PacienteNegocio();
             try
             {
-                listaPacientes = (List<Paciente>)neg.Buscar(dni,apellido,nombre);
+                listaPacientes = (List<Paciente>)neg.Buscar(dni, apellido, nombre);
                 dgvConsultasPacientes.DataSource = listaPacientes;
+
                 dgvConsultasPacientes.Columns["Idpaciente"].Visible = false;
                 dgvConsultasPacientes.Columns["Idhc"].Visible = false;
                 dgvConsultasPacientes.Columns["Id"].Visible = false;
@@ -81,8 +82,20 @@ namespace Presentacion
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            aux = (Paciente)dgvConsultasPacientes.CurrentRow.DataBoundItem;
+            if (MessageBox.Show("¿Eliminar el registro?", "Eliminar", MessageBoxButtons.YesNo).ToString() == "Yes")
+            {
+                aux = (Paciente)dgvConsultasPacientes.CurrentRow.DataBoundItem;
+                PacienteNegocio neg = new PacienteNegocio();
+                neg.Eliminar(aux.Id, 1);
+                cargar();
+            }
+        }
 
+        private void btnVerHC_Click(object sender, EventArgs e)
+        {
+            aux = (Paciente)dgvConsultasPacientes.CurrentRow.DataBoundItem;
+            frmVerHistoriaClinica VerHC = new frmVerHistoriaClinica(aux);
+            VerHC.ShowDialog();
             cargar();
         }
     }
