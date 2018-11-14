@@ -104,6 +104,18 @@
     <Compile Include="frmConsultasPacientesResultado.Designer.cs">
       <DependentUpon>frmConsultasPacientesResultado.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmConsultasPersonas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConsultasPersonas.Designer.cs">
+      <DependentUpon>frmConsultasPersonas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmConsultasPersonasResultado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConsultasPersonasResultado.Designer.cs">
+      <DependentUpon>frmConsultasPersonasResultado.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCrearHistoriaClinica.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +127,12 @@
     </Compile>
     <Compile Include="frmInicio.Designer.cs">
       <DependentUpon>frmInicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmModificarHistoriaClinica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmModificarHistoriaClinica.Designer.cs">
+      <DependentUpon>frmModificarHistoriaClinica.cs</DependentUpon>
     </Compile>
     <Compile Include="frmModificarPaciente.cs">
       <SubType>Form</SubType>
@@ -137,6 +155,16 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>LOBOS_DBDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LOBOS_DBDataSet10.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LOBOS_DBDataSet10.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LOBOS_DBDataSet11.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LOBOS_DBDataSet11.xsd</DependentUpon>
     </Compile>
     <Compile Include="LOBOS_DBDataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -213,11 +241,20 @@
     <EmbeddedResource Include="frmConsultasPacientesResultado.resx">
       <DependentUpon>frmConsultasPacientesResultado.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmConsultasPersonas.resx">
+      <DependentUpon>frmConsultasPersonas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConsultasPersonasResultado.resx">
+      <DependentUpon>frmConsultasPersonasResultado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCrearHistoriaClinica.resx">
       <DependentUpon>frmCrearHistoriaClinica.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmInicio.resx">
       <DependentUpon>frmInicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmModificarHistoriaClinica.resx">
+      <DependentUpon>frmModificarHistoriaClinica.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmModificarPaciente.resx">
       <DependentUpon>frmModificarPaciente.cs</DependentUpon>
@@ -259,6 +296,28 @@
     </None>
     <None Include="LOBOS_DBDataSet1.xss">
       <DependentUpon>LOBOS_DBDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="LOBOS_DBDataSet10.xsc">
+      <DependentUpon>LOBOS_DBDataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="LOBOS_DBDataSet10.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LOBOS_DBDataSet10.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LOBOS_DBDataSet10.xss">
+      <DependentUpon>LOBOS_DBDataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="LOBOS_DBDataSet11.xsc">
+      <DependentUpon>LOBOS_DBDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="LOBOS_DBDataSet11.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LOBOS_DBDataSet11.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LOBOS_DBDataSet11.xss">
+      <DependentUpon>LOBOS_DBDataSet11.xsd</DependentUpon>
     </None>
     <None Include="LOBOS_DBDataSet2.xsc">
       <DependentUpon>LOBOS_DBDataSet2.xsd</DependentUpon>

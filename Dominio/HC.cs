@@ -21,6 +21,6 @@ namespace Dominio
         public Int32 IdAdminModif { set; get; }
         public DateTime FechaHrBaja { set; get; }
         public Int32 IdAdminBaja { set; get; }
-        public bool Estado { set; get; }
+        public Int32 Estado { set; get; }
     }
 }

@@ -16,9 +16,9 @@ namespace Presentacion
     {
         private List<Paciente> listaPacientes;
         Paciente aux;
-        public string dni { set; get; }
-        public string apellido { set; get; }
-        public string nombre { set; get; }
+        string dni { set; get; }
+        string apellido { set; get; }
+        string nombre { set; get; }
 
         public frmConsultasPacientesResultado(string DNI, string APELLIDO, string NOMBRE)
         {
@@ -80,23 +80,23 @@ namespace Presentacion
             cargar();
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("¿Eliminar el registro?", "Eliminar", MessageBoxButtons.YesNo).ToString() == "Yes")
-            {
-                aux = (Paciente)dgvConsultasPacientes.CurrentRow.DataBoundItem;
-                PacienteNegocio neg = new PacienteNegocio();
-                neg.Eliminar(aux.Id, 1);
-                cargar();
-            }
-        }
-
         private void btnVerHC_Click(object sender, EventArgs e)
         {
             aux = (Paciente)dgvConsultasPacientes.CurrentRow.DataBoundItem;
             frmVerHistoriaClinica VerHC = new frmVerHistoriaClinica(aux);
             VerHC.ShowDialog();
             cargar();
+        }
+
+        private void btnEliminarPte_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Eliminar el paciente?", "Eliminar", MessageBoxButtons.YesNo).ToString() == "Yes")
+            {
+                aux = (Paciente)dgvConsultasPacientes.CurrentRow.DataBoundItem;
+                PacienteNegocio neg = new PacienteNegocio();
+                neg.Eliminar(aux.IdPaciente, 1);
+                cargar();
+            }
         }
     }
 }

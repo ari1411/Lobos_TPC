@@ -35,7 +35,7 @@ namespace Presentacion
             HCnegocio neg = new HCnegocio();
             try
             {
-                listaHC= (List<HC>) neg.cargar(aux);
+                listaHC= (List<HC>) neg.cargar(aux.IdPaciente);
                 dgvVerHistoriasClinicas.DataSource = listaHC;
 
                 dgvVerHistoriasClinicas.Columns["IdHC"].Visible = false;
@@ -64,14 +64,33 @@ namespace Presentacion
 
         private void btnCrearHC_Click(object sender, EventArgs e)
         {
-            frmCrearHistoriaClinica crear = new frmCrearHistoriaClinica();
+            frmCrearHistoriaClinica crear = new frmCrearHistoriaClinica(aux.IdPaciente);
             crear.ShowDialog();
             cargar();
         }
 
         private void btnVerHC_Click(object sender, EventArgs e)
         {
-            
+            MessageBox.Show("Paciencia, Falta crear la funcion");
+        }
+
+        private void btnEditarHC_Click(object sender, EventArgs e)
+        {
+            HC seleccion = (HC)dgvVerHistoriasClinicas.CurrentRow.DataBoundItem;
+            frmModificarHistoriaClinica editar = new frmModificarHistoriaClinica(aux.IdPaciente,seleccion);
+            editar.ShowDialog();
+            cargar();
+        }
+
+        private void btnEliminarHC_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Eliminar la historia clinica seleccionada?", "Eliminar", MessageBoxButtons.YesNo).ToString() == "Yes")
+            {
+                HC seleccion = (HC)dgvVerHistoriasClinicas.CurrentRow.DataBoundItem;
+                HCnegocio neg = new HCnegocio();
+                neg.eliminar(seleccion.IdHC, 1);
+                cargar();
+            }
         }
     }
 }

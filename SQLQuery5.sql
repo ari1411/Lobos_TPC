@@ -23,6 +23,9 @@ SELECT * FROM UNIVERSIDADES
 SELECT * FROM SEXO
 GO
 
+--PARA DEVOLVER EL ID
+--SELECT CAST(scope_identity() AS int)
+
 --CONSULTA MUNICIPIOS
 SELECT M.IdMunicipio, M.cp, M.municipio, P.PARTIDO, PR.PROVINCIA, PA.PAIS, PA.IdPais, PA.NacionalidadM, PA.NacionalidadF FROM Municipios AS M FULL JOIN Partidos AS P ON M.IDPARTIDO=P.IDPARTIDO FULL JOIN Provincias AS PR ON P.IDPROVINCIA=PR.IdProvincia FULL JOIN Paises AS PA ON PR.IdPais=PA.IdPais
 GO
@@ -41,16 +44,21 @@ go
 --VISTA RAZON SOCIAL
 alter view VW_RAZONSOCIAL as select top 1000 idrazonsocial, RazonSocialPlan + ' [' + CUIT + ']' as 'Nombre' from RazonesSociales where Estado=1 order by RazonSocialPlan asc
 go
---CONSULTA PARA VER INFO PERSONAS
-SELECT P.IDPERSONA AS ID, P.DNI, P.APELLIDO+', '+P.NOMBRE AS 'APELLIDO Y NOMBRE', P.IDSEXO, P.FechaNac AS 'FECHA NACIMIENTO', PA.NacionalidadM, PA.NacionalidadF, P.Calle, P.Numero, P.Piso, P.Depto, M.MUNICIPIO, P.TelCelular, P.TelFijo, P.FechaAlta, P.IdAdminAlta, P.FechaModif, P.IdAdminModif, P.FechaBaja, P. IdAdminBaja, P.Estado FROM Personas AS P LEFT JOIN Municipios AS M ON P.IDMUNICIPIO=M.IDMUNICIPIO LEFT JOIN Administrativos AS A ON P.IdPersona=A.IDPERSONA LEFT JOIN Paises AS PA ON P.IdNacionalidad=PA.IdPais
-GO
---ELIMINAR PERSONAS
-update Personas set FechaBaja=GETDATE(), IdAdminBaja=1, Estado=0 where IdPersona=
-GO
 --RECUPERAR PERSONAS Y BORRAR RASTROS
 update Personas set Estado=1, FechaBaja=null, IdAdminBaja=null
 GO
-
+SELECT P.IDPERSONA AS ID, P.DNI, P.APELLIDO+', '+P.NOMBRE AS 'APELLIDO Y NOMBRE', P.IDSEXO, P.FechaNac AS 'FECHA NACIMIENTO', PA.NacionalidadM, PA.NacionalidadF, P.Calle, P.Numero, P.Piso, P.Depto, M.MUNICIPIO, P.TelCelular, P.TelFijo, P.FechaAlta, P.IdAdminAlta, P.FechaModif, P.IdAdminModif, P.FechaBaja, P. IdAdminBaja, P.Estado FROM Personas AS P LEFT JOIN Municipios AS M ON P.IDMUNICIPIO=M.IDMUNICIPIO LEFT JOIN Administrativos AS A ON P.IdPersona=A.IDPERSONA LEFT JOIN Paises AS PA ON P.IdNacionalidad=PA.IdPais
+GO
+--RECUPERAR PACIENTES Y BORRAR RASTROS
+update Pacientes set Estado=1, FechaBaja=null, IdAdminBaja=null
+GO
+SELECT * FROM PACIENTES
+GO
+--RECUPERAR HISTORIAS CLINICAS Y BORRAR RASTROS
+update HistoriaClinica set Estado=1, FechaBaja=null, IdAdmBaja=null
+GO
+SELECT * FROM PACIENTES
+GO
 
 
 

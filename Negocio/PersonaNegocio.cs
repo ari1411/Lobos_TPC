@@ -8,21 +8,20 @@ using System.Data.SqlClient;
 
 namespace Negocio
 {
-    public class PacienteNegocio
+    public class PersonaNegocio
     {
-
-        public IList<Paciente> Buscar(string DNI, string APELLIDO, string NOMBRE)
+        public IList<Persona> Buscar(string DNI, string APELLIDO, string NOMBRE)
         {
             SqlConnection conexion = new SqlConnection();
             SqlCommand comando = new SqlCommand();
             SqlDataReader lector;
-            IList<Paciente> lista = new List<Paciente>();
-            Paciente aux;
+            IList<Persona> lista = new List<Persona>();
+            Persona aux;
             try
             {
                 conexion.ConnectionString = "initial catalog= LOBOS_DB; data source=.; integrated security=sspi";
                 comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "Select P.IdPersona, P.DNI, P.Apellido, P.Nombre, S.Sexo, P.FechaNac, PA.NacionalidadM, PA.NacionalidadF, P.Calle, P.Numero, P.Piso, P.Depto,Part.Partido, M.Municipio, M.CP, P.TelCelular, P.TelFijo, P.Mail, P.FechaAlta, P.IdAdminAlta, P.FechaModif, P.IdAdminModif, P.FechaBaja, P. IdAdminBaja, P.Estado, p.IdMunicipio, p.IdNacionalidad, PA.Nacionalidad, P.IDSEXO From Personas as P LEFT JOIN Municipios as M on P.IdMunicipio=M.IdMunicipio LEFT JOIN Pacientes as pte on P.IdPersona=pte.IdPersona LEFT JOIN Paises as PA on P.IdNacionalidad=PA.IdPais LEFT JOIN Partidos as PART on M.IdPartido=PART.IdPartido LEFT JOIN Sexo as S on P.IdSexo=S.IdSexo where P.DNI like '%" + DNI + "%' and P.Apellido like '%" + APELLIDO + "%' and P.Nombre like '%" + NOMBRE + "%' and P.Estado=1 and pte.Estado=1";
+                comando.CommandText = "Select P.IdPersona, P.DNI, P.Apellido, P.Nombre, S.Sexo, P.FechaNac, PA.NacionalidadM, PA.NacionalidadF, P.Calle, P.Numero, P.Piso, P.Depto,Part.Partido, M.Municipio, M.CP, P.TelCelular, P.TelFijo, P.Mail, P.FechaAlta, P.IdAdminAlta, P.FechaModif, P.IdAdminModif, P.FechaBaja, P. IdAdminBaja, P.Estado, p.IdMunicipio, p.IdNacionalidad, PA.Nacionalidad, P.IDSEXO From Personas as P LEFT JOIN Municipios as M on P.IdMunicipio=M.IdMunicipio LEFT JOIN Paises as PA on P.IdNacionalidad=PA.IdPais LEFT JOIN Partidos as PART on M.IdPartido=PART.IdPartido LEFT JOIN Sexo as S on P.IdSexo=S.IdSexo where P.DNI like '%" + DNI + "%' and P.Apellido like '%" + APELLIDO + "%' and P.Nombre like '%" + NOMBRE + "%' and P.Estado=1";
                 comando.Connection = conexion;
                 conexion.Open();
                 lector = comando.ExecuteReader();
@@ -31,14 +30,13 @@ namespace Negocio
                 {
                     aux = new Paciente();
                     aux.Id = (Int32)lector[0];
-                    aux.IdPaciente = (Int32)lector[0];
                     aux.Dni = lector.GetString(1);
                     aux.Apellido = lector.GetString(2);
                     aux.Nombre = lector.GetString(3);
                     aux.Sexo = lector.GetString(4);
                     aux.IdSexo = (Int32)lector[28];
                     aux.FechaNacimiento = (DateTime)lector[5];
-                    if (aux.IdSexo==1) { aux.Nacionalidad = lector.GetString(6); } else if (aux.IdSexo==2) { aux.Nacionalidad = lector.GetString(7); } else { aux.Nacionalidad = lector.GetString(27); }
+                    if (aux.IdSexo == 1) { aux.Nacionalidad = lector.GetString(6); } else if (aux.IdSexo == 2) { aux.Nacionalidad = lector.GetString(7); } else { aux.Nacionalidad = lector.GetString(27); }
                     if (!lector.IsDBNull(8)) { aux.Calle = lector.GetString(8); }
                     if (!lector.IsDBNull(9)) { aux.Altura = lector.GetString(9); }
                     if (!lector.IsDBNull(10)) { aux.Piso = lector.GetString(10); }
@@ -58,7 +56,7 @@ namespace Negocio
                     aux.Estado = (bool)lector[24];
                     aux.IdMunicipio = (Int32)lector[25];
                     aux.IdNacionalidad = (Int32)lector[26];
-                    
+
                     lista.Add(aux);
                 }
 
@@ -76,71 +74,7 @@ namespace Negocio
             }
 
         }
-
-        public void Alta(Paciente nuevo)
-        {
-            AccesoDatos conexion = null;
-            string consulta = "";
-            string valores = "";
-            try
-            {
-                conexion = new AccesoDatos();
-                consulta = "INSERT INTO Personas (DNI, APELLIDO, NOMBRE, IDSEXO, FECHANAC, IDNACIONALIDAD, CALLE, NUMERO, IDMUNICIPIO, ";
-                valores = " values ('" + nuevo.Dni + "','" + nuevo.Apellido.ToString() + "','" + nuevo.Nombre.ToString() + "'," + nuevo.IdSexo + ",'" + nuevo.FechaNacimiento.ToString("yyyy/MM/dd") + "'," + nuevo.IdNacionalidad + ",'" + nuevo.Calle.ToString() + "'," + nuevo.Altura + "," + nuevo.IdMunicipio;
-
-                if (nuevo.Piso.ToString() != "")
-                {
-                    consulta = consulta + "PISO, ";
-                    valores = valores + ",'" + nuevo.Piso.ToString() + "'";
-                }
-
-                if (nuevo.Dpto.ToString() != "")
-                {
-                    consulta = consulta + "DEPTO, ";
-                    valores = valores + ",'" + nuevo.Dpto.ToString() + "'";
-                }
-
-                if (nuevo.TelCelular.ToString() != "")
-                {
-                    consulta = consulta + "TELCELULAR, ";
-                    valores = valores + ",'" + nuevo.TelCelular.ToString() + "'";
-                }
-
-                if (nuevo.TelFijo.ToString() != "")
-                {
-                    consulta = consulta + "TELFIJO, ";
-                    valores = valores + ",'" + nuevo.TelFijo.ToString() + "'";
-                }
-
-                if (nuevo.Mail.ToString() != "")
-                {
-                    consulta = consulta + "MAIL, ";
-                    valores = valores + ",'" + nuevo.Mail.ToString() + "'";
-                }
-
-
-                consulta = consulta + "FECHAALTA, IDADMINALTA, FECHAMODIF, IDADMINMODIF, ESTADO)";
-                consulta = consulta + valores + ",GETDATE()," + nuevo.IdUsuarioAlta + ",GETDATE()," + nuevo.IdUsuarioModif + ",1) SELECT CAST(scope_identity() AS int)";
-
-                conexion.setearConsulta(consulta);
-                conexion.abrirConexion();
-                nuevo.Id = conexion.ejecutarAccionReturn();
-                consulta = "insert into pacientes (IdPaciente, IdPersona,FechaAlta, IdAdminAlta, FechaModif, IdAdminModif, Estado) values (" + nuevo.Id + ", " + nuevo.Id + ", getdate() ,1,getdate(),1,1)";
-                conexion.setearConsulta(consulta);
-                conexion.ejecutarAccion();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                if (conexion != null)
-                    conexion.cerrarConexion();
-            }
-        }
-
-        public void Modificar(Paciente modif)
+        public void Modificar(Persona modif)
         {
             AccesoDatos conexion = null;
             string consulta = "";
@@ -157,31 +91,36 @@ namespace Negocio
                 consulta = consulta + ", calle='" + modif.Calle.ToString();
                 consulta = consulta + "', numero='" + modif.Altura.ToString();
                 consulta = consulta + "', idmunicipio=" + modif.IdMunicipio;
-                
+
                 if (modif.Piso.ToString() != "")
                 {
                     consulta = consulta + ", piso='" + modif.Piso.ToString() + "'";
-                }else consulta = consulta + ", piso=null";
+                }
+                else consulta = consulta + ", piso=null";
 
                 if (modif.Dpto.ToString() != "")
                 {
                     consulta = consulta + ", depto='" + modif.Dpto.ToString() + "'";
-                }else consulta = consulta + ", depto=null";
+                }
+                else consulta = consulta + ", depto=null";
 
                 if (modif.TelCelular.ToString() != "")
                 {
                     consulta = consulta + ", telcelular='" + modif.TelCelular.ToString() + "'";
-                }else consulta = consulta + ", telcelular=null";
+                }
+                else consulta = consulta + ", telcelular=null";
 
                 if (modif.TelFijo.ToString() != "")
                 {
                     consulta = consulta + ", telfijo='" + modif.TelFijo.ToString() + "'";
-                }else consulta = consulta + ", telfijo=null";
+                }
+                else consulta = consulta + ", telfijo=null";
 
                 if (modif.Mail.ToString() != "")
                 {
                     consulta = consulta + ", mail='" + modif.Mail.ToString() + "'";
-                }else consulta = consulta + ", mail=null";
+                }
+                else consulta = consulta + ", mail=null";
 
                 consulta = consulta + ", fechamodif=GETDATE(), IDADMINMODIF=" + modif.IdUsuarioModif + ", ESTADO=1";
                 consulta = consulta + " where IdPersona=" + modif.Id;
@@ -207,7 +146,7 @@ namespace Negocio
             try
             {
                 conexion = new AccesoDatos();
-                consulta = "update Pacientes set FechaBaja=GETDATE(), IdAdminBaja=" + IdAdminElimina + ", Estado=0 where IdPaciente=" + ID;
+                consulta = "update Personas set FechaBaja=GETDATE(), IdAdminBaja=" + IdAdminElimina + ", Estado=0 where IdPersona=" + ID;
                 conexion.setearConsulta(consulta);
                 conexion.abrirConexion();
                 conexion.ejecutarAccion();
@@ -222,5 +161,9 @@ namespace Negocio
                     conexion.cerrarConexion();
             }
         }
+
+
+
+
     }
 }

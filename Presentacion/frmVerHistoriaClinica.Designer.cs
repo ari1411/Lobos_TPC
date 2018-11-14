@@ -63,7 +63,7 @@
             this.btnCrearHC.Name = "btnCrearHC";
             this.btnCrearHC.Size = new System.Drawing.Size(132, 44);
             this.btnCrearHC.TabIndex = 2;
-            this.btnCrearHC.Text = "Crear";
+            this.btnCrearHC.Text = "Crear HC";
             this.btnCrearHC.UseVisualStyleBackColor = true;
             this.btnCrearHC.Click += new System.EventHandler(this.btnCrearHC_Click);
             // 
@@ -73,8 +73,9 @@
             this.btnEditarHC.Name = "btnEditarHC";
             this.btnEditarHC.Size = new System.Drawing.Size(132, 44);
             this.btnEditarHC.TabIndex = 3;
-            this.btnEditarHC.Text = "Editar";
+            this.btnEditarHC.Text = "Editar HC";
             this.btnEditarHC.UseVisualStyleBackColor = true;
+            this.btnEditarHC.Click += new System.EventHandler(this.btnEditarHC_Click);
             // 
             // btnEliminarHC
             // 
@@ -82,8 +83,9 @@
             this.btnEliminarHC.Name = "btnEliminarHC";
             this.btnEliminarHC.Size = new System.Drawing.Size(132, 44);
             this.btnEliminarHC.TabIndex = 4;
-            this.btnEliminarHC.Text = "Eliminar";
+            this.btnEliminarHC.Text = "Eliminar HC";
             this.btnEliminarHC.UseVisualStyleBackColor = true;
+            this.btnEliminarHC.Click += new System.EventHandler(this.btnEliminarHC_Click);
             // 
             // btnVerHC
             // 
@@ -91,7 +93,7 @@
             this.btnVerHC.Name = "btnVerHC";
             this.btnVerHC.Size = new System.Drawing.Size(132, 44);
             this.btnVerHC.TabIndex = 5;
-            this.btnVerHC.Text = "Ver";
+            this.btnVerHC.Text = "Ver Evoluciones";
             this.btnVerHC.UseVisualStyleBackColor = true;
             this.btnVerHC.Click += new System.EventHandler(this.btnVerHC_Click);
             // 

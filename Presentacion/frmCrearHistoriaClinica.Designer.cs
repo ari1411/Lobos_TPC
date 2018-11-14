@@ -34,17 +34,17 @@
             this.dtpFechaVtoCarnet = new System.Windows.Forms.DateTimePicker();
             this.txtMotivoHC = new System.Windows.Forms.TextBox();
             this.cboRazonSocial = new System.Windows.Forms.ComboBox();
+            this.vwRazonSocialBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lOBOS_DBDataSet9 = new Presentacion.LOBOS_DBDataSet9();
             this.lblRazonSocial = new System.Windows.Forms.Label();
             this.lblFechaVtoCarnet = new System.Windows.Forms.Label();
             this.lblMotivoConsulta = new System.Windows.Forms.Label();
             this.btnAgregarRazonSocial = new System.Windows.Forms.Button();
             this.btnGrabar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.lOBOS_DBDataSet9 = new Presentacion.LOBOS_DBDataSet9();
-            this.vwRazonSocialBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vw_RazonSocialTableAdapter = new Presentacion.LOBOS_DBDataSet9TableAdapters.vw_RazonSocialTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.lOBOS_DBDataSet9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vwRazonSocialBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lOBOS_DBDataSet9)).BeginInit();
             this.SuspendLayout();
             // 
             // txtNumeroAfiliado
@@ -90,6 +90,16 @@
             this.cboRazonSocial.Size = new System.Drawing.Size(273, 21);
             this.cboRazonSocial.TabIndex = 0;
             this.cboRazonSocial.ValueMember = "idrazonsocial";
+            // 
+            // vwRazonSocialBindingSource
+            // 
+            this.vwRazonSocialBindingSource.DataMember = "vw_RazonSocial";
+            this.vwRazonSocialBindingSource.DataSource = this.lOBOS_DBDataSet9;
+            // 
+            // lOBOS_DBDataSet9
+            // 
+            this.lOBOS_DBDataSet9.DataSetName = "LOBOS_DBDataSet9";
+            this.lOBOS_DBDataSet9.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // lblRazonSocial
             // 
@@ -148,16 +158,6 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // lOBOS_DBDataSet9
-            // 
-            this.lOBOS_DBDataSet9.DataSetName = "LOBOS_DBDataSet9";
-            this.lOBOS_DBDataSet9.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // vwRazonSocialBindingSource
-            // 
-            this.vwRazonSocialBindingSource.DataMember = "vw_RazonSocial";
-            this.vwRazonSocialBindingSource.DataSource = this.lOBOS_DBDataSet9;
-            // 
             // vw_RazonSocialTableAdapter
             // 
             this.vw_RazonSocialTableAdapter.ClearBeforeFill = true;
@@ -179,10 +179,11 @@
             this.Controls.Add(this.lblNumeroAfiliado);
             this.Controls.Add(this.txtNumeroAfiliado);
             this.Name = "frmCrearHistoriaClinica";
-            this.Text = "frmCrearHistoriaClinica";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Crear Historia Clinica";
             this.Load += new System.EventHandler(this.frmCrearHistoriaClinica_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.lOBOS_DBDataSet9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vwRazonSocialBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lOBOS_DBDataSet9)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

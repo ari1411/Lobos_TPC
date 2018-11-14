@@ -27,10 +27,7 @@ namespace Presentacion
             this.vW_NACIONALIDADTableAdapter.Fill(this.lOBOS_DBDataSet1.VW_NACIONALIDAD);
             // TODO: esta línea de código carga datos en la tabla 'lOBOS_DBDataSet.Sexo' Puede moverla o quitarla según sea necesario.
             this.sexoTableAdapter.Fill(this.lOBOS_DBDataSet.Sexo);
-
-
-
-
+            dtpFechaNacimiento.Value = dtpFechaNacimiento.MaxDate = DateTime.Today;
         }
 
         private void lblTelMovil_Click(object sender, EventArgs e)

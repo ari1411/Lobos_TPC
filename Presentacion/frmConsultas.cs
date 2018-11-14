@@ -27,5 +27,11 @@ namespace Presentacion
             frmConsultasPacientes ConsPte = new frmConsultasPacientes();
             ConsPte.ShowDialog();
         }
+
+        private void btnConsultasPersonas_Click(object sender, EventArgs e)
+        {
+            frmConsultasPersonas ConsPers = new frmConsultasPersonas();
+            ConsPers.ShowDialog();
+        }
     }
 }

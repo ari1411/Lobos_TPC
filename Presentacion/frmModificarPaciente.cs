@@ -21,6 +21,13 @@ namespace Presentacion
             aux = paciente;
         }
 
+        public frmModificarPaciente(Persona paciente)
+        {
+            InitializeComponent();
+            aux = (Paciente)paciente;
+            Text = "Modificar Persona";
+        }
+
         private void frmModificarPaciente_Load(object sender, EventArgs e)
         {
             // TODO: esta línea de código carga datos en la tabla 'lOBOS_DBDataSet8.VW_MUNICIPIOS' Puede moverla o quitarla según sea necesario.
@@ -35,6 +42,7 @@ namespace Presentacion
             txtNombre.Text = aux.Nombre;
             cboSexo.SelectedValue = aux.IdSexo.ToString();
             cboNacionalidad.SelectedValue = aux.IdNacionalidad.ToString();
+            dtpFechaNacimiento.MaxDate = DateTime.Today;
             dtpFechaNacimiento.Text = aux.FechaNacimiento.ToString();
             txtCalle.Text = aux.Calle;
             txtNumero.Text = aux.Altura;

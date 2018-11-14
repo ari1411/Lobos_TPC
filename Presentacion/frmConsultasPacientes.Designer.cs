@@ -47,6 +47,7 @@
             // 
             // btnBuscar
             // 
+            this.btnBuscar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnBuscar.Location = new System.Drawing.Point(330, 279);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(131, 52);

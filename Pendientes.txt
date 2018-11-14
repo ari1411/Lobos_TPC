@@ -1,5 +1,6 @@
 lista de horarios en especialidades
 lista de especialidades
+Ver evoluciones
 
 
 
@@ -9,11 +10,6 @@ lista de especialidades
 
 
 
-
-Para la primera etapa del TPC se solicita:
-- la arquitectura de clases (modelo de dominio), 
-- armado de pantallas de la aplicación (SIN funcionalidad, sólo ventanas, algunos controles y navegación) y 
-- lectura desde base de datos de al menos dos entidades.
 
 Deberán dejar la URL de su repositorio GIT. El mismo deberá estar nombrado TPC_Apellido.
 Recuerden que el nombre de la solución tiene que ser el propuesto >> "TPC_Apellido".

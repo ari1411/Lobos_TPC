@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Dominio;
-using System.Data.SqlClient;
 
 namespace Negocio
 {
@@ -14,13 +13,13 @@ namespace Negocio
 
         private IList<HC> lista=new List<HC>();
 
-        public IList<HC> cargar(Paciente paciente)
+        public IList<HC> cargar(int paciente)
         {
             AccesoDatos conexion = null;
             try
             {
                 conexion = new AccesoDatos();
-                string consulta = "select h.IdHistoriaClinica,h.IdRazonSocial, h.IdPaciente, h.NumAfiliado, h.FechaVtoCarnet, h.Motivo, h.FechaAlta, h.IdAdmAlta, h.FechaModif, h.IdAdmModif, h.FechaBaja, h.IdAdmBaja, h.Estado, p.Apellido from HistoriaClinica as h left join Personas as p on h.IdAdmAlta=p.IdPersona where IdPaciente=" + paciente.IdPaciente;
+                string consulta = "select h.IdHistoriaClinica,h.IdRazonSocial, h.IdPaciente, h.NumAfiliado, h.FechaVtoCarnet, h.Motivo, h.FechaAlta, h.IdAdmAlta, h.FechaModif, h.IdAdmModif, h.FechaBaja, h.IdAdmBaja, h.Estado, p.Apellido from HistoriaClinica as h left join Personas as p on h.IdAdmAlta=p.IdPersona where IdPaciente=" + paciente + " and p.estado=1 and h.estado=1";
                 conexion.setearConsulta(consulta);
                 conexion.abrirConexion();
                 conexion.ejecutarConsulta();
@@ -40,12 +39,57 @@ namespace Negocio
                     aux.IdAdminModif = (int)conexion.Lector[9];
                     if (!conexion.Lector.IsDBNull(10)) aux.FechaHrBaja = (DateTime)conexion.Lector[10]; 
                     if (!conexion.Lector.IsDBNull(11)) aux.IdAdminBaja = (int)conexion.Lector[11];
-                    aux.Estado = (bool)conexion.Lector[12];
+                    aux.Estado = (int)conexion.Lector[12];
                     aux.Ingresante = conexion.Lector.GetString(13);
 
                     lista.Add(aux);
                 }
                 return lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (conexion != null)
+                    conexion.cerrarConexion();
+            }
+        }
+
+        public void editarHC(HC historiaClinicaEditada)
+        {
+            AccesoDatos conexion = null;
+            try
+            {
+                conexion = new AccesoDatos();
+                string consulta = "update historiaclinica set IdRazonSocial=" + historiaClinicaEditada.IdRazonSocial + ",NumAfiliado='" + historiaClinicaEditada.NumeroAfiliado + "',FechaVtoCarnet='" + historiaClinicaEditada.FechaVencimientoCarnet.ToString("yyyy/MM/dd") + "',Motivo='" + historiaClinicaEditada.DescripcionAccidente + "',FechaModif=GETDATE(),IdAdmModif=1,Estado=" + historiaClinicaEditada.Estado + " where idhistoriaclinica=" + historiaClinicaEditada.IdHC;
+                conexion.setearConsulta(consulta);
+                conexion.abrirConexion();
+                conexion.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (conexion != null)
+                    conexion.cerrarConexion();
+            }
+        }
+
+        public void eliminar(int IdHC, int idAdminElimina)
+        {
+            AccesoDatos conexion = null;
+            string consulta = "";
+            try
+            {
+                conexion = new AccesoDatos();
+                consulta = "update HistoriaClinica set FechaBaja=GETDATE(), IdAdmBaja=" + idAdminElimina + ", Estado=0 where IdHistoriaClinica=" + IdHC;
+                conexion.setearConsulta(consulta);
+                conexion.abrirConexion();
+                conexion.ejecutarAccion();
             }
             catch (Exception ex)
             {
