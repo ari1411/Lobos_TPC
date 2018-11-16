@@ -60,5 +60,7 @@ GO
 SELECT * FROM PACIENTES
 GO
 
-
-
+select * from Profesionales where IdPersona=1
+go
+select * from Pacientes where IdPersona=26
+go

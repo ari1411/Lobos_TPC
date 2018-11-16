@@ -9,9 +9,7 @@ namespace Dominio
     public class Administrativo:Persona
     {
         public Int32 IdAdministrativo { set; get; }
-        public string Cargo { set; get; }
+        public Int32 IdCargo { set; get; }
         public string Sector { set; get; }
-        public char Permisos { set; get; }
-        public char Horarios { set; get; }
     }
 }

@@ -8,7 +8,6 @@ namespace Dominio
 {
     public class Profesional:Persona
     {
-        public string IdProfesional { set; get; }
-        public char Especialidades { set; get; }
+        public Int32 IdProfesional { set; get; }
     }
 }

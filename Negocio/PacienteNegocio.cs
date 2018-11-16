@@ -222,5 +222,113 @@ namespace Negocio
                     conexion.cerrarConexion();
             }
         }
+
+        public Paciente VerificarExiste(int ID)
+        {
+            Paciente aux = new Paciente();
+            AccesoDatos conexion = null;
+            string consulta = "";
+            try
+            {
+                conexion = new AccesoDatos();
+                consulta = "select * from Pacientes where IdPersona=" + ID;
+                conexion.setearConsulta(consulta);
+                conexion.abrirConexion();
+                conexion.ejecutarConsulta();
+
+                while (conexion.Lector.Read())
+                {
+                    aux.IdPaciente = (Int32)conexion.Lector[0];
+                    aux.FechaAlta = (DateTime)conexion.Lector[2];
+                    aux.IdUsuarioAlta = (Int32)conexion.Lector[3];
+                    aux.FechaModif = (DateTime)conexion.Lector[4];
+                    aux.IdUsuarioModif = (Int32)conexion.Lector[5];
+                    if (!conexion.Lector.IsDBNull(6)) { aux.FechaBaja = (DateTime)conexion.Lector[6]; }
+                    if (!conexion.Lector.IsDBNull(7)) { aux.IdUsuarioBaja = (Int32)conexion.Lector[7]; }
+                    aux.Estado = (bool)conexion.Lector[8];
+                }
+                return aux;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (conexion != null)
+                    conexion.cerrarConexion();
+            }
+        }
+
+        public void AgregarFuncionPaciente(int ID)
+        {
+            AccesoDatos conexion = null;
+            string consulta = "";
+            try
+            {
+                conexion = new AccesoDatos();
+                consulta = "insert into pacientes (IdPaciente, IdPersona,FechaAlta, IdAdminAlta, FechaModif, IdAdminModif, Estado) values (" + ID + ", " + ID + ", getdate() ,1,getdate(),1,1)";
+
+                conexion.setearConsulta(consulta);
+                conexion.abrirConexion();
+                conexion.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (conexion != null)
+                    conexion.cerrarConexion();
+            }
+        }
+
+        public void EditarFuncionPaciente(int ID)
+        {
+            AccesoDatos conexion = null;
+            string consulta = "";
+            try
+            {
+                conexion = new AccesoDatos();
+                consulta = "update Pacientes set FechaModif=GETDATE(), IdAdminModif=1, Estado=1 where IdPaciente=" + ID;
+                conexion.setearConsulta(consulta);
+                conexion.abrirConexion();
+                conexion.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (conexion != null)
+                    conexion.cerrarConexion();
+            }
+        }
+
+        public void EliminarFuncionPaciente(int ID)
+        {
+            AccesoDatos conexion = null;
+            string consulta = "";
+            try
+            {
+                conexion = new AccesoDatos();
+                consulta = "update Pacientes set FechaModif=GETDATE(), IdAdminModif=1, FechaBaja=GETDATE(), IdAdminBaja=1, Estado=0 where IdPaciente=" + ID;
+                conexion.setearConsulta(consulta);
+                conexion.abrirConexion();
+                conexion.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (conexion != null)
+                    conexion.cerrarConexion();
+            }
+        }
+
     }
 }

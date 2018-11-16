@@ -67,7 +67,8 @@ namespace Presentacion
 
         private void btnAñadirFuncion_Click(object sender, EventArgs e)
         {
-            frmAnadirFuncionPersona funciones = new frmAnadirFuncionPersona();
+            aux = (Persona)dgvConsultasPersonas.CurrentRow.DataBoundItem;
+            frmAnadirFuncionPersona funciones = new frmAnadirFuncionPersona(aux);
             funciones.ShowDialog();
         }
 
@@ -98,5 +99,7 @@ namespace Presentacion
             }
 
         }
+
+        
     }
 }

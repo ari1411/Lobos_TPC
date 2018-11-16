@@ -45,68 +45,71 @@
             // 
             // btnAgregarPaciente
             // 
-            this.btnAgregarPaciente.Enabled = false;
-            this.btnAgregarPaciente.Location = new System.Drawing.Point(12, 47);
+            this.btnAgregarPaciente.Location = new System.Drawing.Point(100, 43);
             this.btnAgregarPaciente.Name = "btnAgregarPaciente";
             this.btnAgregarPaciente.Size = new System.Drawing.Size(104, 30);
             this.btnAgregarPaciente.TabIndex = 0;
             this.btnAgregarPaciente.Text = "Agregar";
             this.btnAgregarPaciente.UseVisualStyleBackColor = true;
+            this.btnAgregarPaciente.Click += new System.EventHandler(this.btnAgregarPaciente_Click);
             // 
             // btnEditarPaciente
             // 
-            this.btnEditarPaciente.Enabled = false;
-            this.btnEditarPaciente.Location = new System.Drawing.Point(122, 47);
+            this.btnEditarPaciente.Location = new System.Drawing.Point(45, 43);
             this.btnEditarPaciente.Name = "btnEditarPaciente";
             this.btnEditarPaciente.Size = new System.Drawing.Size(104, 30);
             this.btnEditarPaciente.TabIndex = 1;
             this.btnEditarPaciente.Text = "Editar";
             this.btnEditarPaciente.UseVisualStyleBackColor = true;
+            this.btnEditarPaciente.Visible = false;
+            this.btnEditarPaciente.Click += new System.EventHandler(this.btnEditarPaciente_Click);
             // 
             // btnEliminarPaciente
             // 
-            this.btnEliminarPaciente.Enabled = false;
-            this.btnEliminarPaciente.Location = new System.Drawing.Point(232, 47);
+            this.btnEliminarPaciente.Location = new System.Drawing.Point(168, 43);
             this.btnEliminarPaciente.Name = "btnEliminarPaciente";
             this.btnEliminarPaciente.Size = new System.Drawing.Size(104, 30);
             this.btnEliminarPaciente.TabIndex = 2;
             this.btnEliminarPaciente.Text = "Eliminar";
             this.btnEliminarPaciente.UseVisualStyleBackColor = true;
+            this.btnEliminarPaciente.Visible = false;
+            this.btnEliminarPaciente.Click += new System.EventHandler(this.btnEliminarPaciente_Click);
             // 
             // btnAgregarAdmin
             // 
-            this.btnAgregarAdmin.Enabled = false;
-            this.btnAgregarAdmin.Location = new System.Drawing.Point(12, 132);
+            this.btnAgregarAdmin.Location = new System.Drawing.Point(100, 128);
             this.btnAgregarAdmin.Name = "btnAgregarAdmin";
             this.btnAgregarAdmin.Size = new System.Drawing.Size(104, 30);
             this.btnAgregarAdmin.TabIndex = 3;
             this.btnAgregarAdmin.Text = "Agregar";
             this.btnAgregarAdmin.UseVisualStyleBackColor = true;
+            this.btnAgregarAdmin.Click += new System.EventHandler(this.btnAgregarAdmin_Click);
             // 
             // btnEditarAdmin
             // 
-            this.btnEditarAdmin.Enabled = false;
-            this.btnEditarAdmin.Location = new System.Drawing.Point(122, 132);
+            this.btnEditarAdmin.Location = new System.Drawing.Point(45, 128);
             this.btnEditarAdmin.Name = "btnEditarAdmin";
             this.btnEditarAdmin.Size = new System.Drawing.Size(104, 30);
             this.btnEditarAdmin.TabIndex = 4;
             this.btnEditarAdmin.Text = "Editar";
             this.btnEditarAdmin.UseVisualStyleBackColor = true;
+            this.btnEditarAdmin.Visible = false;
+            this.btnEditarAdmin.Click += new System.EventHandler(this.btnEditarAdmin_Click);
             // 
             // btnEliminarAdmin
             // 
-            this.btnEliminarAdmin.Enabled = false;
-            this.btnEliminarAdmin.Location = new System.Drawing.Point(232, 132);
+            this.btnEliminarAdmin.Location = new System.Drawing.Point(168, 128);
             this.btnEliminarAdmin.Name = "btnEliminarAdmin";
             this.btnEliminarAdmin.Size = new System.Drawing.Size(104, 30);
             this.btnEliminarAdmin.TabIndex = 5;
             this.btnEliminarAdmin.Text = "Eliminar";
             this.btnEliminarAdmin.UseVisualStyleBackColor = true;
+            this.btnEliminarAdmin.Visible = false;
+            this.btnEliminarAdmin.Click += new System.EventHandler(this.btnEliminarAdmin_Click);
             // 
             // btnAgregarMedico
             // 
-            this.btnAgregarMedico.Enabled = false;
-            this.btnAgregarMedico.Location = new System.Drawing.Point(12, 216);
+            this.btnAgregarMedico.Location = new System.Drawing.Point(100, 212);
             this.btnAgregarMedico.Name = "btnAgregarMedico";
             this.btnAgregarMedico.Size = new System.Drawing.Size(104, 30);
             this.btnAgregarMedico.TabIndex = 6;
@@ -115,38 +118,39 @@
             // 
             // btnEditarMedico
             // 
-            this.btnEditarMedico.Enabled = false;
-            this.btnEditarMedico.Location = new System.Drawing.Point(122, 216);
+            this.btnEditarMedico.Location = new System.Drawing.Point(45, 212);
             this.btnEditarMedico.Name = "btnEditarMedico";
             this.btnEditarMedico.Size = new System.Drawing.Size(104, 30);
             this.btnEditarMedico.TabIndex = 7;
             this.btnEditarMedico.Text = "Editar";
             this.btnEditarMedico.UseVisualStyleBackColor = true;
+            this.btnEditarMedico.Visible = false;
             // 
             // btnEliminarMedico
             // 
-            this.btnEliminarMedico.Enabled = false;
-            this.btnEliminarMedico.Location = new System.Drawing.Point(232, 216);
+            this.btnEliminarMedico.Location = new System.Drawing.Point(168, 212);
             this.btnEliminarMedico.Name = "btnEliminarMedico";
             this.btnEliminarMedico.Size = new System.Drawing.Size(104, 30);
             this.btnEliminarMedico.TabIndex = 8;
             this.btnEliminarMedico.Text = "Eliminar";
             this.btnEliminarMedico.UseVisualStyleBackColor = true;
+            this.btnEliminarMedico.Visible = false;
             // 
             // btnVolverAñadirFuncion
             // 
-            this.btnVolverAñadirFuncion.Location = new System.Drawing.Point(100, 291);
+            this.btnVolverAñadirFuncion.Location = new System.Drawing.Point(82, 273);
             this.btnVolverAñadirFuncion.Name = "btnVolverAñadirFuncion";
             this.btnVolverAñadirFuncion.Size = new System.Drawing.Size(145, 49);
             this.btnVolverAñadirFuncion.TabIndex = 9;
             this.btnVolverAñadirFuncion.Text = "Volver";
             this.btnVolverAñadirFuncion.UseVisualStyleBackColor = true;
+            this.btnVolverAñadirFuncion.Click += new System.EventHandler(this.btnVolverAñadirFuncion_Click);
             // 
             // lblPaciente
             // 
             this.lblPaciente.AutoSize = true;
             this.lblPaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPaciente.Location = new System.Drawing.Point(130, 24);
+            this.lblPaciente.Location = new System.Drawing.Point(119, 20);
             this.lblPaciente.Name = "lblPaciente";
             this.lblPaciente.Size = new System.Drawing.Size(71, 20);
             this.lblPaciente.TabIndex = 10;
@@ -156,7 +160,7 @@
             // 
             this.lblAdministrativo.AutoSize = true;
             this.lblAdministrativo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAdministrativo.Location = new System.Drawing.Point(118, 109);
+            this.lblAdministrativo.Location = new System.Drawing.Point(96, 105);
             this.lblAdministrativo.Name = "lblAdministrativo";
             this.lblAdministrativo.Size = new System.Drawing.Size(108, 20);
             this.lblAdministrativo.TabIndex = 11;
@@ -166,7 +170,7 @@
             // 
             this.lblMedico.AutoSize = true;
             this.lblMedico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMedico.Location = new System.Drawing.Point(141, 193);
+            this.lblMedico.Location = new System.Drawing.Point(119, 189);
             this.lblMedico.Name = "lblMedico";
             this.lblMedico.Size = new System.Drawing.Size(60, 20);
             this.lblMedico.TabIndex = 12;
@@ -176,7 +180,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(348, 355);
+            this.ClientSize = new System.Drawing.Size(320, 355);
             this.Controls.Add(this.lblMedico);
             this.Controls.Add(this.lblAdministrativo);
             this.Controls.Add(this.lblPaciente);
@@ -193,6 +197,7 @@
             this.Name = "frmAnadirFuncionPersona";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Añadir Funcion a la Persona";
+            this.Load += new System.EventHandler(this.frmAnadirFuncionPersona_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
