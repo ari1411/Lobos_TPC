@@ -67,7 +67,8 @@ namespace Presentacion
 
         private void btnAñadirFuncion_Click(object sender, EventArgs e)
         {
-
+            frmAnadirFuncionPersona funciones = new frmAnadirFuncionPersona();
+            funciones.ShowDialog();
         }
 
         private void btnEditarPers_Click(object sender, EventArgs e)
