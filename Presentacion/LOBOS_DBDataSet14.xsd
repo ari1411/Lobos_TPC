@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="LOBOS_DBDataSet14" targetNamespace="http://tempuri.org/LOBOS_DBDataSet14.xsd" xmlns:mstns="http://tempuri.org/LOBOS_DBDataSet14.xsd" xmlns="http://tempuri.org/LOBOS_DBDataSet14.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="LOBOS_DBConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="LOBOS_DBConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Presentacion.Properties.Settings.GlobalReference.Default.LOBOS_DBConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="VW_ESPECIALIDADES_MEDICASTableAdapter" GeneratorDataComponentClassName="VW_ESPECIALIDADES_MEDICASTableAdapter" Name="VW_ESPECIALIDADES_MEDICAS" UserDataComponentName="VW_ESPECIALIDADES_MEDICASTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="LOBOS_DBConnectionString (Settings)" DbObjectName="LOBOS_DB.dbo.VW_ESPECIALIDADES_MEDICAS" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT IdEspecialidad, Especialidad FROM dbo.VW_ESPECIALIDADES_MEDICAS</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="IdEspecialidad" DataSetColumn="IdEspecialidad" />
+              <Mapping SourceColumn="Especialidad" DataSetColumn="Especialidad" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="LOBOS_DBDataSet14" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="LOBOS_DBDataSet14" msprop:Generator_UserDSName="LOBOS_DBDataSet14">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="VW_ESPECIALIDADES_MEDICAS" msprop:Generator_TableClassName="VW_ESPECIALIDADES_MEDICASDataTable" msprop:Generator_TableVarName="tableVW_ESPECIALIDADES_MEDICAS" msprop:Generator_TablePropName="VW_ESPECIALIDADES_MEDICAS" msprop:Generator_RowDeletingName="VW_ESPECIALIDADES_MEDICASRowDeleting" msprop:Generator_RowChangingName="VW_ESPECIALIDADES_MEDICASRowChanging" msprop:Generator_RowEvHandlerName="VW_ESPECIALIDADES_MEDICASRowChangeEventHandler" msprop:Generator_RowDeletedName="VW_ESPECIALIDADES_MEDICASRowDeleted" msprop:Generator_UserTableName="VW_ESPECIALIDADES_MEDICAS" msprop:Generator_RowChangedName="VW_ESPECIALIDADES_MEDICASRowChanged" msprop:Generator_RowEvArgName="VW_ESPECIALIDADES_MEDICASRowChangeEvent" msprop:Generator_RowClassName="VW_ESPECIALIDADES_MEDICASRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdEspecialidad" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdEspecialidad" msprop:Generator_ColumnPropNameInRow="IdEspecialidad" msprop:Generator_ColumnPropNameInTable="IdEspecialidadColumn" msprop:Generator_UserColumnName="IdEspecialidad" type="xs:int" />
+              <xs:element name="Especialidad" msprop:Generator_ColumnVarNameInTable="columnEspecialidad" msprop:Generator_ColumnPropNameInRow="Especialidad" msprop:Generator_ColumnPropNameInTable="EspecialidadColumn" msprop:Generator_UserColumnName="Especialidad">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:VW_ESPECIALIDADES_MEDICAS" />
+      <xs:field xpath="mstns:IdEspecialidad" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

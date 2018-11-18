@@ -71,15 +71,15 @@ namespace Negocio
                     conexion.cerrarConexion();
             }
         }
-        /*
-        public void EditarFuncionPaciente(int ID)
+        
+        public void EditarFuncionAdministrativo(int ID, int idCargo, string Sector, bool Estado)
         {
             AccesoDatos conexion = null;
             string consulta = "";
             try
             {
                 conexion = new AccesoDatos();
-                consulta = "update Pacientes set FechaModif=GETDATE(), IdAdminModif=1, Estado=1 where IdPaciente=" + ID;
+                consulta = "update Administrativos set IdCargo=" + idCargo + ", Sector='" + Sector.ToString() + "', FechaModif=GETDATE(), IdAdminModif=1, Estado='" + Estado + "' where IdAdmin=" + ID;
                 conexion.setearConsulta(consulta);
                 conexion.abrirConexion();
                 conexion.ejecutarAccion();
@@ -95,14 +95,14 @@ namespace Negocio
             }
         }
 
-        public void EliminarFuncionPaciente(int ID)
+        public void EliminarFuncionAdministrativo(int ID)
         {
             AccesoDatos conexion = null;
             string consulta = "";
             try
             {
                 conexion = new AccesoDatos();
-                consulta = "update Pacientes set FechaModif=GETDATE(), IdAdminModif=1, FechaBaja=GETDATE(), IdAdminBaja=1, Estado=0 where IdPaciente=" + ID;
+                consulta = "update Administrativos set FechaModif=GETDATE(), IdAdminModif=1, FechaBaja=GETDATE(), idAdminBaja=1, Estado=0 where IdAdmin=" + ID;
                 conexion.setearConsulta(consulta);
                 conexion.abrirConexion();
                 conexion.ejecutarAccion();
@@ -116,6 +116,6 @@ namespace Negocio
                 if (conexion != null)
                     conexion.cerrarConexion();
             }
-        }*/
+        }
     }
 }

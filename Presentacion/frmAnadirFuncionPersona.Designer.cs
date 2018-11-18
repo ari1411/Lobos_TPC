@@ -115,6 +115,7 @@
             this.btnAgregarMedico.TabIndex = 6;
             this.btnAgregarMedico.Text = "Agregar";
             this.btnAgregarMedico.UseVisualStyleBackColor = true;
+            this.btnAgregarMedico.Click += new System.EventHandler(this.btnAgregarMedico_Click);
             // 
             // btnEditarMedico
             // 
@@ -125,6 +126,7 @@
             this.btnEditarMedico.Text = "Editar";
             this.btnEditarMedico.UseVisualStyleBackColor = true;
             this.btnEditarMedico.Visible = false;
+            this.btnEditarMedico.Click += new System.EventHandler(this.btnEditarMedico_Click);
             // 
             // btnEliminarMedico
             // 
@@ -135,6 +137,7 @@
             this.btnEliminarMedico.Text = "Eliminar";
             this.btnEliminarMedico.UseVisualStyleBackColor = true;
             this.btnEliminarMedico.Visible = false;
+            this.btnEliminarMedico.Click += new System.EventHandler(this.btnEliminarMedico_Click);
             // 
             // btnVolverAñadirFuncion
             // 
@@ -194,6 +197,8 @@
             this.Controls.Add(this.btnEliminarPaciente);
             this.Controls.Add(this.btnEditarPaciente);
             this.Controls.Add(this.btnAgregarPaciente);
+            this.MaximumSize = new System.Drawing.Size(336, 393);
+            this.MinimumSize = new System.Drawing.Size(336, 393);
             this.Name = "frmAnadirFuncionPersona";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Añadir Funcion a la Persona";

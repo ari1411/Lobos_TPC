@@ -70,8 +70,8 @@ namespace Presentacion
                     }
                     else
                     {
-                        btnEliminarAdmin.Enabled = true;
                         btnEditarAdmin.Enabled = false;
+                        btnEliminarAdmin.Enabled = true;
                     }
                 }
                 if (profesional.IdProfesional != 0)
@@ -123,17 +123,49 @@ namespace Presentacion
 
         private void btnAgregarAdmin_Click(object sender, EventArgs e)
         {
-            admin.
+            administrativo.Id = pers.Id;
+            administrativo.Dni = pers.Dni;
+            administrativo.Apellido = pers.Apellido;
+            administrativo.Nombre = pers.Nombre;
+            frmAgregarAdministrativo nvo = new frmAgregarAdministrativo(administrativo);
+            nvo.ShowDialog();
+            cargar();
         }
 
         private void btnEditarAdmin_Click(object sender, EventArgs e)
         {
-
+            administrativo.Id = pers.Id;
+            administrativo.Dni = pers.Dni;
+            administrativo.Apellido = pers.Apellido;
+            administrativo.Nombre = pers.Nombre;
+            frmModificarAdministrativo modif = new frmModificarAdministrativo(administrativo);
+            modif.ShowDialog();
+            cargar();
         }
 
         private void btnEliminarAdmin_Click(object sender, EventArgs e)
         {
+            admin.EliminarFuncionAdministrativo(pers.Id);
+            cargar();
+        }
 
+        private void btnAgregarMedico_Click(object sender, EventArgs e)
+        {
+            prof.AgregarFuncionProfesional(pers.Id);
+            cargar();
+        }
+
+        private void btnEditarMedico_Click(object sender, EventArgs e)
+        {
+            frmEspecialidadesDelProfesional especialidades = new frmEspecialidadesDelProfesional(pers);
+            especialidades.ShowDialog();
+            cargar();
+        }
+
+        private void btnEliminarMedico_Click(object sender, EventArgs e)
+        {
+            prof.EliminarFuncionProfesional(pers.Id);
+            cargar();
         }
     }
 }

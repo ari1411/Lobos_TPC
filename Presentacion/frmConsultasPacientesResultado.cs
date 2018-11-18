@@ -42,7 +42,6 @@ namespace Presentacion
                 dgvConsultasPacientes.DataSource = listaPacientes;
 
                 dgvConsultasPacientes.Columns["Idpaciente"].Visible = false;
-                dgvConsultasPacientes.Columns["Idhc"].Visible = false;
                 dgvConsultasPacientes.Columns["Id"].Visible = false;
                 dgvConsultasPacientes.Columns["IdSexo"].Visible = false;
                 dgvConsultasPacientes.Columns["IdMunicipio"].Visible = false;

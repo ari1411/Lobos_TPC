@@ -69,7 +69,7 @@ namespace Negocio
             }
         }
 
-        public void EditarFuncionProfesional(int ID)
+        public void ActivarFuncionProfesional(int ID)
         {
             AccesoDatos conexion = null;
             string consulta = "";

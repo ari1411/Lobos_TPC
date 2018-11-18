@@ -50,6 +50,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmAgregarEspecialidadMedica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAgregarEspecialidadMedica.Designer.cs">
+      <DependentUpon>frmAgregarEspecialidadMedica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAgregarAdministrativo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAgregarAdministrativo.Designer.cs">
+      <DependentUpon>frmAgregarAdministrativo.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAgregarMunicipio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,11 +140,29 @@
     <Compile Include="frmCrearHistoriaClinica.Designer.cs">
       <DependentUpon>frmCrearHistoriaClinica.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmEspecialidadesDelProfesional.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEspecialidadesDelProfesional.Designer.cs">
+      <DependentUpon>frmEspecialidadesDelProfesional.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmInicio.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmInicio.Designer.cs">
       <DependentUpon>frmInicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmModificarAdministrativo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmModificarAdministrativo.Designer.cs">
+      <DependentUpon>frmModificarAdministrativo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmModificarEspecialidadProfesional.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmModificarEspecialidadProfesional.Designer.cs">
+      <DependentUpon>frmModificarEspecialidadProfesional.cs</DependentUpon>
     </Compile>
     <Compile Include="frmModificarHistoriaClinica.cs">
       <SubType>Form</SubType>
@@ -171,6 +201,21 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>LOBOS_DBDataSet11.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LOBOS_DBDataSet12.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LOBOS_DBDataSet12.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LOBOS_DBDataSet13.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LOBOS_DBDataSet13.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LOBOS_DBDataSet14.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LOBOS_DBDataSet14.xsd</DependentUpon>
     </Compile>
     <Compile Include="LOBOS_DBDataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -220,6 +265,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmAgregarAdministrativo.resx">
+      <DependentUpon>frmAgregarAdministrativo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAgregarEspecialidadMedica.resx">
+      <DependentUpon>frmAgregarEspecialidadMedica.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAgregarMunicipio.resx">
       <DependentUpon>frmAgregarMunicipio.cs</DependentUpon>
     </EmbeddedResource>
@@ -259,8 +310,17 @@
     <EmbeddedResource Include="frmCrearHistoriaClinica.resx">
       <DependentUpon>frmCrearHistoriaClinica.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmEspecialidadesDelProfesional.resx">
+      <DependentUpon>frmEspecialidadesDelProfesional.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmInicio.resx">
       <DependentUpon>frmInicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmModificarAdministrativo.resx">
+      <DependentUpon>frmModificarAdministrativo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmModificarEspecialidadProfesional.resx">
+      <DependentUpon>frmModificarEspecialidadProfesional.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmModificarHistoriaClinica.resx">
       <DependentUpon>frmModificarHistoriaClinica.cs</DependentUpon>
@@ -327,6 +387,39 @@
     </None>
     <None Include="LOBOS_DBDataSet11.xss">
       <DependentUpon>LOBOS_DBDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="LOBOS_DBDataSet12.xsc">
+      <DependentUpon>LOBOS_DBDataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="LOBOS_DBDataSet12.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LOBOS_DBDataSet12.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LOBOS_DBDataSet12.xss">
+      <DependentUpon>LOBOS_DBDataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="LOBOS_DBDataSet13.xsc">
+      <DependentUpon>LOBOS_DBDataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="LOBOS_DBDataSet13.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LOBOS_DBDataSet13.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LOBOS_DBDataSet13.xss">
+      <DependentUpon>LOBOS_DBDataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="LOBOS_DBDataSet14.xsc">
+      <DependentUpon>LOBOS_DBDataSet14.xsd</DependentUpon>
+    </None>
+    <None Include="LOBOS_DBDataSet14.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LOBOS_DBDataSet14.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LOBOS_DBDataSet14.xss">
+      <DependentUpon>LOBOS_DBDataSet14.xsd</DependentUpon>
     </None>
     <None Include="LOBOS_DBDataSet2.xsc">
       <DependentUpon>LOBOS_DBDataSet2.xsd</DependentUpon>
