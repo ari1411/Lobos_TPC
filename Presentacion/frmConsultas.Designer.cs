@@ -39,7 +39,7 @@
             // 
             this.btnConsultasPacientes.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnConsultasPacientes.AutoSize = true;
-            this.btnConsultasPacientes.Location = new System.Drawing.Point(91, 130);
+            this.btnConsultasPacientes.Location = new System.Drawing.Point(191, 107);
             this.btnConsultasPacientes.Name = "btnConsultasPacientes";
             this.btnConsultasPacientes.Size = new System.Drawing.Size(144, 75);
             this.btnConsultasPacientes.TabIndex = 0;
@@ -62,29 +62,31 @@
             // 
             this.btnConsultasTurnos.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnConsultasTurnos.AutoSize = true;
-            this.btnConsultasTurnos.Location = new System.Drawing.Point(333, 130);
+            this.btnConsultasTurnos.Location = new System.Drawing.Point(191, 262);
             this.btnConsultasTurnos.Name = "btnConsultasTurnos";
             this.btnConsultasTurnos.Size = new System.Drawing.Size(144, 75);
             this.btnConsultasTurnos.TabIndex = 1;
             this.btnConsultasTurnos.Text = "Consultas de Turnos";
             this.btnConsultasTurnos.UseVisualStyleBackColor = true;
+            this.btnConsultasTurnos.Visible = false;
             // 
             // btnConsultasEvoluciones
             // 
             this.btnConsultasEvoluciones.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnConsultasEvoluciones.AutoSize = true;
-            this.btnConsultasEvoluciones.Location = new System.Drawing.Point(562, 130);
+            this.btnConsultasEvoluciones.Location = new System.Drawing.Point(442, 262);
             this.btnConsultasEvoluciones.Name = "btnConsultasEvoluciones";
             this.btnConsultasEvoluciones.Size = new System.Drawing.Size(144, 75);
             this.btnConsultasEvoluciones.TabIndex = 2;
             this.btnConsultasEvoluciones.Text = "Consultas de Evoluciones";
             this.btnConsultasEvoluciones.UseVisualStyleBackColor = true;
+            this.btnConsultasEvoluciones.Visible = false;
             // 
             // btnConsultasPersonas
             // 
             this.btnConsultasPersonas.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnConsultasPersonas.AutoSize = true;
-            this.btnConsultasPersonas.Location = new System.Drawing.Point(333, 258);
+            this.btnConsultasPersonas.Location = new System.Drawing.Point(442, 107);
             this.btnConsultasPersonas.Name = "btnConsultasPersonas";
             this.btnConsultasPersonas.Size = new System.Drawing.Size(144, 75);
             this.btnConsultasPersonas.TabIndex = 3;
@@ -103,6 +105,7 @@
             this.Controls.Add(this.btnConsultasTurnos);
             this.Controls.Add(this.btnConsultasVolver);
             this.Controls.Add(this.btnConsultasPacientes);
+            this.MaximumSize = new System.Drawing.Size(800, 550);
             this.MinimumSize = new System.Drawing.Size(800, 550);
             this.Name = "frmConsultas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

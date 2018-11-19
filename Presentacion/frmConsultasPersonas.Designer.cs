@@ -126,6 +126,7 @@
             this.Controls.Add(this.txtApellidoBPers);
             this.Controls.Add(this.btnBuscarBPers);
             this.Controls.Add(this.txtDniBPers);
+            this.MaximumSize = new System.Drawing.Size(800, 550);
             this.MinimumSize = new System.Drawing.Size(800, 550);
             this.Name = "frmConsultasPersonas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

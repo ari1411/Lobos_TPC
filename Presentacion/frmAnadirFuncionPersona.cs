@@ -70,7 +70,7 @@ namespace Presentacion
                     }
                     else
                     {
-                        btnEditarAdmin.Enabled = false;
+                        btnEditarAdmin.Enabled = true;
                         btnEliminarAdmin.Enabled = true;
                     }
                 }
@@ -87,7 +87,7 @@ namespace Presentacion
                     else
                     {
                         btnEliminarMedico.Enabled = true;
-                        btnEditarMedico.Enabled = false;
+                        btnEditarMedico.Enabled = true;
                     }
                 }
             }

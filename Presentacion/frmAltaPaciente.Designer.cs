@@ -86,7 +86,7 @@
             this.txtDni.AllowDrop = true;
             this.txtDni.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtDni.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtDni.Location = new System.Drawing.Point(205, 34);
+            this.txtDni.Location = new System.Drawing.Point(203, 49);
             this.txtDni.MaxLength = 8;
             this.txtDni.Name = "txtDni";
             this.txtDni.Size = new System.Drawing.Size(210, 20);
@@ -98,7 +98,7 @@
             this.txtApellido.AllowDrop = true;
             this.txtApellido.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtApellido.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtApellido.Location = new System.Drawing.Point(205, 66);
+            this.txtApellido.Location = new System.Drawing.Point(203, 81);
             this.txtApellido.MaxLength = 50;
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(285, 20);
@@ -109,7 +109,7 @@
             this.txtNombre.AllowDrop = true;
             this.txtNombre.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtNombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtNombre.Location = new System.Drawing.Point(205, 98);
+            this.txtNombre.Location = new System.Drawing.Point(203, 113);
             this.txtNombre.MaxLength = 50;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(285, 20);
@@ -121,7 +121,7 @@
             this.cboNacionalidad.DataSource = this.vWNACIONALIDADBindingSource;
             this.cboNacionalidad.DisplayMember = "NACIONALIDAD";
             this.cboNacionalidad.FormattingEnabled = true;
-            this.cboNacionalidad.Location = new System.Drawing.Point(205, 163);
+            this.cboNacionalidad.Location = new System.Drawing.Point(203, 172);
             this.cboNacionalidad.Name = "cboNacionalidad";
             this.cboNacionalidad.Size = new System.Drawing.Size(178, 21);
             this.cboNacionalidad.TabIndex = 4;
@@ -141,7 +141,7 @@
             // 
             this.dtpFechaNacimiento.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dtpFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaNacimiento.Location = new System.Drawing.Point(205, 196);
+            this.dtpFechaNacimiento.Location = new System.Drawing.Point(203, 205);
             this.dtpFechaNacimiento.MaxDate = new System.DateTime(2018, 12, 6, 0, 0, 0, 0);
             this.dtpFechaNacimiento.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
@@ -154,7 +154,7 @@
             this.txtCalle.AllowDrop = true;
             this.txtCalle.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtCalle.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtCalle.Location = new System.Drawing.Point(205, 228);
+            this.txtCalle.Location = new System.Drawing.Point(203, 237);
             this.txtCalle.MaxLength = 50;
             this.txtCalle.Name = "txtCalle";
             this.txtCalle.Size = new System.Drawing.Size(241, 20);
@@ -165,7 +165,7 @@
             this.txtNumero.AllowDrop = true;
             this.txtNumero.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtNumero.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtNumero.Location = new System.Drawing.Point(492, 228);
+            this.txtNumero.Location = new System.Drawing.Point(490, 237);
             this.txtNumero.MaxLength = 10;
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(100, 20);
@@ -177,7 +177,7 @@
             this.txtPiso.AllowDrop = true;
             this.txtPiso.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtPiso.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtPiso.Location = new System.Drawing.Point(205, 260);
+            this.txtPiso.Location = new System.Drawing.Point(203, 269);
             this.txtPiso.MaxLength = 10;
             this.txtPiso.Name = "txtPiso";
             this.txtPiso.Size = new System.Drawing.Size(77, 20);
@@ -188,7 +188,7 @@
             this.txtDepto.AllowDrop = true;
             this.txtDepto.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtDepto.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtDepto.Location = new System.Drawing.Point(306, 260);
+            this.txtDepto.Location = new System.Drawing.Point(304, 269);
             this.txtDepto.MaxLength = 10;
             this.txtDepto.Name = "txtDepto";
             this.txtDepto.Size = new System.Drawing.Size(77, 20);
@@ -200,7 +200,7 @@
             this.txtPartido.AllowDrop = true;
             this.txtPartido.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtPartido.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtPartido.Location = new System.Drawing.Point(205, 321);
+            this.txtPartido.Location = new System.Drawing.Point(203, 330);
             this.txtPartido.Name = "txtPartido";
             this.txtPartido.Size = new System.Drawing.Size(224, 20);
             this.txtPartido.TabIndex = 11;
@@ -212,7 +212,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtMail.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtMail.Location = new System.Drawing.Point(205, 351);
+            this.txtMail.Location = new System.Drawing.Point(203, 371);
             this.txtMail.MaxLength = 50;
             this.txtMail.Name = "txtMail";
             this.txtMail.Size = new System.Drawing.Size(285, 20);
@@ -225,7 +225,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTelFijo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtTelFijo.Location = new System.Drawing.Point(466, 383);
+            this.txtTelFijo.Location = new System.Drawing.Point(464, 403);
             this.txtTelFijo.MaxLength = 14;
             this.txtTelFijo.Name = "txtTelFijo";
             this.txtTelFijo.Size = new System.Drawing.Size(178, 20);
@@ -241,7 +241,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTelMovil.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtTelMovil.Location = new System.Drawing.Point(205, 383);
+            this.txtTelMovil.Location = new System.Drawing.Point(203, 403);
             this.txtTelMovil.MaxLength = 14;
             this.txtTelMovil.Name = "txtTelMovil";
             this.txtTelMovil.Size = new System.Drawing.Size(191, 20);
@@ -252,7 +252,7 @@
             // 
             this.lblDni.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblDni.AutoSize = true;
-            this.lblDni.Location = new System.Drawing.Point(170, 37);
+            this.lblDni.Location = new System.Drawing.Point(168, 52);
             this.lblDni.Name = "lblDni";
             this.lblDni.Size = new System.Drawing.Size(29, 13);
             this.lblDni.TabIndex = 15;
@@ -262,7 +262,7 @@
             // 
             this.lblApellido.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblApellido.AutoSize = true;
-            this.lblApellido.Location = new System.Drawing.Point(137, 69);
+            this.lblApellido.Location = new System.Drawing.Point(135, 84);
             this.lblApellido.Name = "lblApellido";
             this.lblApellido.Size = new System.Drawing.Size(62, 13);
             this.lblApellido.TabIndex = 16;
@@ -272,7 +272,7 @@
             // 
             this.lblNombre.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(142, 101);
+            this.lblNombre.Location = new System.Drawing.Point(140, 116);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(57, 13);
             this.lblNombre.TabIndex = 17;
@@ -282,7 +282,7 @@
             // 
             this.lblSexo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblSexo.AutoSize = true;
-            this.lblSexo.Location = new System.Drawing.Point(160, 133);
+            this.lblSexo.Location = new System.Drawing.Point(158, 142);
             this.lblSexo.Name = "lblSexo";
             this.lblSexo.Size = new System.Drawing.Size(39, 13);
             this.lblSexo.TabIndex = 18;
@@ -292,7 +292,7 @@
             // 
             this.lblNacionalidad.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblNacionalidad.AutoSize = true;
-            this.lblNacionalidad.Location = new System.Drawing.Point(109, 166);
+            this.lblNacionalidad.Location = new System.Drawing.Point(107, 175);
             this.lblNacionalidad.Name = "lblNacionalidad";
             this.lblNacionalidad.Size = new System.Drawing.Size(90, 13);
             this.lblNacionalidad.TabIndex = 19;
@@ -302,7 +302,7 @@
             // 
             this.lblFechaNacimiento.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblFechaNacimiento.AutoSize = true;
-            this.lblFechaNacimiento.Location = new System.Drawing.Point(66, 202);
+            this.lblFechaNacimiento.Location = new System.Drawing.Point(64, 211);
             this.lblFechaNacimiento.Name = "lblFechaNacimiento";
             this.lblFechaNacimiento.Size = new System.Drawing.Size(133, 13);
             this.lblFechaNacimiento.TabIndex = 20;
@@ -312,7 +312,7 @@
             // 
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(156, 231);
+            this.label7.Location = new System.Drawing.Point(154, 240);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(43, 13);
             this.label7.TabIndex = 21;
@@ -322,7 +322,7 @@
             // 
             this.lblNumeroCalle.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblNumeroCalle.AutoSize = true;
-            this.lblNumeroCalle.Location = new System.Drawing.Point(452, 231);
+            this.lblNumeroCalle.Location = new System.Drawing.Point(450, 240);
             this.lblNumeroCalle.Name = "lblNumeroCalle";
             this.lblNumeroCalle.Size = new System.Drawing.Size(34, 13);
             this.lblNumeroCalle.TabIndex = 22;
@@ -332,7 +332,7 @@
             // 
             this.lblPisoDto.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblPisoDto.AutoSize = true;
-            this.lblPisoDto.Location = new System.Drawing.Point(116, 263);
+            this.lblPisoDto.Location = new System.Drawing.Point(114, 272);
             this.lblPisoDto.Name = "lblPisoDto";
             this.lblPisoDto.Size = new System.Drawing.Size(83, 13);
             this.lblPisoDto.TabIndex = 23;
@@ -342,7 +342,7 @@
             // 
             this.lblBarra.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblBarra.AutoSize = true;
-            this.lblBarra.Location = new System.Drawing.Point(288, 263);
+            this.lblBarra.Location = new System.Drawing.Point(286, 272);
             this.lblBarra.Name = "lblBarra";
             this.lblBarra.Size = new System.Drawing.Size(12, 13);
             this.lblBarra.TabIndex = 24;
@@ -352,7 +352,7 @@
             // 
             this.lblMunicipio.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblMunicipio.AutoSize = true;
-            this.lblMunicipio.Location = new System.Drawing.Point(133, 295);
+            this.lblMunicipio.Location = new System.Drawing.Point(131, 304);
             this.lblMunicipio.Name = "lblMunicipio";
             this.lblMunicipio.Size = new System.Drawing.Size(66, 13);
             this.lblMunicipio.TabIndex = 25;
@@ -362,7 +362,7 @@
             // 
             this.lblPartido.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblPartido.AutoSize = true;
-            this.lblPartido.Location = new System.Drawing.Point(141, 327);
+            this.lblPartido.Location = new System.Drawing.Point(139, 336);
             this.lblPartido.Name = "lblPartido";
             this.lblPartido.Size = new System.Drawing.Size(58, 13);
             this.lblPartido.TabIndex = 26;
@@ -374,7 +374,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblMail.AutoSize = true;
-            this.lblMail.Location = new System.Drawing.Point(154, 357);
+            this.lblMail.Location = new System.Drawing.Point(152, 377);
             this.lblMail.Name = "lblMail";
             this.lblMail.Size = new System.Drawing.Size(45, 13);
             this.lblMail.TabIndex = 27;
@@ -386,7 +386,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTelFijo.AutoSize = true;
-            this.lblTelFijo.Location = new System.Drawing.Point(402, 386);
+            this.lblTelFijo.Location = new System.Drawing.Point(400, 406);
             this.lblTelFijo.Name = "lblTelFijo";
             this.lblTelFijo.Size = new System.Drawing.Size(58, 13);
             this.lblTelFijo.TabIndex = 28;
@@ -398,7 +398,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTelMovil.AutoSize = true;
-            this.lblTelMovil.Location = new System.Drawing.Point(130, 386);
+            this.lblTelMovil.Location = new System.Drawing.Point(128, 406);
             this.lblTelMovil.Name = "lblTelMovil";
             this.lblTelMovil.Size = new System.Drawing.Size(69, 13);
             this.lblTelMovil.TabIndex = 29;
@@ -410,7 +410,7 @@
             this.btnGrabar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGrabar.Location = new System.Drawing.Point(224, 464);
+            this.btnGrabar.Location = new System.Drawing.Point(222, 429);
             this.btnGrabar.MaximumSize = new System.Drawing.Size(115, 35);
             this.btnGrabar.MinimumSize = new System.Drawing.Size(115, 35);
             this.btnGrabar.Name = "btnGrabar";
@@ -426,7 +426,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancelar.Location = new System.Drawing.Point(468, 464);
+            this.btnCancelar.Location = new System.Drawing.Point(466, 429);
             this.btnCancelar.MaximumSize = new System.Drawing.Size(115, 35);
             this.btnCancelar.MinimumSize = new System.Drawing.Size(115, 35);
             this.btnCancelar.Name = "btnCancelar";
@@ -442,7 +442,7 @@
             this.cboMunicipio.DataSource = this.vWMUNICIPIOSBindingSource;
             this.cboMunicipio.DisplayMember = "MUNICIPIOS";
             this.cboMunicipio.FormattingEnabled = true;
-            this.cboMunicipio.Location = new System.Drawing.Point(205, 292);
+            this.cboMunicipio.Location = new System.Drawing.Point(203, 301);
             this.cboMunicipio.Name = "cboMunicipio";
             this.cboMunicipio.Size = new System.Drawing.Size(439, 21);
             this.cboMunicipio.TabIndex = 10;
@@ -464,7 +464,7 @@
             this.cboSexo.DataSource = this.sexoBindingSource;
             this.cboSexo.DisplayMember = "Sexo";
             this.cboSexo.FormattingEnabled = true;
-            this.cboSexo.Location = new System.Drawing.Point(205, 130);
+            this.cboSexo.Location = new System.Drawing.Point(203, 139);
             this.cboSexo.Name = "cboSexo";
             this.cboSexo.Size = new System.Drawing.Size(121, 21);
             this.cboSexo.TabIndex = 3;
@@ -495,7 +495,7 @@
             // btnAgregarSexo
             // 
             this.btnAgregarSexo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAgregarSexo.Location = new System.Drawing.Point(332, 130);
+            this.btnAgregarSexo.Location = new System.Drawing.Point(330, 139);
             this.btnAgregarSexo.Name = "btnAgregarSexo";
             this.btnAgregarSexo.Size = new System.Drawing.Size(25, 21);
             this.btnAgregarSexo.TabIndex = 17;
@@ -507,7 +507,7 @@
             // btnAgregarNacionalidad
             // 
             this.btnAgregarNacionalidad.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAgregarNacionalidad.Location = new System.Drawing.Point(389, 163);
+            this.btnAgregarNacionalidad.Location = new System.Drawing.Point(387, 172);
             this.btnAgregarNacionalidad.Name = "btnAgregarNacionalidad";
             this.btnAgregarNacionalidad.Size = new System.Drawing.Size(25, 21);
             this.btnAgregarNacionalidad.TabIndex = 18;
@@ -519,7 +519,7 @@
             // btnAgregarMunicipio
             // 
             this.btnAgregarMunicipio.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAgregarMunicipio.Location = new System.Drawing.Point(650, 291);
+            this.btnAgregarMunicipio.Location = new System.Drawing.Point(648, 300);
             this.btnAgregarMunicipio.Name = "btnAgregarMunicipio";
             this.btnAgregarMunicipio.Size = new System.Drawing.Size(25, 21);
             this.btnAgregarMunicipio.TabIndex = 19;
@@ -533,7 +533,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancelar;
-            this.ClientSize = new System.Drawing.Size(784, 584);
+            this.ClientSize = new System.Drawing.Size(784, 512);
             this.ControlBox = false;
             this.Controls.Add(this.btnAgregarMunicipio);
             this.Controls.Add(this.btnAgregarNacionalidad);
@@ -570,8 +570,8 @@
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.txtApellido);
             this.Controls.Add(this.txtDni);
-            this.MaximumSize = new System.Drawing.Size(800, 622);
-            this.MinimumSize = new System.Drawing.Size(800, 622);
+            this.MaximumSize = new System.Drawing.Size(800, 550);
+            this.MinimumSize = new System.Drawing.Size(800, 550);
             this.Name = "frmAltaPaciente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Alta Paciente";

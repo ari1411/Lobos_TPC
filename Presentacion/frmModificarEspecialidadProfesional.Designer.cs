@@ -31,8 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.lblDniApellidoNombre = new System.Windows.Forms.Label();
             this.cboEspecialidad = new System.Windows.Forms.ComboBox();
-            this.lOBOS_DBDataSet14 = new Presentacion.LOBOS_DBDataSet14();
             this.vWESPECIALIDADESMEDICASBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lOBOS_DBDataSet14 = new Presentacion.LOBOS_DBDataSet14();
             this.vW_ESPECIALIDADES_MEDICASTableAdapter = new Presentacion.LOBOS_DBDataSet14TableAdapters.VW_ESPECIALIDADES_MEDICASTableAdapter();
             this.txtMatriculaNac = new System.Windows.Forms.TextBox();
             this.txtMatriculaProv = new System.Windows.Forms.TextBox();
@@ -45,8 +45,8 @@
             this.lblVtoMatProv = new System.Windows.Forms.Label();
             this.btnGrabarEspecialidadMed = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.lOBOS_DBDataSet14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vWESPECIALIDADESMEDICASBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lOBOS_DBDataSet14)).BeginInit();
             this.SuspendLayout();
             // 
             // lblDniApellidoNombre
@@ -69,15 +69,15 @@
             this.cboEspecialidad.TabIndex = 1;
             this.cboEspecialidad.ValueMember = "IdEspecialidad";
             // 
-            // lOBOS_DBDataSet14
-            // 
-            this.lOBOS_DBDataSet14.DataSetName = "LOBOS_DBDataSet14";
-            this.lOBOS_DBDataSet14.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // vWESPECIALIDADESMEDICASBindingSource
             // 
             this.vWESPECIALIDADESMEDICASBindingSource.DataMember = "VW_ESPECIALIDADES_MEDICAS";
             this.vWESPECIALIDADESMEDICASBindingSource.DataSource = this.lOBOS_DBDataSet14;
+            // 
+            // lOBOS_DBDataSet14
+            // 
+            this.lOBOS_DBDataSet14.DataSetName = "LOBOS_DBDataSet14";
+            this.lOBOS_DBDataSet14.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // vW_ESPECIALIDADES_MEDICASTableAdapter
             // 
@@ -168,6 +168,7 @@
             this.btnGrabarEspecialidadMed.TabIndex = 11;
             this.btnGrabarEspecialidadMed.Text = "Grabar";
             this.btnGrabarEspecialidadMed.UseVisualStyleBackColor = true;
+            this.btnGrabarEspecialidadMed.Click += new System.EventHandler(this.btnGrabarEspecialidadMed_Click);
             // 
             // btnVolver
             // 
@@ -177,8 +178,9 @@
             this.btnVolver.TabIndex = 12;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
-            // frmModificarFuncionProfesional
+            // frmModificarEspecialidadProfesional
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -198,12 +200,12 @@
             this.Controls.Add(this.lblDniApellidoNombre);
             this.MaximumSize = new System.Drawing.Size(336, 393);
             this.MinimumSize = new System.Drawing.Size(336, 393);
-            this.Name = "frmModificarFuncionProfesional";
+            this.Name = "frmModificarEspecialidadProfesional";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Modificar Funcion Profesional";
+            this.Text = "Modificar Especialidad";
             this.Load += new System.EventHandler(this.frmModificarFuncionProfesional_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.lOBOS_DBDataSet14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vWESPECIALIDADESMEDICASBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lOBOS_DBDataSet14)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

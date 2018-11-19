@@ -125,6 +125,7 @@
             this.Controls.Add(this.txtApellido);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.txtDni);
+            this.MaximumSize = new System.Drawing.Size(800, 550);
             this.MinimumSize = new System.Drawing.Size(800, 550);
             this.Name = "frmConsultasPacientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

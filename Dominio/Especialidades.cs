@@ -8,13 +8,14 @@ namespace Dominio
 {
     public class Especialidades
     {
+        public Int32 IdEspXProf { set; get; }
+        public Int32 IdProfesional { set; get; }
         public Int32 IdEspecialidad { set; get; }
         public string Especialidad { set; get; }
-        public Int32 MatriculaNac { set; get; }
+        public string MatriculaNac { set; get; }
         public DateTime FechaVtoNac { set; get; }
-        public Int32 MatriculaProv { set; get; }
+        public string MatriculaProv { set; get; }
         public DateTime FechaVtoProv { set; get; }
-        public Char Horarios { set; get; }
         public DateTime FechaAlta { set; get; }
         public Int32 IdUsuarioAlta { set; get; }
         public DateTime FechaModif { set; get; }

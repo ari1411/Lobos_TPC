@@ -178,6 +178,8 @@
             this.Controls.Add(this.dtpFechaVtoCarnet);
             this.Controls.Add(this.lblNumeroAfiliado);
             this.Controls.Add(this.txtNumeroAfiliado);
+            this.MaximumSize = new System.Drawing.Size(449, 413);
+            this.MinimumSize = new System.Drawing.Size(449, 413);
             this.Name = "frmCrearHistoriaClinica";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Crear Historia Clinica";
