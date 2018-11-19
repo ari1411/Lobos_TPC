@@ -45,6 +45,7 @@
             this.lblVtoMatProv = new System.Windows.Forms.Label();
             this.btnGrabarEspecialidadMed = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
+            this.btnAgregarEspecialidades = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.vWESPECIALIDADESMEDICASBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lOBOS_DBDataSet14)).BeginInit();
             this.SuspendLayout();
@@ -65,7 +66,7 @@
             this.cboEspecialidad.FormattingEnabled = true;
             this.cboEspecialidad.Location = new System.Drawing.Point(88, 66);
             this.cboEspecialidad.Name = "cboEspecialidad";
-            this.cboEspecialidad.Size = new System.Drawing.Size(220, 21);
+            this.cboEspecialidad.Size = new System.Drawing.Size(193, 21);
             this.cboEspecialidad.TabIndex = 1;
             this.cboEspecialidad.ValueMember = "IdEspecialidad";
             // 
@@ -180,11 +181,23 @@
             this.btnVolver.UseVisualStyleBackColor = true;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
+            // btnAgregarEspecialidades
+            // 
+            this.btnAgregarEspecialidades.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarEspecialidades.Location = new System.Drawing.Point(287, 66);
+            this.btnAgregarEspecialidades.Name = "btnAgregarEspecialidades";
+            this.btnAgregarEspecialidades.Size = new System.Drawing.Size(21, 21);
+            this.btnAgregarEspecialidades.TabIndex = 13;
+            this.btnAgregarEspecialidades.Text = "+";
+            this.btnAgregarEspecialidades.UseVisualStyleBackColor = true;
+            this.btnAgregarEspecialidades.Click += new System.EventHandler(this.btnAgregarEspecialidades_Click);
+            // 
             // frmModificarEspecialidadProfesional
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(320, 355);
+            this.Controls.Add(this.btnAgregarEspecialidades);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnGrabarEspecialidadMed);
             this.Controls.Add(this.lblVtoMatProv);
@@ -229,5 +242,6 @@
         private System.Windows.Forms.Label lblVtoMatProv;
         private System.Windows.Forms.Button btnGrabarEspecialidadMed;
         private System.Windows.Forms.Button btnVolver;
+        private System.Windows.Forms.Button btnAgregarEspecialidades;
     }
 }

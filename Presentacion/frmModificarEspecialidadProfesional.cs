@@ -84,5 +84,12 @@ namespace Presentacion
         {
             Close();
         }
+
+        private void btnAgregarEspecialidades_Click(object sender, EventArgs e)
+        {
+            frmAgregarEspecialidadMedica agregar = new frmAgregarEspecialidadMedica();
+            agregar.ShowDialog();
+            this.vW_ESPECIALIDADES_MEDICASTableAdapter.Fill(this.lOBOS_DBDataSet14.VW_ESPECIALIDADES_MEDICAS);
+        }
     }
 }
