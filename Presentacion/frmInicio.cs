@@ -66,5 +66,11 @@ namespace Presentacion
         {
             Close();
         }
+
+        private void btnAdministrador_Click(object sender, EventArgs e)
+        {
+            frmAdministrador admin = new frmAdministrador();
+            admin.ShowDialog();
+        }
     }
 }

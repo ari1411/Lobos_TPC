@@ -50,6 +50,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmAdministrador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdministrador.Designer.cs">
+      <DependentUpon>frmAdministrador.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAgregarEspecialidadMedica.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +140,24 @@
     <Compile Include="frmConsultasPersonasResultado.Designer.cs">
       <DependentUpon>frmConsultasPersonasResultado.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmConsultaTurnos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConsultaTurnos.Designer.cs">
+      <DependentUpon>frmConsultaTurnos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmConsultaTurnosResultado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConsultaTurnosResultado.Designer.cs">
+      <DependentUpon>frmConsultaTurnosResultado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCrearAgenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCrearAgenda.Designer.cs">
+      <DependentUpon>frmCrearAgenda.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCrearHistoriaClinica.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -217,10 +241,40 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>LOBOS_DBDataSet14.xsd</DependentUpon>
     </Compile>
+    <Compile Include="LOBOS_DBDataSet15.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LOBOS_DBDataSet15.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LOBOS_DBDataSet16.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LOBOS_DBDataSet16.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LOBOS_DBDataSet17.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LOBOS_DBDataSet17.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LOBOS_DBDataSet18.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LOBOS_DBDataSet18.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LOBOS_DBDataSet19.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LOBOS_DBDataSet19.xsd</DependentUpon>
+    </Compile>
     <Compile Include="LOBOS_DBDataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>LOBOS_DBDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LOBOS_DBDataSet20.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LOBOS_DBDataSet20.xsd</DependentUpon>
     </Compile>
     <Compile Include="LOBOS_DBDataSet3.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -265,6 +319,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmAdministrador.resx">
+      <DependentUpon>frmAdministrador.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAgregarAdministrativo.resx">
       <DependentUpon>frmAgregarAdministrativo.cs</DependentUpon>
     </EmbeddedResource>
@@ -306,6 +363,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmConsultasPersonasResultado.resx">
       <DependentUpon>frmConsultasPersonasResultado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConsultaTurnos.resx">
+      <DependentUpon>frmConsultaTurnos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConsultaTurnosResultado.resx">
+      <DependentUpon>frmConsultaTurnosResultado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCrearAgenda.resx">
+      <DependentUpon>frmCrearAgenda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCrearHistoriaClinica.resx">
       <DependentUpon>frmCrearHistoriaClinica.cs</DependentUpon>
@@ -421,6 +487,61 @@
     <None Include="LOBOS_DBDataSet14.xss">
       <DependentUpon>LOBOS_DBDataSet14.xsd</DependentUpon>
     </None>
+    <None Include="LOBOS_DBDataSet15.xsc">
+      <DependentUpon>LOBOS_DBDataSet15.xsd</DependentUpon>
+    </None>
+    <None Include="LOBOS_DBDataSet15.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LOBOS_DBDataSet15.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LOBOS_DBDataSet15.xss">
+      <DependentUpon>LOBOS_DBDataSet15.xsd</DependentUpon>
+    </None>
+    <None Include="LOBOS_DBDataSet16.xsc">
+      <DependentUpon>LOBOS_DBDataSet16.xsd</DependentUpon>
+    </None>
+    <None Include="LOBOS_DBDataSet16.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LOBOS_DBDataSet16.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LOBOS_DBDataSet16.xss">
+      <DependentUpon>LOBOS_DBDataSet16.xsd</DependentUpon>
+    </None>
+    <None Include="LOBOS_DBDataSet17.xsc">
+      <DependentUpon>LOBOS_DBDataSet17.xsd</DependentUpon>
+    </None>
+    <None Include="LOBOS_DBDataSet17.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LOBOS_DBDataSet17.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LOBOS_DBDataSet17.xss">
+      <DependentUpon>LOBOS_DBDataSet17.xsd</DependentUpon>
+    </None>
+    <None Include="LOBOS_DBDataSet18.xsc">
+      <DependentUpon>LOBOS_DBDataSet18.xsd</DependentUpon>
+    </None>
+    <None Include="LOBOS_DBDataSet18.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LOBOS_DBDataSet18.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LOBOS_DBDataSet18.xss">
+      <DependentUpon>LOBOS_DBDataSet18.xsd</DependentUpon>
+    </None>
+    <None Include="LOBOS_DBDataSet19.xsc">
+      <DependentUpon>LOBOS_DBDataSet19.xsd</DependentUpon>
+    </None>
+    <None Include="LOBOS_DBDataSet19.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LOBOS_DBDataSet19.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LOBOS_DBDataSet19.xss">
+      <DependentUpon>LOBOS_DBDataSet19.xsd</DependentUpon>
+    </None>
     <None Include="LOBOS_DBDataSet2.xsc">
       <DependentUpon>LOBOS_DBDataSet2.xsd</DependentUpon>
     </None>
@@ -431,6 +552,17 @@
     </None>
     <None Include="LOBOS_DBDataSet2.xss">
       <DependentUpon>LOBOS_DBDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="LOBOS_DBDataSet20.xsc">
+      <DependentUpon>LOBOS_DBDataSet20.xsd</DependentUpon>
+    </None>
+    <None Include="LOBOS_DBDataSet20.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LOBOS_DBDataSet20.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LOBOS_DBDataSet20.xss">
+      <DependentUpon>LOBOS_DBDataSet20.xsd</DependentUpon>
     </None>
     <None Include="LOBOS_DBDataSet3.xsc">
       <DependentUpon>LOBOS_DBDataSet3.xsd</DependentUpon>

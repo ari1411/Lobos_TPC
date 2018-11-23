@@ -28,10 +28,16 @@ namespace Presentacion
             ConsPte.ShowDialog();
         }
 
-        private void btnConsultasPersonas_Click(object sender, EventArgs e)
+
+        private void btnConsultasTurnos_Click(object sender, EventArgs e)
         {
-            frmConsultasPersonas ConsPers = new frmConsultasPersonas();
-            ConsPers.ShowDialog();
+            frmConsultaTurnos consTur = new frmConsultaTurnos();
+            consTur.ShowDialog();
+        }
+
+        private void frmConsultas_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

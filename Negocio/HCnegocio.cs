@@ -19,7 +19,7 @@ namespace Negocio
             try
             {
                 conexion = new AccesoDatos();
-                string consulta = "select h.IdHistoriaClinica,h.IdRazonSocial, h.IdPaciente, h.NumAfiliado, h.FechaVtoCarnet, h.Motivo, h.FechaAlta, h.IdAdmAlta, h.FechaModif, h.IdAdmModif, h.FechaBaja, h.IdAdmBaja, h.Estado, p.Apellido from HistoriaClinica as h inner join Personas as p on h.IdAdmAlta=p.IdPersona where IdPaciente=" + paciente + " and p.estado=1 and h.estado=1";
+                string consulta = "select h.IdHistoriaClinica,h.IdRazonSocial, h.IdPaciente, h.NumAfiliado, h.FechaVtoCarnet, h.Motivo, h.FechaAlta, h.IdAdmAlta, h.FechaModif, h.IdAdmModif, h.FechaBaja, h.IdAdmBaja, h.IdEstado, p.Apellido from HistoriaClinica as h inner join Personas as p on h.IdAdmAlta=p.IdPersona where IdPaciente=" + paciente + " and p.estado=1 and h.Idestado=1";
                 conexion.setearConsulta(consulta);
                 conexion.abrirConexion();
                 conexion.ejecutarConsulta();
@@ -63,7 +63,7 @@ namespace Negocio
             try
             {
                 conexion = new AccesoDatos();
-                string consulta = "update historiaclinica set IdRazonSocial=" + historiaClinicaEditada.IdRazonSocial + ",NumAfiliado='" + historiaClinicaEditada.NumeroAfiliado + "',FechaVtoCarnet='" + historiaClinicaEditada.FechaVencimientoCarnet.ToString("yyyy/MM/dd") + "',Motivo='" + historiaClinicaEditada.DescripcionAccidente + "',FechaModif=GETDATE(),IdAdmModif=1,Estado=" + historiaClinicaEditada.Estado + " where idhistoriaclinica=" + historiaClinicaEditada.IdHC;
+                string consulta = "update historiaclinica set IdRazonSocial=" + historiaClinicaEditada.IdRazonSocial + ",NumAfiliado='" + historiaClinicaEditada.NumeroAfiliado + "',FechaVtoCarnet='" + historiaClinicaEditada.FechaVencimientoCarnet.ToString("yyyy/MM/dd") + "',Motivo='" + historiaClinicaEditada.DescripcionAccidente + "',FechaModif=GETDATE(),IdAdmModif=1,IdEstado=" + historiaClinicaEditada.Estado + " where idhistoriaclinica=" + historiaClinicaEditada.IdHC;
                 conexion.setearConsulta(consulta);
                 conexion.abrirConexion();
                 conexion.ejecutarAccion();
@@ -86,7 +86,7 @@ namespace Negocio
             try
             {
                 conexion = new AccesoDatos();
-                consulta = "update HistoriaClinica set FechaBaja=GETDATE(), IdAdmBaja=" + idAdminElimina + ", Estado=0 where IdHistoriaClinica=" + IdHC;
+                consulta = "update HistoriaClinica set FechaBaja=GETDATE(), IdAdmBaja=" + idAdminElimina + ", IdEstado=0 where IdHistoriaClinica=" + IdHC;
                 conexion.setearConsulta(consulta);
                 conexion.abrirConexion();
                 conexion.ejecutarAccion();

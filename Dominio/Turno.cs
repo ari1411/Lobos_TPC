@@ -9,18 +9,24 @@ namespace Dominio
     public class Turno
     {
         public Int32 IdTurno { set; get; }
-        public Int32 IdAdministrativo { set; get; }
-        public Int32 IdProfesional { set; get; }
-        public Int32 IdPaciente { set; get; }
-        public Int32 IdHC { set; get; }
         public DateTime FechaHoraTurno { set; get; }
+        public Int32 IdProfesional { set; get; }
+        public string Profesional { set; get; }
+        public Int32 IdEspecialidad { set; get; }
+        public string Especialidad { set; get; }
+        public Int32 IdPaciente { set; get; }
+        public string Paciente { set; get; }
+        public Int32 IdHC { set; get; }
         public DateTime FechaHoraAsignado { set; get; }
         public Int32 IdUsuarioAsigna { set; get; }
+        public string UsuarioAsigna { set; get; }
         public DateTime FechaHoraLiberado { set; get; }
         public Int32 IdUsuarioLibera { set; get; }
+        public string UsuarioLibera { set; get; }
         public DateTime FechaHoraCancelado { set; get; }
         public Int32 IdUsuarioCancela { set; get; }
-        public bool Disponible { set; get; }
-        public bool Eliminado { set; get; }
+        public string UsuarioCancela { set; get; }
+        public Int32 IdEstado { set; get; }
+        public string Estado { set; get; }
     }
 }

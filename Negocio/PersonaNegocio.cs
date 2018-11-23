@@ -74,6 +74,7 @@ namespace Negocio
             }
 
         }
+
         public void Modificar(Persona modif)
         {
             AccesoDatos conexion = null;

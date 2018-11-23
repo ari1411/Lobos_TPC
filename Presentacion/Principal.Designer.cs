@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
             this.inicioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msMenuPrincipal = new System.Windows.Forms.MenuStrip();
             this.msMenuPrincipal.SuspendLayout();
             this.SuspendLayout();
@@ -50,18 +49,11 @@
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click_1);
             // 
-            // ayudaToolStripMenuItem
-            // 
-            this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
-            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
-            this.ayudaToolStripMenuItem.Text = "Ayuda";
-            // 
             // msMenuPrincipal
             // 
             this.msMenuPrincipal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.inicioToolStripMenuItem,
-            this.salirToolStripMenuItem,
-            this.ayudaToolStripMenuItem});
+            this.salirToolStripMenuItem});
             this.msMenuPrincipal.Location = new System.Drawing.Point(0, 0);
             this.msMenuPrincipal.Name = "msMenuPrincipal";
             this.msMenuPrincipal.Size = new System.Drawing.Size(784, 24);
@@ -94,7 +86,6 @@
 
         private System.Windows.Forms.ToolStripMenuItem inicioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem;
         private System.Windows.Forms.MenuStrip msMenuPrincipal;
     }
 }
