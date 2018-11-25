@@ -41,7 +41,7 @@
             // 
             this.btnAltaPaciente.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnAltaPaciente.AutoSize = true;
-            this.btnAltaPaciente.Location = new System.Drawing.Point(112, 153);
+            this.btnAltaPaciente.Location = new System.Drawing.Point(112, 142);
             this.btnAltaPaciente.Name = "btnAltaPaciente";
             this.btnAltaPaciente.Size = new System.Drawing.Size(120, 75);
             this.btnAltaPaciente.TabIndex = 0;
@@ -52,7 +52,7 @@
             // btnConsultas
             // 
             this.btnConsultas.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnConsultas.Location = new System.Drawing.Point(332, 153);
+            this.btnConsultas.Location = new System.Drawing.Point(332, 142);
             this.btnConsultas.Name = "btnConsultas";
             this.btnConsultas.Size = new System.Drawing.Size(120, 75);
             this.btnConsultas.TabIndex = 1;
@@ -63,19 +63,18 @@
             // btnAsignarTurno
             // 
             this.btnAsignarTurno.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAsignarTurno.Location = new System.Drawing.Point(572, 295);
+            this.btnAsignarTurno.Location = new System.Drawing.Point(332, 284);
             this.btnAsignarTurno.Name = "btnAsignarTurno";
             this.btnAsignarTurno.Size = new System.Drawing.Size(120, 75);
             this.btnAsignarTurno.TabIndex = 2;
             this.btnAsignarTurno.Text = "Asignar Turno";
             this.btnAsignarTurno.UseVisualStyleBackColor = true;
-            this.btnAsignarTurno.Visible = false;
             this.btnAsignarTurno.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnAdmision
             // 
             this.btnAdmision.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAdmision.Location = new System.Drawing.Point(112, 295);
+            this.btnAdmision.Location = new System.Drawing.Point(112, 284);
             this.btnAdmision.Name = "btnAdmision";
             this.btnAdmision.Size = new System.Drawing.Size(120, 75);
             this.btnAdmision.TabIndex = 3;
@@ -87,7 +86,7 @@
             // btnEditarTurno
             // 
             this.btnEditarTurno.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnEditarTurno.Location = new System.Drawing.Point(332, 295);
+            this.btnEditarTurno.Location = new System.Drawing.Point(572, 284);
             this.btnEditarTurno.Name = "btnEditarTurno";
             this.btnEditarTurno.Size = new System.Drawing.Size(120, 75);
             this.btnEditarTurno.TabIndex = 4;
@@ -98,7 +97,7 @@
             // btnAdministrador
             // 
             this.btnAdministrador.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAdministrador.Location = new System.Drawing.Point(572, 153);
+            this.btnAdministrador.Location = new System.Drawing.Point(572, 142);
             this.btnAdministrador.Name = "btnAdministrador";
             this.btnAdministrador.Size = new System.Drawing.Size(120, 75);
             this.btnAdministrador.TabIndex = 5;
@@ -109,7 +108,7 @@
             // btnCerrarSesion
             // 
             this.btnCerrarSesion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCerrarSesion.Location = new System.Drawing.Point(506, 438);
+            this.btnCerrarSesion.Location = new System.Drawing.Point(506, 416);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
             this.btnCerrarSesion.Size = new System.Drawing.Size(243, 50);
             this.btnCerrarSesion.TabIndex = 6;

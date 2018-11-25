@@ -11,7 +11,7 @@ namespace Negocio
     public class PacienteNegocio
     {
 
-        public IList<Paciente> Buscar(string DNI, string APELLIDO, string NOMBRE)
+        public IList<Paciente> Buscar(string DNI, string APELLIDO="", string NOMBRE="")
         {
             SqlConnection conexion = new SqlConnection();
             SqlCommand comando = new SqlCommand();

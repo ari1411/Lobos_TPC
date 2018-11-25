@@ -33,5 +33,17 @@ namespace Presentacion
         {
             Close();
         }
+
+        private void btnConsultaTurnos_Click(object sender, EventArgs e)
+        {
+            frmConsultaTurnos consTur = new frmConsultaTurnos();
+            consTur.ShowDialog();
+        }
+
+        private void btnAltaPersona_Click(object sender, EventArgs e)
+        {
+            frmAltaPaciente alta = new frmAltaPaciente(true);
+            alta.ShowDialog();
+        }
     }
 }

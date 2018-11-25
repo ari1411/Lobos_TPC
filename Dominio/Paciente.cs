@@ -9,5 +9,6 @@ namespace Dominio
     public class Paciente:Persona
     {
         public Int32 IdPaciente { set; get; }
+        public HC HistoriaClinicaActual { set; get; }
     }
 }

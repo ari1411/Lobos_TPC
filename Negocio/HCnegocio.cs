@@ -10,8 +10,7 @@ namespace Negocio
     public class HCnegocio
     {
         private HC aux;
-
-        private IList<HC> lista=new List<HC>();
+        private IList<HC> lista = new List<HC>();
 
         public IList<HC> cargar(int paciente)
         {
@@ -37,7 +36,7 @@ namespace Negocio
                     aux.IdAdminAlta = (int)conexion.Lector[7];
                     aux.FechaHrModif = (DateTime)conexion.Lector[8];
                     aux.IdAdminModif = (int)conexion.Lector[9];
-                    if (!conexion.Lector.IsDBNull(10)) aux.FechaHrBaja = (DateTime)conexion.Lector[10]; 
+                    if (!conexion.Lector.IsDBNull(10)) aux.FechaHrBaja = (DateTime)conexion.Lector[10];
                     if (!conexion.Lector.IsDBNull(11)) aux.IdAdminBaja = (int)conexion.Lector[11];
                     aux.Estado = (int)conexion.Lector[12];
                     aux.Ingresante = conexion.Lector.GetString(13);
@@ -99,6 +98,37 @@ namespace Negocio
             {
                 if (conexion != null)
                     conexion.cerrarConexion();
+            }
+        }
+
+        public IList<HC> cargarHCactivas(int idpaciente)
+        {
+            try
+            {
+                AccesoDatos conexion = new AccesoDatos();
+                string consulta = "select hc.IdHistoriaClinica, rs.RazonSocialPlan, hc.NumAfiliado, hc.FechaVtoCarnet , hc.Motivo, hc.FechaAlta, p.Apellido from HistoriaClinica as hc inner join RazonesSociales as rs on hc.IdRazonSocial=rs.IdRazonSocial inner join Personas as p on hc.IdAdmAlta=p.IdPersona where hc.IdPaciente=" + idpaciente + " and hc.IdEstado=9";
+                conexion.setearConsulta(consulta);
+                conexion.abrirConexion();
+                conexion.ejecutarConsulta();
+                while (conexion.Lector.Read())
+                {
+                    aux = new HC();
+                    aux.IdHC = (int)conexion.Lector[0];
+                    aux.RazonSocial = conexion.Lector.GetString(1);
+                    aux.NumeroAfiliado = conexion.Lector.GetString(2);
+                    aux.FechaVencimientoCarnet = (DateTime)conexion.Lector[3];
+                    aux.DescripcionAccidente = conexion.Lector.GetString(4);
+                    aux.FechaHrAlta = (DateTime)conexion.Lector[5];
+                    aux.Ingresante = conexion.Lector.GetString(6);
+
+
+                    lista.Add(aux);
+                }
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
         }
     }

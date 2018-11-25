@@ -12,73 +12,8 @@ namespace Negocio
     {
         AccesoDatos conexion = new AccesoDatos();
         Turno aux = new Turno();
-        
-        public int crearAgenda(DateTime fechaHora, int cantidad, int min, int idProfesional, int idEspecialidad)
-        {
-            try
-            {
-                int creados = 0;
 
-                while (cantidad > 0)
-                {
-                    crearTurno(fechaHora, idProfesional, idEspecialidad);
-                    fechaHora = fechaHora.AddMinutes(min);
-                    --cantidad;
-                    ++creados;
-                }
-                return creados;
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
-        }
-
-        public int crearAgenda(DateTime fechaHora, DateTime HoraInicio, DateTime HoraFin, int min, int idProfesional, int idEspecialidad)
-        {
-            try
-            {
-                int creados = 0;
-
-                while (HoraInicio < HoraFin)
-                {
-                    crearTurno(fechaHora, idProfesional, idEspecialidad);
-                    HoraInicio = HoraInicio.AddMinutes(min); //mi intencion era hacerlo mas personalizado
-                    fechaHora = fechaHora.AddMinutes(min);
-                    ++creados;
-                }
-                return creados;
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
-        }
-
-        public void crearTurno(DateTime fechaHoraTurno, int Profesional, int Especialidad)
-        {
-            conexion = null;
-            try
-            {
-                conexion = new AccesoDatos();
-                string consulta = "insert into Turnos (FechaHoraTurno, IdProfesional, idespecialidad, idestado) values('" + fechaHoraTurno.ToString("yyyy/MM/dd hh:MM:ss") + "'," + Profesional + "," + Especialidad + ",2)";
-                conexion.setearConsulta(consulta);
-                conexion.abrirConexion();
-                conexion.ejecutarAccion();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                if (conexion != null) conexion.cerrarConexion();
-            }
-        }
-
-        public IList<Turno> buscar(DateTime fechaIni, DateTime fechaFin, int prof, int esp, int seleccion)
+        public IList<Turno> buscar(DateTime fechaIni, DateTime fechaFin, int prof, int esp, int seleccionRDB, int Estado=0)
         {
             IList<Turno> listaTurno = new List<Turno>();
             conexion = null;
@@ -86,13 +21,17 @@ namespace Negocio
             try
             {
                 conexion = new AccesoDatos();
-                string consulta = "select t.IdTurno, t.FechaHoraTurno, t.IdProfesional , (select pers.Apellido + ', ' + pers.Nombre from personas as pers where t.IdProfesional = pers.idpersona) as 'Profesional', t.IdEspecialidad, e.Especialidad, t.IdPaciente, (select pers.Apellido + ', ' + pers.Nombre from personas as pers where t.IdPaciente = pers.idpersona) as 'Paciente', t.IdHistoriaClinica, t.FechaAsignado, t.IdAdminAsigna, (select pers.Apellido + ', ' + pers.Nombre from personas as pers where t.IdAdminAsigna = pers.idpersona) as 'Admin Alta', t.FechaLiberacion, t.IdAdminLibera, (select pers.Apellido + ', ' + pers.Nombre from personas as pers where t.IdAdminLibera = pers.idpersona) as 'Admin Libera', t.FechaCancelado, t.IdAdminCancela, (select pers.Apellido + ', ' + pers.Nombre from personas as pers where t.IdAdminCancela = pers.idpersona) as 'Adm Cancela', t.IdEstado, est.Estado from turnos as t inner join Profesionales as prof on t.IdProfesional=prof.IdProfesional inner join Especialidades as e on t.IdEspecialidad=e.IdEspecialidad inner join estados as est on est.idestado=t.IdEstado where '" + fechaIni.ToString("yyyy/MM/dd") + "'<=FechaHoraTurno and FechaHoraTurno<'" + fechaFin.ToString("yyyy/MM/dd") + "'";
-                if (seleccion == 2)
+                string consulta = "select t.IdTurno, t.FechaHoraTurno, t.IdProfesional , (select pers.Apellido + ', ' + pers.Nombre from personas as pers where t.IdProfesional = pers.idpersona) as 'Profesional', t.IdEspecialidad, e.Especialidad, t.IdPaciente, (select pers.Apellido + ', ' + pers.Nombre from personas as pers where t.IdPaciente = pers.idpersona) as 'Paciente', t.IdHistoriaClinica, t.FechaAsignado, t.IdAdminAsigna, (select pers.Apellido + ', ' + pers.Nombre from personas as pers where t.IdAdminAsigna = pers.idpersona) as 'Admin Alta', t.FechaLiberacion, t.IdAdminLibera, (select pers.Apellido + ', ' + pers.Nombre from personas as pers where t.IdAdminLibera = pers.idpersona) as 'Admin Libera', t.FechaCancelado, t.IdAdminCancela, (select pers.Apellido + ', ' + pers.Nombre from personas as pers where t.IdAdminCancela = pers.idpersona) as 'Adm Cancela', t.IdEstado, est.Estado from turnos as t inner join Profesionales as prof on t.IdProfesional=prof.IdProfesional inner join Especialidades as e on t.IdEspecialidad=e.IdEspecialidad inner join estados as est on est.idestado=t.IdEstado where '" + fechaIni.ToString("yyyy/MM/dd") + "'<=FechaHoraTurno and FechaHoraTurno<'" + fechaFin.ToString("yyyy/MM/dd") + "' order by t.FechaHoraTurno asc, 'profesional' asc, e.Especialidad asc";
+                if (seleccionRDB == 2)
                 {
                     consulta = consulta + " and t.IdProfesional=" + prof;
-                }else if (seleccion == 3)
+                }else if (seleccionRDB == 3)
                 {
                     consulta = consulta + " and t.IdEspecialidad=" + esp;
+                }
+                if (Estado != 0)
+                {
+                    consulta = consulta + " and t.IdEstado=" + Estado;
                 }
                 conexion.setearConsulta(consulta);
                 conexion.abrirConexion();
@@ -139,6 +78,97 @@ namespace Negocio
                 }
             }
         }
+        
+        public int crearAgenda(DateTime fechaHora, int cantidad, int min, int idProfesional, int idEspecialidad)
+        {
+            try
+            {
+                int creados = 0;
+
+                while (cantidad > 0)
+                {
+                    crearTurno(fechaHora, idProfesional, idEspecialidad);
+                    fechaHora = fechaHora.AddMinutes(min);
+                    --cantidad;
+                    ++creados;
+                }
+                return creados;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public int crearAgenda(DateTime fechaHora, DateTime HoraInicio, DateTime HoraFin, int min, int idProfesional, int idEspecialidad)
+        {
+            try
+            {
+                int creados = 0;
+
+                while (HoraInicio < HoraFin)
+                {
+                    crearTurno(fechaHora, idProfesional, idEspecialidad);
+                    HoraInicio = HoraInicio.AddMinutes(min); //mi intencion era hacerlo mas personalizado
+                    fechaHora = fechaHora.AddMinutes(min);
+                    ++creados;
+                }
+                return creados;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void crearTurno(DateTime fechaHoraTurno, int Profesional, int Especialidad)
+        {
+            conexion = null;
+            try
+            {
+                conexion = new AccesoDatos();
+                string consulta = "insert into Turnos (FechaHoraTurno, IdProfesional, idespecialidad, idestado) values('" + fechaHoraTurno.ToString("yyyy/MM/dd HH:mm:ss") + "'," + Profesional + "," + Especialidad + ",2)";
+                conexion.setearConsulta(consulta);
+                conexion.abrirConexion();
+                conexion.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (conexion != null) conexion.cerrarConexion();
+            }
+        }
+
+        public void asignarTurno(int idPaciente, int idHistoriaClinica, int idTurno)
+        {
+            try
+            {
+                TurnoNegocio turnNeg = new TurnoNegocio();
+                conexion = null;
+                conexion = new AccesoDatos();
+                string consulta = "update Turnos set IdPaciente=" + idPaciente + ", IdHistoriaClinica=" + idHistoriaClinica + ", FechaAsignado=GETDATE(), IdAdminAsigna=1, IdEstado=3 where IdTurno=" + idTurno;
+                conexion.setearConsulta(consulta);
+                conexion.abrirConexion();
+                conexion.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                if (conexion != null)
+                {
+                    conexion.cerrarConexion();
+                }
+            }
+        }
+
         
     }
 }

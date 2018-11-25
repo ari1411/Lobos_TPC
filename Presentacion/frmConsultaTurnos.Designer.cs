@@ -125,14 +125,14 @@
             // 
             this.dtpFechaDesde.Location = new System.Drawing.Point(360, 119);
             this.dtpFechaDesde.Name = "dtpFechaDesde";
-            this.dtpFechaDesde.Size = new System.Drawing.Size(200, 20);
+            this.dtpFechaDesde.Size = new System.Drawing.Size(211, 20);
             this.dtpFechaDesde.TabIndex = 3;
             // 
             // dtpFechaHasta
             // 
             this.dtpFechaHasta.Location = new System.Drawing.Point(360, 164);
             this.dtpFechaHasta.Name = "dtpFechaHasta";
-            this.dtpFechaHasta.Size = new System.Drawing.Size(200, 20);
+            this.dtpFechaHasta.Size = new System.Drawing.Size(211, 20);
             this.dtpFechaHasta.TabIndex = 4;
             // 
             // lblProfesional
@@ -185,7 +185,7 @@
             this.cboEspecialidad.FormattingEnabled = true;
             this.cboEspecialidad.Location = new System.Drawing.Point(360, 212);
             this.cboEspecialidad.Name = "cboEspecialidad";
-            this.cboEspecialidad.Size = new System.Drawing.Size(200, 21);
+            this.cboEspecialidad.Size = new System.Drawing.Size(211, 21);
             this.cboEspecialidad.TabIndex = 8;
             this.cboEspecialidad.ValueMember = "IdEspecialidad";
             this.cboEspecialidad.Visible = false;

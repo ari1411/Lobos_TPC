@@ -163,8 +163,64 @@ namespace Negocio
             }
         }
 
+        public void Alta(Persona nuevo)
+        {
+            AccesoDatos conexion = null;
+            string consulta = "";
+            string valores = "";
+            try
+            {
+                conexion = new AccesoDatos();
+                consulta = "INSERT INTO Personas (DNI, APELLIDO, NOMBRE, IDSEXO, FECHANAC, IDNACIONALIDAD, CALLE, NUMERO, IDMUNICIPIO, ";
+                valores = " values ('" + nuevo.Dni + "','" + nuevo.Apellido.ToString() + "','" + nuevo.Nombre.ToString() + "'," + nuevo.IdSexo + ",'" + nuevo.FechaNacimiento.ToString("yyyy/MM/dd") + "'," + nuevo.IdNacionalidad + ",'" + nuevo.Calle.ToString() + "'," + nuevo.Altura + "," + nuevo.IdMunicipio;
+
+                if (nuevo.Piso.ToString() != "")
+                {
+                    consulta = consulta + "PISO, ";
+                    valores = valores + ",'" + nuevo.Piso.ToString() + "'";
+                }
+
+                if (nuevo.Dpto.ToString() != "")
+                {
+                    consulta = consulta + "DEPTO, ";
+                    valores = valores + ",'" + nuevo.Dpto.ToString() + "'";
+                }
+
+                if (nuevo.TelCelular.ToString() != "")
+                {
+                    consulta = consulta + "TELCELULAR, ";
+                    valores = valores + ",'" + nuevo.TelCelular.ToString() + "'";
+                }
+
+                if (nuevo.TelFijo.ToString() != "")
+                {
+                    consulta = consulta + "TELFIJO, ";
+                    valores = valores + ",'" + nuevo.TelFijo.ToString() + "'";
+                }
+
+                if (nuevo.Mail.ToString() != "")
+                {
+                    consulta = consulta + "MAIL, ";
+                    valores = valores + ",'" + nuevo.Mail.ToString() + "'";
+                }
 
 
+                consulta = consulta + "FECHAALTA, IDADMINALTA, FECHAMODIF, IDADMINMODIF, ESTADO)";
+                consulta = consulta + valores + ",GETDATE()," + nuevo.IdUsuarioAlta + ",GETDATE()," + nuevo.IdUsuarioModif + ",1)";
+                conexion.setearConsulta(consulta);
+                conexion.abrirConexion();
+                conexion.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (conexion != null)
+                    conexion.cerrarConexion();
+            }
 
+        }
     }
 }

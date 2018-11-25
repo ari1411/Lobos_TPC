@@ -21,10 +21,10 @@ namespace Presentacion
             aux = paciente;
         }
 
-        public frmModificarPaciente(Persona paciente)
+        public frmModificarPaciente(Persona persona)
         {
             InitializeComponent();
-            aux = (Paciente)paciente;
+            aux = (Paciente)persona;
             Text = "Modificar Persona";
         }
 

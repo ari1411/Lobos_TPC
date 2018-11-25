@@ -175,9 +175,9 @@
             this.lblMedico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMedico.Location = new System.Drawing.Point(119, 189);
             this.lblMedico.Name = "lblMedico";
-            this.lblMedico.Size = new System.Drawing.Size(60, 20);
+            this.lblMedico.Size = new System.Drawing.Size(88, 20);
             this.lblMedico.TabIndex = 12;
-            this.lblMedico.Text = "Medico";
+            this.lblMedico.Text = "Profesional";
             // 
             // frmAnadirFuncionPersona
             // 

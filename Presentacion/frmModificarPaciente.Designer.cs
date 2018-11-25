@@ -32,7 +32,6 @@
             this.lblTelMovil = new System.Windows.Forms.Label();
             this.lblTelFijo = new System.Windows.Forms.Label();
             this.lblMail = new System.Windows.Forms.Label();
-            this.lblPartido = new System.Windows.Forms.Label();
             this.lblMunicipio = new System.Windows.Forms.Label();
             this.lblPisoDto = new System.Windows.Forms.Label();
             this.lblNumeroCalle = new System.Windows.Forms.Label();
@@ -63,7 +62,6 @@
             this.lOBOS_DBDataSet8 = new Presentacion.LOBOS_DBDataSet8();
             this.txtTelMovil = new System.Windows.Forms.TextBox();
             this.txtMail = new System.Windows.Forms.TextBox();
-            this.txtPartido = new System.Windows.Forms.TextBox();
             this.txtTelFijo = new System.Windows.Forms.TextBox();
             this.btnGrabar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -87,7 +85,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTelMovil.AutoSize = true;
-            this.lblTelMovil.Location = new System.Drawing.Point(143, 397);
+            this.lblTelMovil.Location = new System.Drawing.Point(143, 374);
             this.lblTelMovil.Name = "lblTelMovil";
             this.lblTelMovil.Size = new System.Drawing.Size(69, 13);
             this.lblTelMovil.TabIndex = 43;
@@ -99,7 +97,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTelFijo.AutoSize = true;
-            this.lblTelFijo.Location = new System.Drawing.Point(415, 397);
+            this.lblTelFijo.Location = new System.Drawing.Point(415, 374);
             this.lblTelFijo.Name = "lblTelFijo";
             this.lblTelFijo.Size = new System.Drawing.Size(58, 13);
             this.lblTelFijo.TabIndex = 42;
@@ -111,21 +109,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblMail.AutoSize = true;
-            this.lblMail.Location = new System.Drawing.Point(167, 368);
+            this.lblMail.Location = new System.Drawing.Point(167, 345);
             this.lblMail.Name = "lblMail";
             this.lblMail.Size = new System.Drawing.Size(45, 13);
             this.lblMail.TabIndex = 41;
             this.lblMail.Text = "E-MAIL:";
-            // 
-            // lblPartido
-            // 
-            this.lblPartido.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblPartido.AutoSize = true;
-            this.lblPartido.Location = new System.Drawing.Point(154, 336);
-            this.lblPartido.Name = "lblPartido";
-            this.lblPartido.Size = new System.Drawing.Size(58, 13);
-            this.lblPartido.TabIndex = 40;
-            this.lblPartido.Text = "PARTIDO:";
             // 
             // lblMunicipio
             // 
@@ -401,7 +389,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTelMovil.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtTelMovil.Location = new System.Drawing.Point(218, 394);
+            this.txtTelMovil.Location = new System.Drawing.Point(218, 371);
             this.txtTelMovil.MaxLength = 14;
             this.txtTelMovil.Name = "txtTelMovil";
             this.txtTelMovil.Size = new System.Drawing.Size(191, 20);
@@ -414,21 +402,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtMail.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtMail.Location = new System.Drawing.Point(218, 362);
+            this.txtMail.Location = new System.Drawing.Point(218, 339);
             this.txtMail.MaxLength = 50;
             this.txtMail.Name = "txtMail";
             this.txtMail.Size = new System.Drawing.Size(285, 20);
             this.txtMail.TabIndex = 57;
-            // 
-            // txtPartido
-            // 
-            this.txtPartido.AllowDrop = true;
-            this.txtPartido.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtPartido.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtPartido.Location = new System.Drawing.Point(218, 330);
-            this.txtPartido.Name = "txtPartido";
-            this.txtPartido.Size = new System.Drawing.Size(224, 20);
-            this.txtPartido.TabIndex = 56;
             // 
             // txtTelFijo
             // 
@@ -437,7 +415,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTelFijo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtTelFijo.Location = new System.Drawing.Point(479, 394);
+            this.txtTelFijo.Location = new System.Drawing.Point(479, 371);
             this.txtTelFijo.MaxLength = 14;
             this.txtTelFijo.Name = "txtTelFijo";
             this.txtTelFijo.Size = new System.Drawing.Size(178, 20);
@@ -519,7 +497,6 @@
             this.Controls.Add(this.cboMunicipio);
             this.Controls.Add(this.txtTelMovil);
             this.Controls.Add(this.txtMail);
-            this.Controls.Add(this.txtPartido);
             this.Controls.Add(this.txtDepto);
             this.Controls.Add(this.lblBarra);
             this.Controls.Add(this.txtPiso);
@@ -534,7 +511,6 @@
             this.Controls.Add(this.lblTelMovil);
             this.Controls.Add(this.lblTelFijo);
             this.Controls.Add(this.lblMail);
-            this.Controls.Add(this.lblPartido);
             this.Controls.Add(this.lblMunicipio);
             this.Controls.Add(this.lblPisoDto);
             this.Controls.Add(this.lblNumeroCalle);
@@ -567,7 +543,6 @@
         private System.Windows.Forms.Label lblTelMovil;
         private System.Windows.Forms.Label lblTelFijo;
         private System.Windows.Forms.Label lblMail;
-        private System.Windows.Forms.Label lblPartido;
         private System.Windows.Forms.Label lblMunicipio;
         private System.Windows.Forms.Label lblPisoDto;
         private System.Windows.Forms.Label lblNumeroCalle;
@@ -592,7 +567,6 @@
         private System.Windows.Forms.ComboBox cboMunicipio;
         private System.Windows.Forms.TextBox txtTelMovil;
         private System.Windows.Forms.TextBox txtMail;
-        private System.Windows.Forms.TextBox txtPartido;
         private System.Windows.Forms.TextBox txtTelFijo;
         private System.Windows.Forms.Button btnGrabar;
         private System.Windows.Forms.Button btnCancelar;

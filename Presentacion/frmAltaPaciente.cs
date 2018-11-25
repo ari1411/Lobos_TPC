@@ -14,9 +14,18 @@ namespace Presentacion
 {
     public partial class frmAltaPaciente : Form
     {
+        bool altaPersona = false;
+
         public frmAltaPaciente()
         {
             InitializeComponent();
+        }
+
+        public frmAltaPaciente(bool esAltaPersona)
+        {
+            InitializeComponent();
+            Text = "Alta Persona";
+            altaPersona = true;
         }
 
         private void frmAltaPaciente_Load(object sender, EventArgs e)
@@ -49,32 +58,58 @@ namespace Presentacion
         {
             if (txtDni.TextLength > 0 && txtApellido.TextLength > 0 && txtNombre.TextLength > 0 && txtCalle.TextLength > 0 && txtNumero.TextLength > 0)
             {
-
-                PacienteNegocio neg = new PacienteNegocio();
-                Paciente nvo = new Paciente();
-
                 try
                 {
-                    nvo.Dni = txtDni.Text;
-                    nvo.Apellido = txtApellido.Text;
-                    nvo.Nombre = txtNombre.Text;
-                    nvo.IdSexo = int.Parse(cboSexo.SelectedValue.ToString());
-                    nvo.IdNacionalidad = int.Parse(cboNacionalidad.SelectedValue.ToString());
-                    nvo.FechaNacimiento = DateTime.Parse(dtpFechaNacimiento.Text);
-                    nvo.Calle = txtCalle.Text;
-                    nvo.Altura = txtNumero.Text;
-                    nvo.Piso = txtPiso.Text;
-                    nvo.Dpto = txtDepto.Text;
-                    nvo.IdMunicipio = int.Parse(cboMunicipio.SelectedValue.ToString());
-                    nvo.TelCelular = txtTelMovil.Text;
-                    nvo.TelFijo = txtTelFijo.Text;
-                    nvo.Mail = txtMail.Text;
-                    nvo.IdUsuarioAlta = 1;
-                    nvo.IdUsuarioModif = 1;
+                    if (altaPersona == false)
+                    {
+                        PacienteNegocio neg = new PacienteNegocio();
+                        Paciente nvo = new Paciente();
+                        nvo.Dni = txtDni.Text;
+                        nvo.Apellido = txtApellido.Text;
+                        nvo.Nombre = txtNombre.Text;
+                        nvo.IdSexo = int.Parse(cboSexo.SelectedValue.ToString());
+                        nvo.IdNacionalidad = int.Parse(cboNacionalidad.SelectedValue.ToString());
+                        nvo.FechaNacimiento = DateTime.Parse(dtpFechaNacimiento.Text);
+                        nvo.Calle = txtCalle.Text;
+                        nvo.Altura = txtNumero.Text;
+                        nvo.Piso = txtPiso.Text;
+                        nvo.Dpto = txtDepto.Text;
+                        nvo.IdMunicipio = int.Parse(cboMunicipio.SelectedValue.ToString());
+                        nvo.TelCelular = txtTelMovil.Text;
+                        nvo.TelFijo = txtTelFijo.Text;
+                        nvo.Mail = txtMail.Text;
+                        nvo.IdUsuarioAlta = 1;
+                        nvo.IdUsuarioModif = 1;
 
-                    neg.Alta(nvo);
-                    MessageBox.Show("Se grabo con exito");
-                    Close();
+                        neg.Alta(nvo);
+                        MessageBox.Show("Se grabo con exito");
+                        Close();
+                    }
+                    else if (altaPersona == true)
+                    {
+                        PersonaNegocio neg = new PersonaNegocio();
+                        Persona nvo = new Persona();
+                        nvo.Dni = txtDni.Text;
+                        nvo.Apellido = txtApellido.Text;
+                        nvo.Nombre = txtNombre.Text;
+                        nvo.IdSexo = int.Parse(cboSexo.SelectedValue.ToString());
+                        nvo.IdNacionalidad = int.Parse(cboNacionalidad.SelectedValue.ToString());
+                        nvo.FechaNacimiento = DateTime.Parse(dtpFechaNacimiento.Text);
+                        nvo.Calle = txtCalle.Text;
+                        nvo.Altura = txtNumero.Text;
+                        nvo.Piso = txtPiso.Text;
+                        nvo.Dpto = txtDepto.Text;
+                        nvo.IdMunicipio = int.Parse(cboMunicipio.SelectedValue.ToString());
+                        nvo.TelCelular = txtTelMovil.Text;
+                        nvo.TelFijo = txtTelFijo.Text;
+                        nvo.Mail = txtMail.Text;
+                        nvo.IdUsuarioAlta = 1;
+                        nvo.IdUsuarioModif = 1;
+
+                        neg.Alta(nvo);
+                        MessageBox.Show("Se grabo con exito");
+                        Close();
+                    }
                 }
                 catch (Exception ex)
                 {

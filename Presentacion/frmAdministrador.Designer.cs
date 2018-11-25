@@ -31,6 +31,8 @@
             this.btnCrearAgenda = new System.Windows.Forms.Button();
             this.btnPersonas = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
+            this.btnConsultaTurnos = new System.Windows.Forms.Button();
+            this.btnAltaPersona = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnCrearAgenda
@@ -45,7 +47,7 @@
             // 
             // btnPersonas
             // 
-            this.btnPersonas.Location = new System.Drawing.Point(448, 163);
+            this.btnPersonas.Location = new System.Drawing.Point(448, 241);
             this.btnPersonas.Name = "btnPersonas";
             this.btnPersonas.Size = new System.Drawing.Size(144, 48);
             this.btnPersonas.TabIndex = 1;
@@ -63,11 +65,33 @@
             this.btnVolver.UseVisualStyleBackColor = true;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
+            // btnConsultaTurnos
+            // 
+            this.btnConsultaTurnos.Location = new System.Drawing.Point(215, 241);
+            this.btnConsultaTurnos.Name = "btnConsultaTurnos";
+            this.btnConsultaTurnos.Size = new System.Drawing.Size(144, 48);
+            this.btnConsultaTurnos.TabIndex = 3;
+            this.btnConsultaTurnos.Text = "Consulta Turnos";
+            this.btnConsultaTurnos.UseVisualStyleBackColor = true;
+            this.btnConsultaTurnos.Click += new System.EventHandler(this.btnConsultaTurnos_Click);
+            // 
+            // btnAltaPersona
+            // 
+            this.btnAltaPersona.Location = new System.Drawing.Point(448, 163);
+            this.btnAltaPersona.Name = "btnAltaPersona";
+            this.btnAltaPersona.Size = new System.Drawing.Size(144, 47);
+            this.btnAltaPersona.TabIndex = 4;
+            this.btnAltaPersona.Text = "Alta Persona";
+            this.btnAltaPersona.UseVisualStyleBackColor = true;
+            this.btnAltaPersona.Click += new System.EventHandler(this.btnAltaPersona_Click);
+            // 
             // frmAdministrador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 512);
+            this.Controls.Add(this.btnAltaPersona);
+            this.Controls.Add(this.btnConsultaTurnos);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnPersonas);
             this.Controls.Add(this.btnCrearAgenda);
@@ -85,5 +109,7 @@
         private System.Windows.Forms.Button btnCrearAgenda;
         private System.Windows.Forms.Button btnPersonas;
         private System.Windows.Forms.Button btnVolver;
+        private System.Windows.Forms.Button btnConsultaTurnos;
+        private System.Windows.Forms.Button btnAltaPersona;
     }
 }

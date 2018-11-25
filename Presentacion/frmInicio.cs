@@ -29,7 +29,8 @@ namespace Presentacion
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            frmAsignarTurno asig = new frmAsignarTurno();
+            asig.ShowDialog();
         }
 
         private void btnConsultas_Click(object sender, EventArgs e)

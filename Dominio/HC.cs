@@ -10,6 +10,7 @@ namespace Dominio
     {
         public Int32 IdHC { set; get; }
         public Int32 IdRazonSocial { set; get; }
+        public string RazonSocial { set; get; }
         public Int32 IdPaciente { set; get; }
         public string NumeroAfiliado { set; get; }
         public DateTime FechaVencimientoCarnet { set; get; }
