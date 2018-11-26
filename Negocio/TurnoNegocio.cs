@@ -21,7 +21,7 @@ namespace Negocio
             try
             {
                 conexion = new AccesoDatos();
-                string consulta = "select t.IdTurno, t.FechaHoraTurno, t.IdProfesional , (select pers.Apellido + ', ' + pers.Nombre from personas as pers where t.IdProfesional = pers.idpersona) as 'Profesional', t.IdEspecialidad, e.Especialidad, t.IdPaciente, (select pers.Apellido + ', ' + pers.Nombre from personas as pers where t.IdPaciente = pers.idpersona) as 'Paciente', t.IdHistoriaClinica, t.FechaAsignado, t.IdAdminAsigna, (select pers.Apellido + ', ' + pers.Nombre from personas as pers where t.IdAdminAsigna = pers.idpersona) as 'Admin Alta', t.FechaLiberacion, t.IdAdminLibera, (select pers.Apellido + ', ' + pers.Nombre from personas as pers where t.IdAdminLibera = pers.idpersona) as 'Admin Libera', t.FechaCancelado, t.IdAdminCancela, (select pers.Apellido + ', ' + pers.Nombre from personas as pers where t.IdAdminCancela = pers.idpersona) as 'Adm Cancela', t.IdEstado, est.Estado from turnos as t inner join Profesionales as prof on t.IdProfesional=prof.IdProfesional inner join Especialidades as e on t.IdEspecialidad=e.IdEspecialidad inner join estados as est on est.idestado=t.IdEstado where '" + fechaIni.ToString("yyyy/MM/dd") + "'<=FechaHoraTurno and FechaHoraTurno<'" + fechaFin.ToString("yyyy/MM/dd") + "' order by t.FechaHoraTurno asc, 'profesional' asc, e.Especialidad asc";
+                string consulta = "select t.IdTurno, t.FechaHoraTurno, t.IdProfesional , (select pers.Apellido + ', ' + pers.Nombre from personas as pers where t.IdProfesional = pers.idpersona) as 'Profesional', t.IdEspecialidad, e.Especialidad, t.IdPaciente, (select pers.Apellido + ', ' + pers.Nombre from personas as pers where t.IdPaciente = pers.idpersona) as 'Paciente', t.IdHistoriaClinica, t.FechaAsignado, t.IdAdminAsigna, (select pers.Apellido + ', ' + pers.Nombre from personas as pers where t.IdAdminAsigna = pers.idpersona) as 'Admin Alta', t.FechaLiberacion, t.IdAdminLibera, (select pers.Apellido + ', ' + pers.Nombre from personas as pers where t.IdAdminLibera = pers.idpersona) as 'Admin Libera', t.FechaCancelado, t.IdAdminCancela, (select pers.Apellido + ', ' + pers.Nombre from personas as pers where t.IdAdminCancela = pers.idpersona) as 'Adm Cancela', t.IdEstado, est.Estado, t.Observaciones from turnos as t inner join Profesionales as prof on t.IdProfesional=prof.IdProfesional inner join Especialidades as e on t.IdEspecialidad=e.IdEspecialidad inner join estados as est on est.idestado=t.IdEstado where '" + fechaIni.ToString("yyyy/MM/dd") + "'<=FechaHoraTurno and FechaHoraTurno<'" + fechaFin.ToString("yyyy/MM/dd") + "'";
                 if (seleccionRDB == 2)
                 {
                     consulta = consulta + " and t.IdProfesional=" + prof;
@@ -33,6 +33,7 @@ namespace Negocio
                 {
                     consulta = consulta + " and t.IdEstado=" + Estado;
                 }
+                consulta = consulta + " order by t.FechaHoraTurno asc, 'profesional' asc, e.Especialidad asc";
                 conexion.setearConsulta(consulta);
                 conexion.abrirConexion();
                 conexion.ejecutarConsulta();
@@ -60,6 +61,7 @@ namespace Negocio
                     if (!conexion.Lector.IsDBNull(17)) aux.UsuarioCancela = conexion.Lector.GetString(17);
                     aux.IdEstado = (Int32)conexion.Lector[18];
                     aux.Estado = conexion.Lector.GetString(19);
+                    if (!conexion.Lector.IsDBNull(20)) aux.Observaciones = conexion.Lector.GetString(20);
 
                     listaTurno.Add(aux);
                 }
@@ -143,14 +145,14 @@ namespace Negocio
             }
         }
 
-        public void asignarTurno(int idPaciente, int idHistoriaClinica, int idTurno)
+        public void asignarTurno(int idPaciente, int idHistoriaClinica, int idTurno, string Obs)
         {
             try
             {
                 TurnoNegocio turnNeg = new TurnoNegocio();
                 conexion = null;
                 conexion = new AccesoDatos();
-                string consulta = "update Turnos set IdPaciente=" + idPaciente + ", IdHistoriaClinica=" + idHistoriaClinica + ", FechaAsignado=GETDATE(), IdAdminAsigna=1, IdEstado=3 where IdTurno=" + idTurno;
+                string consulta = "update Turnos set IdPaciente=" + idPaciente + ", IdHistoriaClinica=" + idHistoriaClinica + ", Observaciones='" + Obs + "' , FechaAsignado=GETDATE(), IdAdminAsigna=1, IdEstado=3 where IdTurno=" + idTurno;
                 conexion.setearConsulta(consulta);
                 conexion.abrirConexion();
                 conexion.ejecutarAccion();

@@ -17,6 +17,7 @@ namespace Dominio
         public Int32 IdPaciente { set; get; }
         public string Paciente { set; get; }
         public Int32 IdHC { set; get; }
+        public string Observaciones { set; get; }
         public DateTime FechaHoraAsignado { set; get; }
         public Int32 IdUsuarioAsigna { set; get; }
         public string UsuarioAsigna { set; get; }

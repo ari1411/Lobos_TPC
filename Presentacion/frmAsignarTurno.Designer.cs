@@ -56,6 +56,8 @@
             this.btnVolver = new System.Windows.Forms.Button();
             this.lblHC = new System.Windows.Forms.Label();
             this.dgvHistoriasClinicas = new System.Windows.Forms.DataGridView();
+            this.txtObservaciones = new System.Windows.Forms.TextBox();
+            this.lblObservaciones = new System.Windows.Forms.Label();
             this.grbModoSeleccion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vWESPECIALIDADESMEDICASBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lOBOS_DBDataSet20)).BeginInit();
@@ -67,7 +69,7 @@
             // 
             // txtDNI
             // 
-            this.txtDNI.Location = new System.Drawing.Point(73, 40);
+            this.txtDNI.Location = new System.Drawing.Point(73, 24);
             this.txtDNI.MaxLength = 9;
             this.txtDNI.Name = "txtDNI";
             this.txtDNI.Size = new System.Drawing.Size(191, 20);
@@ -77,7 +79,7 @@
             // lblDNI
             // 
             this.lblDNI.AutoSize = true;
-            this.lblDNI.Location = new System.Drawing.Point(24, 41);
+            this.lblDNI.Location = new System.Drawing.Point(24, 25);
             this.lblDNI.Name = "lblDNI";
             this.lblDNI.Size = new System.Drawing.Size(29, 13);
             this.lblDNI.TabIndex = 20;
@@ -85,7 +87,7 @@
             // 
             // txtApellidoNombre
             // 
-            this.txtApellidoNombre.Location = new System.Drawing.Point(125, 66);
+            this.txtApellidoNombre.Location = new System.Drawing.Point(125, 50);
             this.txtApellidoNombre.Name = "txtApellidoNombre";
             this.txtApellidoNombre.ReadOnly = true;
             this.txtApellidoNombre.Size = new System.Drawing.Size(238, 20);
@@ -94,7 +96,7 @@
             // lblApellidoNombre
             // 
             this.lblApellidoNombre.AutoSize = true;
-            this.lblApellidoNombre.Location = new System.Drawing.Point(24, 69);
+            this.lblApellidoNombre.Location = new System.Drawing.Point(24, 53);
             this.lblApellidoNombre.Name = "lblApellidoNombre";
             this.lblApellidoNombre.Size = new System.Drawing.Size(95, 13);
             this.lblApellidoNombre.TabIndex = 20;
@@ -106,7 +108,7 @@
             this.grbModoSeleccion.Controls.Add(this.rdbEspecialidad);
             this.grbModoSeleccion.Controls.Add(this.cboProfesionales);
             this.grbModoSeleccion.Controls.Add(this.rdbProfesional);
-            this.grbModoSeleccion.Location = new System.Drawing.Point(409, 36);
+            this.grbModoSeleccion.Location = new System.Drawing.Point(27, 367);
             this.grbModoSeleccion.Name = "grbModoSeleccion";
             this.grbModoSeleccion.Size = new System.Drawing.Size(336, 71);
             this.grbModoSeleccion.TabIndex = 2;
@@ -191,7 +193,7 @@
             // 
             // btnBuscarPte
             // 
-            this.btnBuscarPte.Location = new System.Drawing.Point(288, 36);
+            this.btnBuscarPte.Location = new System.Drawing.Point(288, 20);
             this.btnBuscarPte.Name = "btnBuscarPte";
             this.btnBuscarPte.Size = new System.Drawing.Size(75, 23);
             this.btnBuscarPte.TabIndex = 1;
@@ -201,7 +203,7 @@
             // 
             // dtpFechaTurnoIni
             // 
-            this.dtpFechaTurnoIni.Location = new System.Drawing.Point(507, 120);
+            this.dtpFechaTurnoIni.Location = new System.Drawing.Point(507, 37);
             this.dtpFechaTurnoIni.Name = "dtpFechaTurnoIni";
             this.dtpFechaTurnoIni.Size = new System.Drawing.Size(238, 20);
             this.dtpFechaTurnoIni.TabIndex = 7;
@@ -210,7 +212,7 @@
             // lblFechaTurno
             // 
             this.lblFechaTurno.AutoSize = true;
-            this.lblFechaTurno.Location = new System.Drawing.Point(406, 110);
+            this.lblFechaTurno.Location = new System.Drawing.Point(406, 27);
             this.lblFechaTurno.Name = "lblFechaTurno";
             this.lblFechaTurno.Size = new System.Drawing.Size(84, 13);
             this.lblFechaTurno.TabIndex = 25;
@@ -218,7 +220,7 @@
             // 
             // btnBuscarTurnos
             // 
-            this.btnBuscarTurnos.Location = new System.Drawing.Point(507, 172);
+            this.btnBuscarTurnos.Location = new System.Drawing.Point(507, 89);
             this.btnBuscarTurnos.Name = "btnBuscarTurnos";
             this.btnBuscarTurnos.Size = new System.Drawing.Size(107, 25);
             this.btnBuscarTurnos.TabIndex = 9;
@@ -229,7 +231,7 @@
             // dgvTurnosDisponibles
             // 
             this.dgvTurnosDisponibles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTurnosDisponibles.Location = new System.Drawing.Point(409, 203);
+            this.dgvTurnosDisponibles.Location = new System.Drawing.Point(409, 120);
             this.dgvTurnosDisponibles.MultiSelect = false;
             this.dgvTurnosDisponibles.Name = "dgvTurnosDisponibles";
             this.dgvTurnosDisponibles.ReadOnly = true;
@@ -239,7 +241,7 @@
             // 
             // dtpFechaTurnoFin
             // 
-            this.dtpFechaTurnoFin.Location = new System.Drawing.Point(507, 146);
+            this.dtpFechaTurnoFin.Location = new System.Drawing.Point(507, 63);
             this.dtpFechaTurnoFin.Name = "dtpFechaTurnoFin";
             this.dtpFechaTurnoFin.Size = new System.Drawing.Size(238, 20);
             this.dtpFechaTurnoFin.TabIndex = 8;
@@ -248,7 +250,7 @@
             // lblDesde
             // 
             this.lblDesde.AutoSize = true;
-            this.lblDesde.Location = new System.Drawing.Point(434, 126);
+            this.lblDesde.Location = new System.Drawing.Point(434, 43);
             this.lblDesde.Name = "lblDesde";
             this.lblDesde.Size = new System.Drawing.Size(41, 13);
             this.lblDesde.TabIndex = 26;
@@ -257,7 +259,7 @@
             // lblHasta
             // 
             this.lblHasta.AutoSize = true;
-            this.lblHasta.Location = new System.Drawing.Point(434, 152);
+            this.lblHasta.Location = new System.Drawing.Point(434, 69);
             this.lblHasta.Name = "lblHasta";
             this.lblHasta.Size = new System.Drawing.Size(38, 13);
             this.lblHasta.TabIndex = 27;
@@ -288,7 +290,7 @@
             // lblHC
             // 
             this.lblHC.AutoSize = true;
-            this.lblHC.Location = new System.Drawing.Point(24, 120);
+            this.lblHC.Location = new System.Drawing.Point(24, 89);
             this.lblHC.Name = "lblHC";
             this.lblHC.Size = new System.Drawing.Size(79, 13);
             this.lblHC.TabIndex = 28;
@@ -297,13 +299,32 @@
             // dgvHistoriasClinicas
             // 
             this.dgvHistoriasClinicas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvHistoriasClinicas.Location = new System.Drawing.Point(12, 136);
+            this.dgvHistoriasClinicas.Location = new System.Drawing.Point(27, 111);
             this.dgvHistoriasClinicas.MultiSelect = false;
             this.dgvHistoriasClinicas.Name = "dgvHistoriasClinicas";
             this.dgvHistoriasClinicas.ReadOnly = true;
             this.dgvHistoriasClinicas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvHistoriasClinicas.Size = new System.Drawing.Size(351, 298);
+            this.dgvHistoriasClinicas.Size = new System.Drawing.Size(336, 240);
             this.dgvHistoriasClinicas.TabIndex = 29;
+            // 
+            // txtObservaciones
+            // 
+            this.txtObservaciones.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtObservaciones.Location = new System.Drawing.Point(409, 383);
+            this.txtObservaciones.MaxLength = 50;
+            this.txtObservaciones.Multiline = true;
+            this.txtObservaciones.Name = "txtObservaciones";
+            this.txtObservaciones.Size = new System.Drawing.Size(363, 55);
+            this.txtObservaciones.TabIndex = 30;
+            // 
+            // lblObservaciones
+            // 
+            this.lblObservaciones.AutoSize = true;
+            this.lblObservaciones.Location = new System.Drawing.Point(406, 367);
+            this.lblObservaciones.Name = "lblObservaciones";
+            this.lblObservaciones.Size = new System.Drawing.Size(81, 13);
+            this.lblObservaciones.TabIndex = 31;
+            this.lblObservaciones.Text = "Observaciones:";
             // 
             // frmAsignarTurno
             // 
@@ -311,6 +332,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnVolver;
             this.ClientSize = new System.Drawing.Size(784, 512);
+            this.Controls.Add(this.lblObservaciones);
+            this.Controls.Add(this.txtObservaciones);
             this.Controls.Add(this.dgvHistoriasClinicas);
             this.Controls.Add(this.lblHC);
             this.Controls.Add(this.btnVolver);
@@ -376,5 +399,7 @@
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.Label lblHC;
         private System.Windows.Forms.DataGridView dgvHistoriasClinicas;
+        private System.Windows.Forms.TextBox txtObservaciones;
+        private System.Windows.Forms.Label lblObservaciones;
     }
 }

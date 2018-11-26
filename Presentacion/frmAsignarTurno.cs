@@ -166,7 +166,7 @@ namespace Presentacion
         {
             turn = (Turno)dgvTurnosDisponibles.CurrentRow.DataBoundItem;
             histClin = (HC)dgvHistoriasClinicas.CurrentRow.DataBoundItem;
-            turnNeg.asignarTurno(pte.IdPaciente, histClin.IdHC, turn.IdTurno);
+            turnNeg.asignarTurno(pte.IdPaciente, histClin.IdHC, turn.IdTurno, txtObservaciones.Text);
             MessageBox.Show("Se asigno correctamente el turno");
             Close();
         }

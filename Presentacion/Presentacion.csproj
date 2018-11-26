@@ -56,6 +56,12 @@
     <Compile Include="frmAdministrador.Designer.cs">
       <DependentUpon>frmAdministrador.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAdmision.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdmision.Designer.cs">
+      <DependentUpon>frmAdmision.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAgregarEspecialidadMedica.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -206,6 +212,12 @@
     <Compile Include="frmModificarPaciente.Designer.cs">
       <DependentUpon>frmModificarPaciente.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmObservacionesAsignarTurno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmObservacionesAsignarTurno.Designer.cs">
+      <DependentUpon>frmObservacionesAsignarTurno.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmVerHistoriaClinica.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -328,6 +340,9 @@
     <EmbeddedResource Include="frmAdministrador.resx">
       <DependentUpon>frmAdministrador.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAdmision.resx">
+      <DependentUpon>frmAdmision.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAgregarAdministrativo.resx">
       <DependentUpon>frmAgregarAdministrativo.cs</DependentUpon>
     </EmbeddedResource>
@@ -402,6 +417,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmModificarPaciente.resx">
       <DependentUpon>frmModificarPaciente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmObservacionesAsignarTurno.resx">
+      <DependentUpon>frmObservacionesAsignarTurno.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmVerHistoriaClinica.resx">
       <DependentUpon>frmVerHistoriaClinica.cs</DependentUpon>

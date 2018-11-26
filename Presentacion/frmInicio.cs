@@ -17,31 +17,15 @@ namespace Presentacion
             InitializeComponent();
         }
 
-        private void frmInicio_MaximumSizeChanged(object sender, EventArgs e)
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
-
+            Close();
         }
 
-        private void frmInicio_Load(object sender, EventArgs e)
+        private void btnAdministrador_Click(object sender, EventArgs e)
         {
-            
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            frmAsignarTurno asig = new frmAsignarTurno();
-            asig.ShowDialog();
-        }
-
-        private void btnConsultas_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnConsultas_Click_1(object sender, EventArgs e)
-        {
-            frmConsultas Consultas = new frmConsultas();
-            Consultas.ShowDialog();
+            frmAdministrador admin = new frmAdministrador();
+            admin.ShowDialog();
         }
 
         private void btnAltaPaciente_Click(object sender, EventArgs e)
@@ -63,15 +47,22 @@ namespace Presentacion
             AltaPte.ShowDialog();
         }
 
-        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        private void btnConsultas_Click_1(object sender, EventArgs e)
         {
-            Close();
+            frmConsultas Consultas = new frmConsultas();
+            Consultas.ShowDialog();
         }
 
-        private void btnAdministrador_Click(object sender, EventArgs e)
+        private void btnAdmision_Click(object sender, EventArgs e)
         {
-            frmAdministrador admin = new frmAdministrador();
+            frmAdmision admin = new frmAdmision();
             admin.ShowDialog();
+        }
+
+        private void btnAsignarTurno_Click(object sender, EventArgs e)
+        {
+            frmAsignarTurno asig = new frmAsignarTurno();
+            asig.ShowDialog();
         }
     }
 }
