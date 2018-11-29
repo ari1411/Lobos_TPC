@@ -77,38 +77,38 @@ namespace Presentacion
         private void btnBuscarPte_Click(object sender, EventArgs e)
         {
 
-                try
-                {
-                    pteNeg = new PacienteNegocio();
-                    listaPte = new List<Paciente>();
-                    listaPte = pteNeg.Buscar(txtDNI.Text.Trim());
-                    pte = listaPte[0];
-                    txtApellidoNombre.Text = pte.Apellido + ", " + pte.Nombre;
-                    listaHC = new List<HC>();
-                    histClinNeg = new HCnegocio();
-                    listaHC = histClinNeg.cargarHCactivas(pte.IdPaciente);
-                    dgvHistoriasClinicas.DataSource = listaHC;
+            try
+            {
+                pteNeg = new PacienteNegocio();
+                listaPte = new List<Paciente>();
+                listaPte = pteNeg.Buscar(txtDNI.Text.Trim());
+                pte = listaPte[0];
+                txtApellidoNombre.Text = pte.Apellido + ", " + pte.Nombre;
+                listaHC = new List<HC>();
+                histClinNeg = new HCnegocio();
+                listaHC = histClinNeg.cargarHCactivas(pte.IdPaciente);
+                dgvHistoriasClinicas.DataSource = listaHC;
 
-                    dgvHistoriasClinicas.Columns["IdHC"].Visible = false;
-                    dgvHistoriasClinicas.Columns["IdRazonSocial"].Visible = false;
-                    dgvHistoriasClinicas.Columns["IdPaciente"].Visible = false;
-                    dgvHistoriasClinicas.Columns["IdAdminAlta"].Visible = false;
-                    dgvHistoriasClinicas.Columns["FechaHrModif"].Visible = false;
-                    dgvHistoriasClinicas.Columns["IdAdminModif"].Visible = false;
-                    dgvHistoriasClinicas.Columns["FechaHrBaja"].Visible = false;
-                    dgvHistoriasClinicas.Columns["IdAdminBaja"].Visible = false;
-                    dgvHistoriasClinicas.Columns["Estado"].Visible = false;
-                    dgvHistoriasClinicas.AutoResizeColumns();
+                dgvHistoriasClinicas.Columns["IdHC"].Visible = false;
+                dgvHistoriasClinicas.Columns["IdRazonSocial"].Visible = false;
+                dgvHistoriasClinicas.Columns["IdPaciente"].Visible = false;
+                dgvHistoriasClinicas.Columns["IdAdminAlta"].Visible = false;
+                dgvHistoriasClinicas.Columns["FechaHrModif"].Visible = false;
+                dgvHistoriasClinicas.Columns["IdAdminModif"].Visible = false;
+                dgvHistoriasClinicas.Columns["FechaHrBaja"].Visible = false;
+                dgvHistoriasClinicas.Columns["IdAdminBaja"].Visible = false;
+                dgvHistoriasClinicas.Columns["Estado"].Visible = false;
+                dgvHistoriasClinicas.AutoResizeColumns();
 
-                }
-                catch (ArgumentOutOfRangeException)
-                {
-                    MessageBox.Show("DNI no encontrado o se encuentra inactivo");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.ToString());
-                }
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                MessageBox.Show("DNI no encontrado o se encuentra inactivo");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
 
 
         }
@@ -147,11 +147,6 @@ namespace Presentacion
             }
         }
 
-        private void lblHasta_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void dtpFechaTurnoIni_ValueChanged(object sender, EventArgs e)
         {
             dtpFechaTurnoFin.MinDate = dtpFechaTurnoIni.Value;
@@ -164,11 +159,31 @@ namespace Presentacion
 
         private void btnAsignarTurno_Click(object sender, EventArgs e)
         {
-            turn = (Turno)dgvTurnosDisponibles.CurrentRow.DataBoundItem;
-            histClin = (HC)dgvHistoriasClinicas.CurrentRow.DataBoundItem;
-            turnNeg.asignarTurno(pte.IdPaciente, histClin.IdHC, turn.IdTurno, txtObservaciones.Text);
-            MessageBox.Show("Se asigno correctamente el turno");
-            Close();
+            if (txtApellidoNombre.Text != "")
+            {
+                if (dgvHistoriasClinicas.CurrentRow != null)
+                {
+                    if (txtObservaciones.Text != "")
+                    {
+                        if (rdbSeleccionado != 0)
+                        {
+                            if (dgvTurnosDisponibles.CurrentRow != null)
+                            {
+                                turn = (Turno)dgvTurnosDisponibles.CurrentRow.DataBoundItem;
+                                histClin = (HC)dgvHistoriasClinicas.CurrentRow.DataBoundItem;
+                                turnNeg.asignarTurno(pte.IdPaciente, histClin.IdHC, turn.IdTurno, txtObservaciones.Text);
+                                MessageBox.Show("Se asigno correctamente el turno");
+                                Close();
+                            }
+                            else MessageBox.Show("Seleccione un turno");
+                        }
+                        else MessageBox.Show("Seleccione un modo de busqueda, fecha y luego el turno a asignar");
+                    }
+                    else MessageBox.Show("Ingrese una observacion, por ej: Consulta, diagnostico, informacion importante para el profesional y/o administrativo");
+                }
+                else MessageBox.Show("Seleccione una Historia Clinica");
+            }
+            else MessageBox.Show("Ingrese un DNI válido y luego seleccione una Historia Clinica");
         }
 
         private void dtpFechaTurnoFin_ValueChanged(object sender, EventArgs e)

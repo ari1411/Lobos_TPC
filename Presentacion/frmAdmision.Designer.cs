@@ -34,18 +34,19 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnLiberar = new System.Windows.Forms.Button();
             this.btnReprogramar = new System.Windows.Forms.Button();
+            this.lblFechaHora = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTurnosAsignados)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvTurnosAsignados
             // 
             this.dgvTurnosAsignados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTurnosAsignados.Location = new System.Drawing.Point(12, 12);
+            this.dgvTurnosAsignados.Location = new System.Drawing.Point(12, 43);
             this.dgvTurnosAsignados.MultiSelect = false;
             this.dgvTurnosAsignados.Name = "dgvTurnosAsignados";
             this.dgvTurnosAsignados.ReadOnly = true;
             this.dgvTurnosAsignados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTurnosAsignados.Size = new System.Drawing.Size(662, 488);
+            this.dgvTurnosAsignados.Size = new System.Drawing.Size(662, 457);
             this.dgvTurnosAsignados.TabIndex = 0;
             // 
             // btnAdmisionar
@@ -56,6 +57,7 @@
             this.btnAdmisionar.TabIndex = 1;
             this.btnAdmisionar.Text = "Admisionar";
             this.btnAdmisionar.UseVisualStyleBackColor = true;
+            this.btnAdmisionar.Click += new System.EventHandler(this.btnAdmisionar_Click);
             // 
             // btnVolver
             // 
@@ -75,6 +77,7 @@
             this.btnCancelar.TabIndex = 3;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnLiberar
             // 
@@ -84,21 +87,34 @@
             this.btnLiberar.TabIndex = 4;
             this.btnLiberar.Text = "Liberar";
             this.btnLiberar.UseVisualStyleBackColor = true;
+            this.btnLiberar.Click += new System.EventHandler(this.btnLiberar_Click);
             // 
             // btnReprogramar
             // 
+            this.btnReprogramar.Enabled = false;
             this.btnReprogramar.Location = new System.Drawing.Point(680, 193);
             this.btnReprogramar.Name = "btnReprogramar";
             this.btnReprogramar.Size = new System.Drawing.Size(92, 44);
             this.btnReprogramar.TabIndex = 5;
             this.btnReprogramar.Text = "Reprogramar";
             this.btnReprogramar.UseVisualStyleBackColor = true;
+            this.btnReprogramar.Click += new System.EventHandler(this.btnReprogramar_Click);
+            // 
+            // lblFechaHora
+            // 
+            this.lblFechaHora.AutoSize = true;
+            this.lblFechaHora.Location = new System.Drawing.Point(13, 24);
+            this.lblFechaHora.Name = "lblFechaHora";
+            this.lblFechaHora.Size = new System.Drawing.Size(71, 13);
+            this.lblFechaHora.TabIndex = 6;
+            this.lblFechaHora.Text = "Fecha y Hora";
             // 
             // frmAdmision
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 512);
+            this.Controls.Add(this.lblFechaHora);
             this.Controls.Add(this.btnReprogramar);
             this.Controls.Add(this.btnLiberar);
             this.Controls.Add(this.btnCancelar);
@@ -113,6 +129,7 @@
             this.Load += new System.EventHandler(this.frmAdmision_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTurnosAsignados)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -124,5 +141,6 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnLiberar;
         private System.Windows.Forms.Button btnReprogramar;
+        private System.Windows.Forms.Label lblFechaHora;
     }
 }

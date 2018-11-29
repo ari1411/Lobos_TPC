@@ -49,17 +49,11 @@ namespace Presentacion
                 dgvTurnos.Columns["IdEspecialidad"].Visible = false;
                 dgvTurnos.Columns["IdPaciente"].Visible = false;
                 dgvTurnos.Columns["IdHC"].Visible = false;
-                dgvTurnos.Columns["FechaHoraAsignado"].Visible = false;
                 dgvTurnos.Columns["IdUsuarioAsigna"].Visible = false;
-                dgvTurnos.Columns["UsuarioAsigna"].Visible = false;
-                dgvTurnos.Columns["FechaHoraLiberado"].Visible = false;
+                dgvTurnos.Columns["IdUsuarioAdmitio"].Visible = false;
                 dgvTurnos.Columns["IdUsuarioLibera"].Visible = false;
-                dgvTurnos.Columns["UsuarioLibera"].Visible = false;
-                dgvTurnos.Columns["FechaHoraCancelado"].Visible = false;
                 dgvTurnos.Columns["IdUsuarioCancela"].Visible = false;
-                dgvTurnos.Columns["UsuarioCancela"].Visible = false;
                 dgvTurnos.Columns["IdEstado"].Visible = false;
-                dgvTurnos.Columns["Estado"].Visible = false;
                 dgvTurnos.AutoResizeColumns();
             }
             catch (Exception ex)

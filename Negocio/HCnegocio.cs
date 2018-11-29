@@ -18,7 +18,7 @@ namespace Negocio
             try
             {
                 conexion = new AccesoDatos();
-                string consulta = "select h.IdHistoriaClinica,h.IdRazonSocial, h.IdPaciente, h.NumAfiliado, h.FechaVtoCarnet, h.Motivo, h.FechaAlta, h.IdAdmAlta, h.FechaModif, h.IdAdmModif, h.FechaBaja, h.IdAdmBaja, h.IdEstado, p.Apellido from HistoriaClinica as h inner join Personas as p on h.IdAdmAlta=p.IdPersona where IdPaciente=" + paciente + " and p.estado=1 and h.Idestado=1";
+                string consulta = "select h.IdHistoriaClinica,h.IdRazonSocial, h.IdPaciente, h.NumAfiliado, h.FechaVtoCarnet, h.Motivo, h.FechaAlta, h.IdAdmAlta, h.FechaModif, h.IdAdmModif, h.FechaBaja, h.IdAdmBaja, h.IdEstado, p.Apellido, (select rs.RazonSocialPlan from RazonesSociales as rs where h.IdRazonSocial=rs.IdRazonSocial) from HistoriaClinica as h inner join Personas as p on h.IdAdmAlta=p.IdPersona where IdPaciente=" + paciente + " and p.estado=1 and h.Idestado=9";
                 conexion.setearConsulta(consulta);
                 conexion.abrirConexion();
                 conexion.ejecutarConsulta();
@@ -40,6 +40,7 @@ namespace Negocio
                     if (!conexion.Lector.IsDBNull(11)) aux.IdAdminBaja = (int)conexion.Lector[11];
                     aux.Estado = (int)conexion.Lector[12];
                     aux.Ingresante = conexion.Lector.GetString(13);
+                    aux.RazonSocial = conexion.Lector.GetString(14);
 
                     lista.Add(aux);
                 }

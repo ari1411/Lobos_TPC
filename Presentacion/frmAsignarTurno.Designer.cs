@@ -108,7 +108,7 @@
             this.grbModoSeleccion.Controls.Add(this.rdbEspecialidad);
             this.grbModoSeleccion.Controls.Add(this.cboProfesionales);
             this.grbModoSeleccion.Controls.Add(this.rdbProfesional);
-            this.grbModoSeleccion.Location = new System.Drawing.Point(27, 367);
+            this.grbModoSeleccion.Location = new System.Drawing.Point(409, 20);
             this.grbModoSeleccion.Name = "grbModoSeleccion";
             this.grbModoSeleccion.Size = new System.Drawing.Size(336, 71);
             this.grbModoSeleccion.TabIndex = 2;
@@ -203,7 +203,7 @@
             // 
             // dtpFechaTurnoIni
             // 
-            this.dtpFechaTurnoIni.Location = new System.Drawing.Point(507, 37);
+            this.dtpFechaTurnoIni.Location = new System.Drawing.Point(507, 125);
             this.dtpFechaTurnoIni.Name = "dtpFechaTurnoIni";
             this.dtpFechaTurnoIni.Size = new System.Drawing.Size(238, 20);
             this.dtpFechaTurnoIni.TabIndex = 7;
@@ -212,7 +212,7 @@
             // lblFechaTurno
             // 
             this.lblFechaTurno.AutoSize = true;
-            this.lblFechaTurno.Location = new System.Drawing.Point(406, 27);
+            this.lblFechaTurno.Location = new System.Drawing.Point(406, 115);
             this.lblFechaTurno.Name = "lblFechaTurno";
             this.lblFechaTurno.Size = new System.Drawing.Size(84, 13);
             this.lblFechaTurno.TabIndex = 25;
@@ -220,7 +220,7 @@
             // 
             // btnBuscarTurnos
             // 
-            this.btnBuscarTurnos.Location = new System.Drawing.Point(507, 89);
+            this.btnBuscarTurnos.Location = new System.Drawing.Point(507, 177);
             this.btnBuscarTurnos.Name = "btnBuscarTurnos";
             this.btnBuscarTurnos.Size = new System.Drawing.Size(107, 25);
             this.btnBuscarTurnos.TabIndex = 9;
@@ -231,7 +231,7 @@
             // dgvTurnosDisponibles
             // 
             this.dgvTurnosDisponibles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTurnosDisponibles.Location = new System.Drawing.Point(409, 120);
+            this.dgvTurnosDisponibles.Location = new System.Drawing.Point(409, 208);
             this.dgvTurnosDisponibles.MultiSelect = false;
             this.dgvTurnosDisponibles.Name = "dgvTurnosDisponibles";
             this.dgvTurnosDisponibles.ReadOnly = true;
@@ -241,7 +241,7 @@
             // 
             // dtpFechaTurnoFin
             // 
-            this.dtpFechaTurnoFin.Location = new System.Drawing.Point(507, 63);
+            this.dtpFechaTurnoFin.Location = new System.Drawing.Point(507, 151);
             this.dtpFechaTurnoFin.Name = "dtpFechaTurnoFin";
             this.dtpFechaTurnoFin.Size = new System.Drawing.Size(238, 20);
             this.dtpFechaTurnoFin.TabIndex = 8;
@@ -250,7 +250,7 @@
             // lblDesde
             // 
             this.lblDesde.AutoSize = true;
-            this.lblDesde.Location = new System.Drawing.Point(434, 43);
+            this.lblDesde.Location = new System.Drawing.Point(434, 131);
             this.lblDesde.Name = "lblDesde";
             this.lblDesde.Size = new System.Drawing.Size(41, 13);
             this.lblDesde.TabIndex = 26;
@@ -259,12 +259,11 @@
             // lblHasta
             // 
             this.lblHasta.AutoSize = true;
-            this.lblHasta.Location = new System.Drawing.Point(434, 69);
+            this.lblHasta.Location = new System.Drawing.Point(434, 157);
             this.lblHasta.Name = "lblHasta";
             this.lblHasta.Size = new System.Drawing.Size(38, 13);
             this.lblHasta.TabIndex = 27;
             this.lblHasta.Text = "Hasta:";
-            this.lblHasta.Click += new System.EventHandler(this.lblHasta_Click);
             // 
             // btnAsignarTurno
             // 
@@ -310,17 +309,17 @@
             // txtObservaciones
             // 
             this.txtObservaciones.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtObservaciones.Location = new System.Drawing.Point(409, 383);
+            this.txtObservaciones.Location = new System.Drawing.Point(27, 384);
             this.txtObservaciones.MaxLength = 50;
             this.txtObservaciones.Multiline = true;
             this.txtObservaciones.Name = "txtObservaciones";
-            this.txtObservaciones.Size = new System.Drawing.Size(363, 55);
+            this.txtObservaciones.Size = new System.Drawing.Size(336, 55);
             this.txtObservaciones.TabIndex = 30;
             // 
             // lblObservaciones
             // 
             this.lblObservaciones.AutoSize = true;
-            this.lblObservaciones.Location = new System.Drawing.Point(406, 367);
+            this.lblObservaciones.Location = new System.Drawing.Point(24, 368);
             this.lblObservaciones.Name = "lblObservaciones";
             this.lblObservaciones.Size = new System.Drawing.Size(81, 13);
             this.lblObservaciones.TabIndex = 31;

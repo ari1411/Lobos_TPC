@@ -64,5 +64,11 @@ namespace Presentacion
             frmAsignarTurno asig = new frmAsignarTurno();
             asig.ShowDialog();
         }
+
+        private void btnPerfilMedico_Click(object sender, EventArgs e)
+        {
+            frmPerfilProfesional prof = new frmPerfilProfesional();
+            prof.ShowDialog();
+        }
     }
 }

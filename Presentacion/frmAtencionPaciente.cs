@@ -7,23 +7,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Dominio;
+using Negocio;
 
 namespace Presentacion
 {
-    public partial class frmObservacionesAsignarTurno : Form
+    public partial class frmAtencionPaciente : Form
     {
-        public frmObservacionesAsignarTurno()
+        Turno turn = new Turno();
+
+        public frmAtencionPaciente(Turno X)
         {
             InitializeComponent();
+            turn = X;
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
+        private void frmAtencionPaciente_Load(object sender, EventArgs e)
         {
-            Close();
-        }
 
-        private void btnGrabar_Click(object sender, EventArgs e)
-        {
         }
     }
 }

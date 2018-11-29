@@ -21,6 +21,9 @@ namespace Dominio
         public DateTime FechaHoraAsignado { set; get; }
         public Int32 IdUsuarioAsigna { set; get; }
         public string UsuarioAsigna { set; get; }
+        public DateTime FechaHoraAdmitido { set; get; }
+        public Int32 IdUsuarioAdmitio { set; get; }
+        public string UsuarioAdmitio { set; get; }
         public DateTime FechaHoraLiberado { set; get; }
         public Int32 IdUsuarioLibera { set; get; }
         public string UsuarioLibera { set; get; }
@@ -29,5 +32,9 @@ namespace Dominio
         public string UsuarioCancela { set; get; }
         public Int32 IdEstado { set; get; }
         public string Estado { set; get; }
+        public string DNI { set; get; }
+        public string MotivoHC { set; get; }
+        public DateTime FechaVtoCarnet { set; get; }
+        public string RazonSocial_Plan { set; get; }
     }
 }

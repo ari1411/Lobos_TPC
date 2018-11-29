@@ -122,6 +122,12 @@
     <Compile Include="frmAsignarTurno.Designer.cs">
       <DependentUpon>frmAsignarTurno.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAtencionPaciente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAtencionPaciente.Designer.cs">
+      <DependentUpon>frmAtencionPaciente.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmConsultas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -212,11 +218,23 @@
     <Compile Include="frmModificarPaciente.Designer.cs">
       <DependentUpon>frmModificarPaciente.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmObservacionesAsignarTurno.cs">
+    <Compile Include="frmAdmisionTurno.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmObservacionesAsignarTurno.Designer.cs">
-      <DependentUpon>frmObservacionesAsignarTurno.cs</DependentUpon>
+    <Compile Include="frmAdmisionTurno.Designer.cs">
+      <DependentUpon>frmAdmisionTurno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPerfilProfesional.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPerfilProfesional.Designer.cs">
+      <DependentUpon>frmPerfilProfesional.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPerfilProfesionalAtender.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPerfilProfesionalAtender.Designer.cs">
+      <DependentUpon>frmPerfilProfesionalAtender.cs</DependentUpon>
     </Compile>
     <Compile Include="frmVerHistoriaClinica.cs">
       <SubType>Form</SubType>
@@ -373,6 +391,9 @@
     <EmbeddedResource Include="frmAsignarTurno.resx">
       <DependentUpon>frmAsignarTurno.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAtencionPaciente.resx">
+      <DependentUpon>frmAtencionPaciente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmConsultas.resx">
       <DependentUpon>frmConsultas.cs</DependentUpon>
     </EmbeddedResource>
@@ -418,8 +439,14 @@
     <EmbeddedResource Include="frmModificarPaciente.resx">
       <DependentUpon>frmModificarPaciente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmObservacionesAsignarTurno.resx">
-      <DependentUpon>frmObservacionesAsignarTurno.cs</DependentUpon>
+    <EmbeddedResource Include="frmAdmisionTurno.resx">
+      <DependentUpon>frmAdmisionTurno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPerfilProfesional.resx">
+      <DependentUpon>frmPerfilProfesional.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPerfilProfesionalAtender.resx">
+      <DependentUpon>frmPerfilProfesionalAtender.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmVerHistoriaClinica.resx">
       <DependentUpon>frmVerHistoriaClinica.cs</DependentUpon>

@@ -13,19 +13,20 @@ namespace Negocio
         AccesoDatos conexion = new AccesoDatos();
         Turno aux = new Turno();
 
-        public IList<Turno> buscar(DateTime fechaIni, DateTime fechaFin, int prof, int esp, int seleccionRDB, int Estado=0)
+        public IList<Turno> buscar(DateTime fechaIni, DateTime fechaFin, int prof, int esp, int seleccionRDB, int Estado = 0)
         {
-            IList<Turno> listaTurno = new List<Turno>();
-            conexion = null;
-            fechaFin = fechaFin.AddDays(1);
             try
             {
+                IList<Turno> listaTurno = new List<Turno>();
+                conexion = null;
+                fechaFin = fechaFin.AddDays(1);
                 conexion = new AccesoDatos();
-                string consulta = "select t.IdTurno, t.FechaHoraTurno, t.IdProfesional , (select pers.Apellido + ', ' + pers.Nombre from personas as pers where t.IdProfesional = pers.idpersona) as 'Profesional', t.IdEspecialidad, e.Especialidad, t.IdPaciente, (select pers.Apellido + ', ' + pers.Nombre from personas as pers where t.IdPaciente = pers.idpersona) as 'Paciente', t.IdHistoriaClinica, t.FechaAsignado, t.IdAdminAsigna, (select pers.Apellido + ', ' + pers.Nombre from personas as pers where t.IdAdminAsigna = pers.idpersona) as 'Admin Alta', t.FechaLiberacion, t.IdAdminLibera, (select pers.Apellido + ', ' + pers.Nombre from personas as pers where t.IdAdminLibera = pers.idpersona) as 'Admin Libera', t.FechaCancelado, t.IdAdminCancela, (select pers.Apellido + ', ' + pers.Nombre from personas as pers where t.IdAdminCancela = pers.idpersona) as 'Adm Cancela', t.IdEstado, est.Estado, t.Observaciones from turnos as t inner join Profesionales as prof on t.IdProfesional=prof.IdProfesional inner join Especialidades as e on t.IdEspecialidad=e.IdEspecialidad inner join estados as est on est.idestado=t.IdEstado where '" + fechaIni.ToString("yyyy/MM/dd") + "'<=FechaHoraTurno and FechaHoraTurno<'" + fechaFin.ToString("yyyy/MM/dd") + "'";
+                string consulta = "select t.IdTurno, t.FechaHoraTurno, t.IdProfesional , (select pers.Apellido + ', ' + pers.Nombre from personas as pers where t.IdProfesional = pers.idpersona) as 'Profesional', t.IdEspecialidad, e.Especialidad, t.IdPaciente, (select pers.Apellido + ', ' + pers.Nombre from personas as pers where t.IdPaciente = pers.idpersona) as 'Paciente', t.IdHistoriaClinica, t.Observaciones, t.FechaAsignado, t.IdAdminAsigna, (select pers.Apellido + ', ' + pers.Nombre from personas as pers where t.IdAdminAsigna = pers.idpersona) as 'Admin Asigna', t.FechaAdmitido, t.IdAdminAdmitio, (select pers.Apellido + ', ' + pers.Nombre from personas as pers where t.IdAdminAdmitio = pers.idpersona) as 'Admin Admitio', t.FechaLiberacion, t.IdAdminLibera, (select pers.Apellido + ', ' + pers.Nombre from personas as pers where t.IdAdminLibera = pers.idpersona) as 'Admin Libera', t.FechaCancelado, t.IdAdminCancela, (select pers.Apellido + ', ' + pers.Nombre from personas as pers where t.IdAdminCancela = pers.idpersona) as 'Adm Cancela', t.IdEstado, est.Estado, (select pers.DNI from personas as pers where t.IdPaciente = pers.idpersona) as 'dniPaciente', HC.Motivo, HC.FechaVtoCarnet, (select rs.RazonSocialPlan from RazonesSociales as rs where HC.IdRazonSocial=rs.IdRazonSocial) from turnos as t inner join Profesionales as prof on t.IdProfesional=prof.IdProfesional inner join Especialidades as e on t.IdEspecialidad=e.IdEspecialidad inner join estados as est on est.idestado=t.IdEstado left join HistoriaClinica as HC on t.IdHistoriaClinica=HC.IdHistoriaClinica where '" + fechaIni.ToString("yyyy/MM/dd") + "'<=FechaHoraTurno and FechaHoraTurno<'" + fechaFin.ToString("yyyy/MM/dd") + "'";
                 if (seleccionRDB == 2)
                 {
                     consulta = consulta + " and t.IdProfesional=" + prof;
-                }else if (seleccionRDB == 3)
+                }
+                else if (seleccionRDB == 3)
                 {
                     consulta = consulta + " and t.IdEspecialidad=" + esp;
                 }
@@ -50,18 +51,25 @@ namespace Negocio
                     if (!conexion.Lector.IsDBNull(6)) aux.IdPaciente = (Int32)conexion.Lector[6];
                     if (!conexion.Lector.IsDBNull(7)) aux.Paciente = conexion.Lector.GetString(7);
                     if (!conexion.Lector.IsDBNull(8)) aux.IdHC = (Int32)conexion.Lector[8];
-                    if (!conexion.Lector.IsDBNull(9)) aux.FechaHoraAsignado = (DateTime)conexion.Lector[9];
-                    if (!conexion.Lector.IsDBNull(10)) aux.IdUsuarioAsigna = (Int32)conexion.Lector[10];
-                    if (!conexion.Lector.IsDBNull(11)) aux.UsuarioAsigna = conexion.Lector.GetString(11);
-                    if (!conexion.Lector.IsDBNull(12)) aux.FechaHoraLiberado = (DateTime)conexion.Lector[12];
-                    if (!conexion.Lector.IsDBNull(13)) aux.IdUsuarioLibera = (Int32)conexion.Lector[13];
-                    if (!conexion.Lector.IsDBNull(14)) aux.UsuarioLibera = conexion.Lector.GetString(14);
-                    if (!conexion.Lector.IsDBNull(15)) aux.FechaHoraCancelado = (DateTime)conexion.Lector[15];
-                    if (!conexion.Lector.IsDBNull(16)) aux.IdUsuarioCancela = (Int32)conexion.Lector[16];
-                    if (!conexion.Lector.IsDBNull(17)) aux.UsuarioCancela = conexion.Lector.GetString(17);
-                    aux.IdEstado = (Int32)conexion.Lector[18];
-                    aux.Estado = conexion.Lector.GetString(19);
-                    if (!conexion.Lector.IsDBNull(20)) aux.Observaciones = conexion.Lector.GetString(20);
+                    if (!conexion.Lector.IsDBNull(9)) aux.Observaciones = conexion.Lector.GetString(9);
+                    if (!conexion.Lector.IsDBNull(10)) aux.FechaHoraAsignado = (DateTime)conexion.Lector[10];
+                    if (!conexion.Lector.IsDBNull(11)) aux.IdUsuarioAsigna = (Int32)conexion.Lector[11];
+                    if (!conexion.Lector.IsDBNull(12)) aux.UsuarioAsigna = conexion.Lector.GetString(12);
+                    if (!conexion.Lector.IsDBNull(13)) aux.FechaHoraAdmitido = (DateTime)conexion.Lector[13];
+                    if (!conexion.Lector.IsDBNull(14)) aux.IdUsuarioAdmitio = (Int32)conexion.Lector[14];
+                    if (!conexion.Lector.IsDBNull(15)) aux.UsuarioAdmitio = conexion.Lector.GetString(15);
+                    if (!conexion.Lector.IsDBNull(16)) aux.FechaHoraLiberado = (DateTime)conexion.Lector[16];
+                    if (!conexion.Lector.IsDBNull(17)) aux.IdUsuarioLibera = (Int32)conexion.Lector[17];
+                    if (!conexion.Lector.IsDBNull(18)) aux.UsuarioLibera = conexion.Lector.GetString(18);
+                    if (!conexion.Lector.IsDBNull(19)) aux.FechaHoraCancelado = (DateTime)conexion.Lector[19];
+                    if (!conexion.Lector.IsDBNull(20)) aux.IdUsuarioCancela = (Int32)conexion.Lector[20];
+                    if (!conexion.Lector.IsDBNull(21)) aux.UsuarioCancela = conexion.Lector.GetString(21);
+                    aux.IdEstado = (Int32)conexion.Lector[22];
+                    aux.Estado = conexion.Lector.GetString(23);
+                    if (!conexion.Lector.IsDBNull(24)) aux.DNI = conexion.Lector.GetString(24);
+                    if (!conexion.Lector.IsDBNull(25)) aux.MotivoHC = conexion.Lector.GetString(25);
+                    if (!conexion.Lector.IsDBNull(26)) aux.FechaVtoCarnet = (DateTime)conexion.Lector[26];
+                    if (!conexion.Lector.IsDBNull(27)) aux.RazonSocial_Plan = conexion.Lector.GetString(27);
 
                     listaTurno.Add(aux);
                 }
@@ -80,7 +88,7 @@ namespace Negocio
                 }
             }
         }
-        
+
         public int crearAgenda(DateTime fechaHora, int cantidad, int min, int idProfesional, int idEspecialidad)
         {
             try
@@ -171,6 +179,76 @@ namespace Negocio
             }
         }
 
-        
+        public void admisionar(int idTurno, string observ, int idAdmin)
+        {
+            try
+            {
+                conexion = null;
+                conexion = new AccesoDatos();
+                string consulta = "update Turnos set Observaciones='" + observ + "', FechaAdmitido=GETDATE(), IdAdminAdmitio=" + idAdmin + ", IdEstado=6 where IdTurno=" + idTurno;
+                conexion.setearConsulta(consulta);
+                conexion.abrirConexion();
+                conexion.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (conexion != null)
+                {
+                    conexion.cerrarConexion();
+                }
+            }
+        }
+
+        public void cancelar(int idTurno, string observ, int idAdmin)
+        {
+            try
+            {
+                conexion = null;
+                conexion = new AccesoDatos();
+                string consulta = "update Turnos set Observaciones='" + observ + "', FechaCancelado=GETDATE(), IdAdminCancela=" + idAdmin + ", IdEstado=1 where IdTurno=" + idTurno;
+                conexion.setearConsulta(consulta);
+                conexion.abrirConexion();
+                conexion.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (conexion != null)
+                {
+                    conexion.cerrarConexion();
+                }
+            }
+        }
+
+        public void liberar(int idTurno, string observ, int idAdmin) // En este momento lo estoy dejando en estado disponible. Para dejarlo en liberado debe estar en idEstado=4
+        {
+            try
+            {
+                conexion = null;
+                conexion = new AccesoDatos();
+                string consulta = "update Turnos set IdPaciente=null, IdHistoriaClinica=null, Observaciones='" + observ + "', FechaAsignado=null, IdAdminAsigna=null, FechaAdmitido=null, IdAdminAdmitio=null, FechaLiberacion=GETDATE(), IdAdminLibera=" + idAdmin + ", FechaCancelado=null, IdAdminCancela=null, IdEstado=2 where IdTurno=" + idTurno;
+                conexion.setearConsulta(consulta);
+                conexion.abrirConexion();
+                conexion.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (conexion != null)
+                {
+                    conexion.cerrarConexion();
+                }
+            }
+        }
     }
 }
