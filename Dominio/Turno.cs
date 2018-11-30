@@ -16,7 +16,11 @@ namespace Dominio
         public string Especialidad { set; get; }
         public Int32 IdPaciente { set; get; }
         public string Paciente { set; get; }
+        public string DNI { set; get; }
         public Int32 IdHC { set; get; }
+        public string MotivoHC { set; get; }
+        public DateTime FechaVtoCarnet { set; get; }
+        public string RazonSocial_Plan { set; get; }
         public string Observaciones { set; get; }
         public DateTime FechaHoraAsignado { set; get; }
         public Int32 IdUsuarioAsigna { set; get; }
@@ -32,9 +36,5 @@ namespace Dominio
         public string UsuarioCancela { set; get; }
         public Int32 IdEstado { set; get; }
         public string Estado { set; get; }
-        public string DNI { set; get; }
-        public string MotivoHC { set; get; }
-        public DateTime FechaVtoCarnet { set; get; }
-        public string RazonSocial_Plan { set; get; }
     }
 }

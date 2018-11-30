@@ -53,7 +53,7 @@ namespace Presentacion
                 if (Accion >= 1 & Accion <= 3)
                 {
                     if (Accion == 1) turnoNeg.admisionar(turno.IdTurno, txtObservaciones.Text, 1);
-                    if (Accion == 2) turnoNeg.cancelar(turno.IdTurno, txtObservaciones.Text, 1);
+                    if (Accion == 2) turnoNeg.cancelarAdm(turno.IdTurno, txtObservaciones.Text, 1);
                     if (Accion == 3) turnoNeg.liberar(turno.IdTurno, txtObservaciones.Text, 1);
                     Close();
                 }

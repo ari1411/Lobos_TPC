@@ -122,11 +122,11 @@
     <Compile Include="frmAsignarTurno.Designer.cs">
       <DependentUpon>frmAsignarTurno.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAtencionPaciente.cs">
+    <Compile Include="frmPerfilProfesionalAtenderPaciente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAtencionPaciente.Designer.cs">
-      <DependentUpon>frmAtencionPaciente.cs</DependentUpon>
+    <Compile Include="frmPerfilProfesionalAtenderPaciente.Designer.cs">
+      <DependentUpon>frmPerfilProfesionalAtenderPaciente.cs</DependentUpon>
     </Compile>
     <Compile Include="frmConsultas.cs">
       <SubType>Form</SubType>
@@ -236,11 +236,23 @@
     <Compile Include="frmPerfilProfesionalAtender.Designer.cs">
       <DependentUpon>frmPerfilProfesionalAtender.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPerfilProfesionalCancelarTurno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPerfilProfesionalCancelarTurno.Designer.cs">
+      <DependentUpon>frmPerfilProfesionalCancelarTurno.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmVerHistoriaClinica.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmVerHistoriaClinica.Designer.cs">
       <DependentUpon>frmVerHistoriaClinica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVerHistoriaClinicaEvoluciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVerHistoriaClinicaEvoluciones.Designer.cs">
+      <DependentUpon>frmVerHistoriaClinicaEvoluciones.cs</DependentUpon>
     </Compile>
     <Compile Include="LOBOS_DBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -391,8 +403,8 @@
     <EmbeddedResource Include="frmAsignarTurno.resx">
       <DependentUpon>frmAsignarTurno.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAtencionPaciente.resx">
-      <DependentUpon>frmAtencionPaciente.cs</DependentUpon>
+    <EmbeddedResource Include="frmPerfilProfesionalAtenderPaciente.resx">
+      <DependentUpon>frmPerfilProfesionalAtenderPaciente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmConsultas.resx">
       <DependentUpon>frmConsultas.cs</DependentUpon>
@@ -448,8 +460,14 @@
     <EmbeddedResource Include="frmPerfilProfesionalAtender.resx">
       <DependentUpon>frmPerfilProfesionalAtender.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmPerfilProfesionalCancelarTurno.resx">
+      <DependentUpon>frmPerfilProfesionalCancelarTurno.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmVerHistoriaClinica.resx">
       <DependentUpon>frmVerHistoriaClinica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVerHistoriaClinicaEvoluciones.resx">
+      <DependentUpon>frmVerHistoriaClinicaEvoluciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>

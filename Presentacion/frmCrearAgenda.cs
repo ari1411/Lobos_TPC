@@ -67,21 +67,26 @@ namespace Presentacion
 
         private void btnGenerarTurnos_Click(object sender, EventArgs e)
         {
-            
+
             if (mtbHoraInicio.Text != mtbHoraHasta.Text)
             {
                 if (dgvEspecialidades.CurrentRow != null)
                 {
                     try
                     {
-                    DateTime fechaHora = DateTime.Parse(mtbHoraInicio.Text);
-                    DateTime hrFin = DateTime.Parse(mtbHoraHasta.Text);
-                    TurnoNegocio neg = new TurnoNegocio();
-                    int idProf = int.Parse(cboProfesionales.SelectedValue.ToString());
-                    Especialidades aux = (Especialidades)dgvEspecialidades.CurrentRow.DataBoundItem;
-                    int x = neg.crearAgenda(fechaHora, fechaHora, hrFin, 60, idProf, aux.IdEspecialidad);
-                    MessageBox.Show("Se creo correctamente la agenda con " + x + " turno/s");
-                    Close();
+                        TurnoNegocio neg = new TurnoNegocio();
+
+                        DateTime fechaHora = DateTime.Parse(mtbHoraInicio.Text);
+                        DateTime hrFin = DateTime.Parse(mtbHoraHasta.Text);
+
+                        int idProf = int.Parse(cboProfesionales.SelectedValue.ToString());
+                        Especialidades aux = (Especialidades)dgvEspecialidades.CurrentRow.DataBoundItem;
+
+                        int x = neg.crearAgenda(fechaHora, fechaHora, hrFin, 60, idProf, aux.IdEspecialidad);
+
+
+                        MessageBox.Show("Se creo correctamente la agenda con " + x + " turno/s");
+                        Close();
 
                     }
                     catch (FormatException)

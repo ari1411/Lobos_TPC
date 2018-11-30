@@ -49,8 +49,16 @@ namespace Presentacion
         private void btnAtender_Click(object sender, EventArgs e)
         {
             turn = (Turno)dgvPacientesAdmitidos.CurrentRow.DataBoundItem;
-            frmAtencionPaciente atencion = new frmAtencionPaciente(turn);
+            frmPerfilProfesionalAtenderPaciente atencion = new frmPerfilProfesionalAtenderPaciente(turn);
             atencion.ShowDialog();
+            cargar();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            frmPerfilProfesionalCancelarTurno cancelar = new frmPerfilProfesionalCancelarTurno(turn);
+            cancelar.ShowDialog();
+            cargar();
         }
     }
 }

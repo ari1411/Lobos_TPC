@@ -41,16 +41,16 @@
             this.dgvPacientesAdmitidos.AllowUserToAddRows = false;
             this.dgvPacientesAdmitidos.AllowUserToDeleteRows = false;
             this.dgvPacientesAdmitidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPacientesAdmitidos.Location = new System.Drawing.Point(12, 74);
+            this.dgvPacientesAdmitidos.Location = new System.Drawing.Point(12, 59);
             this.dgvPacientesAdmitidos.MultiSelect = false;
             this.dgvPacientesAdmitidos.Name = "dgvPacientesAdmitidos";
             this.dgvPacientesAdmitidos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPacientesAdmitidos.Size = new System.Drawing.Size(641, 345);
+            this.dgvPacientesAdmitidos.Size = new System.Drawing.Size(641, 371);
             this.dgvPacientesAdmitidos.TabIndex = 0;
             // 
             // btnActualizar
             // 
-            this.btnActualizar.Location = new System.Drawing.Point(13, 45);
+            this.btnActualizar.Location = new System.Drawing.Point(12, 12);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(75, 23);
             this.btnActualizar.TabIndex = 1;
@@ -60,7 +60,7 @@
             // 
             // btnAtender
             // 
-            this.btnAtender.Location = new System.Drawing.Point(659, 74);
+            this.btnAtender.Location = new System.Drawing.Point(659, 83);
             this.btnAtender.Name = "btnAtender";
             this.btnAtender.Size = new System.Drawing.Size(113, 32);
             this.btnAtender.TabIndex = 2;
@@ -70,12 +70,13 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(659, 112);
+            this.btnCancelar.Location = new System.Drawing.Point(659, 143);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(113, 32);
             this.btnCancelar.TabIndex = 3;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnVolver
             // 

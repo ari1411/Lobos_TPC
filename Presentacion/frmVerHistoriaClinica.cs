@@ -17,6 +17,7 @@ namespace Presentacion
     {
         private Paciente aux;
         private IList<HC> listaHC;
+
         public frmVerHistoriaClinica(Paciente paciente)
         {
             InitializeComponent();
@@ -71,7 +72,9 @@ namespace Presentacion
 
         private void btnVerHC_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Paciencia, Falta crear la funcion");
+            HC seleccion = (HC)dgvVerHistoriasClinicas.CurrentRow.DataBoundItem;
+            frmVerHistoriaClinicaEvoluciones evol = new frmVerHistoriaClinicaEvoluciones(aux, seleccion);
+            evol.ShowDialog();
         }
 
         private void btnEditarHC_Click(object sender, EventArgs e)

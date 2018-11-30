@@ -120,7 +120,7 @@ namespace Negocio
                 while (HoraInicio < HoraFin)
                 {
                     crearTurno(fechaHora, idProfesional, idEspecialidad);
-                    HoraInicio = HoraInicio.AddMinutes(min); //mi intencion era hacerlo mas personalizado
+                    HoraInicio = HoraInicio.AddMinutes(min); //mi intencion es hacerlo mas personalizado
                     fechaHora = fechaHora.AddMinutes(min);
                     ++creados;
                 }
@@ -203,7 +203,7 @@ namespace Negocio
             }
         }
 
-        public void cancelar(int idTurno, string observ, int idAdmin)
+        public void cancelarAdm(int idTurno, string observ, int idAdmin)
         {
             try
             {
@@ -234,6 +234,54 @@ namespace Negocio
                 conexion = null;
                 conexion = new AccesoDatos();
                 string consulta = "update Turnos set IdPaciente=null, IdHistoriaClinica=null, Observaciones='" + observ + "', FechaAsignado=null, IdAdminAsigna=null, FechaAdmitido=null, IdAdminAdmitio=null, FechaLiberacion=GETDATE(), IdAdminLibera=" + idAdmin + ", FechaCancelado=null, IdAdminCancela=null, IdEstado=2 where IdTurno=" + idTurno;
+                conexion.setearConsulta(consulta);
+                conexion.abrirConexion();
+                conexion.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (conexion != null)
+                {
+                    conexion.cerrarConexion();
+                }
+            }
+        }
+
+        public void realizado(int idTurno) // Atendido
+        {
+            try
+            {
+                conexion = null;
+                conexion = new AccesoDatos();
+                string consulta = "update Turnos set IdEstado=7 where IdTurno=" + idTurno;
+                conexion.setearConsulta(consulta);
+                conexion.abrirConexion();
+                conexion.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (conexion != null)
+                {
+                    conexion.cerrarConexion();
+                }
+            }
+        }
+
+        public void cancelarMed(int idTurno, string observ) // Medico cancela el turno. En la columna idAdminCancelado queda null
+        {
+            try
+            {
+                conexion = null;
+                conexion = new AccesoDatos();
+                string consulta = "update Turnos set Observaciones='" + observ + "', FechaCancelado=GETDATE(), IdEstado=1 where IdTurno=" + idTurno;
                 conexion.setearConsulta(consulta);
                 conexion.abrirConexion();
                 conexion.ejecutarAccion();

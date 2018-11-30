@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presentacion", "Presentacio
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1A079D1D-6A63-4C73-9220-6C9ACF06B342}"
 	ProjectSection(SolutionItems) = preProject
-		Script Lobos_DB.sql = Script Lobos_DB.sql
+		Script Lobos_DB 18-11-30.sql = Script Lobos_DB 18-11-30.sql
 	EndProjectSection
 EndProject
 Global
